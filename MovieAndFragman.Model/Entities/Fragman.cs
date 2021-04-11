@@ -12,7 +12,10 @@ namespace MovieAndFragman.Model.Entities
         public string Poster { get; set; }//afiş
         public int UserID { get; set; }
         public User User { get; set; }//yükleyici
-
+        public string InitialRelease { get; set; }// ilk gösterim
+        public string Director { get; set; } //Yönetmen
+        public string Production { get; set; } // Yapımcı
+        public float IMDB { get; set; }
         public ICollection<GenreFragman> GenreFragmens { get; set; }
 
         public ICollection<FragComment> FragComments { get; set; }

@@ -8,6 +8,12 @@ namespace MovieAndFragman.Model.Entities
 {
     public class User : BaseModel, IEntity
     {
+        public User()
+        {
+            IsActive = false;
+            UserRole = UserRole.User;
+            ActivationCode = Guid.NewGuid();
+        }
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
