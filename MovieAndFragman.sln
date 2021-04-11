@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieAndFragman.Core", "MovieAndFragman.Core\MovieAndFragman.Core.csproj", "{D6C78DD1-6B19-406B-A4E0-374C0148D9F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieAndFragman.Model", "MovieAndFragman.Model\MovieAndFragman.Model.csproj", "{B85DFD50-024E-4408-A8FA-3EAEC13A6C99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieAndFragman.DAL", "MovieAndFragman.DAL\MovieAndFragman.DAL.csproj", "{6A3EF30D-55A0-411E-B034-F383A0267C90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieAndFragman.BLL", "MovieAndFragman.BLL\MovieAndFragman.BLL.csproj", "{B11D02A3-6AD1-4A8E-9D27-6BA4D137BB99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F427582-3CDB-4E17-B345-E92C15206367}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAndFragman.UI.CoreMVC", "MovieAndFragman.UI.CoreMVC\MovieAndFragman.UI.CoreMVC.csproj", "{BD7EDC4F-B1C3-4202-9ED8-C2D63F811BC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAndFragman.Service.WebAPI", "MovieAndFragman.Service.WebAPI\MovieAndFragman.Service.WebAPI.csproj", "{1F4CE71D-BF75-4B4C-B47A-768589EF78F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6C78DD1-6B19-406B-A4E0-374C0148D9F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C78DD1-6B19-406B-A4E0-374C0148D9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C78DD1-6B19-406B-A4E0-374C0148D9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C78DD1-6B19-406B-A4E0-374C0148D9F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B85DFD50-024E-4408-A8FA-3EAEC13A6C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85DFD50-024E-4408-A8FA-3EAEC13A6C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85DFD50-024E-4408-A8FA-3EAEC13A6C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85DFD50-024E-4408-A8FA-3EAEC13A6C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A3EF30D-55A0-411E-B034-F383A0267C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3EF30D-55A0-411E-B034-F383A0267C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3EF30D-55A0-411E-B034-F383A0267C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3EF30D-55A0-411E-B034-F383A0267C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11D02A3-6AD1-4A8E-9D27-6BA4D137BB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11D02A3-6AD1-4A8E-9D27-6BA4D137BB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11D02A3-6AD1-4A8E-9D27-6BA4D137BB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11D02A3-6AD1-4A8E-9D27-6BA4D137BB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7EDC4F-B1C3-4202-9ED8-C2D63F811BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7EDC4F-B1C3-4202-9ED8-C2D63F811BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7EDC4F-B1C3-4202-9ED8-C2D63F811BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7EDC4F-B1C3-4202-9ED8-C2D63F811BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F4CE71D-BF75-4B4C-B47A-768589EF78F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F4CE71D-BF75-4B4C-B47A-768589EF78F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F4CE71D-BF75-4B4C-B47A-768589EF78F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F4CE71D-BF75-4B4C-B47A-768589EF78F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A2C9632-E6BF-404C-8622-45DA39448719}
+	EndGlobalSection
+EndGlobal

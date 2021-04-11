@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieAndFragman.Core\MovieAndFragman.Core.csproj" />
+    <ProjectReference Include="..\MovieAndFragman.DAL\MovieAndFragman.DAL.csproj" />
+    <ProjectReference Include="..\MovieAndFragman.Model\MovieAndFragman.Model.csproj" />
+  </ItemGroup>
+
+</Project>
