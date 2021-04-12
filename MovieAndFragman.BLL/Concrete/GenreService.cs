@@ -14,14 +14,23 @@ namespace MovieAndFragman.BLL.Concrete
         {
             genreDAL = dAL;
         }
-        //TODO: check genre
+        
+        void Check(Genre genre)
+        {
+            if (string.IsNullOrWhiteSpace(genre.Name))
+            {
+                throw new Exception("Karegori adı boş bırakılamaz.");
+            }
+        }
         public void Insert(Genre entity)
         {
+            Check(entity);
             genreDAL.Insert(entity);
         }
 
         public void Update(Genre entity)
         {
+            Check(entity);
             genreDAL.Update(entity);
         }
 

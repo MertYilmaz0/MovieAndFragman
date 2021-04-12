@@ -14,14 +14,24 @@ namespace MovieAndFragman.BLL.Concrete
         {
             urlDAL = dAL;
         }
-        //Todo : Check url
+
+        void Check(Url url)
+        {
+            if (string.IsNullOrWhiteSpace(url.UrlPath))
+            {
+                throw new Exception("Yayınlayacağınız videoyu belirtiniz.");
+            }
+        }
+
         public void Insert(Url entity)
         {
+            Check(entity);
             urlDAL.Insert(entity);
         }
 
         public void Update(Url entity)
         {
+            Check(entity);
             urlDAL.Update(entity);
         }
 
