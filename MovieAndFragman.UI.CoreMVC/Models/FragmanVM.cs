@@ -7,7 +7,7 @@ namespace MovieAndFragman.UI.CoreMVC.Models
 {
     public class FragmanVM
     {
-        public string Name { get; set; }
+        public string Namer { get; set; }
         public string Description { get; set; }
         public string Poster { get; set; }//afiş
         public int UserID { get; set; }
