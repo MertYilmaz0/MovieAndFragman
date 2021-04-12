@@ -7,6 +7,10 @@ namespace MovieAndFragman.Model.Entities
 {
     public class Fragman : BaseModel, IEntity
     {
+        public Fragman()
+        {
+            IsActive = false;
+        }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Poster { get; set; }//afiş

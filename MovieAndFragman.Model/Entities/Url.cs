@@ -8,6 +8,11 @@ namespace MovieAndFragman.Model.Entities
 {
     public class Url : BaseModel, IEntity
     {
+        public Url()
+        {
+            IsActive = true;
+        }
+
         public Language Language { get; set; }//dil
         public string UrlPath { get; set; }//url uzantısı
 
