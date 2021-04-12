@@ -7,11 +7,12 @@ using System.Text;
 
 namespace MovieAndFragman.DAL
 {
-    class MovieAndFragmanDbContext:DbContext
+    class MovieAndFragmanDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS01; Database = MovieAndFragman; uid = bilal; pwd = 123");
+            //Server=94.73.144.8;Database=NapsDB;User Id=userNap;Password=142536NAPSnaps142536;
+            optionsBuilder.UseSqlServer("Server=94.73.144.8;Database=NapsDB;User Id=userNap;Password=142536NAPSnaps142536;");
             base.OnConfiguring(optionsBuilder);
         }
 
@@ -33,7 +34,7 @@ namespace MovieAndFragman.DAL
             modelBuilder.ApplyConfiguration(new UrlConfiguration());
             modelBuilder.ApplyConfiguration(new RatingConfiguration());
             modelBuilder.ApplyConfiguration(new FragmanConfiguration());
-           
+
 
             base.OnModelCreating(modelBuilder);
         }
