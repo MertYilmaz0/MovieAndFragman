@@ -21,6 +21,7 @@ namespace MovieAndFragman.UI.CoreMVC.Helper
             _configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: false).Build();
             string apiKey = _configuration.GetValue<string>(APIKEYNAME);
             url = _configuration.GetValue<string>(APIUrlNAME);
+            client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Add("ApiKey", apiKey);
         }
 
