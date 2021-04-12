@@ -17,18 +17,14 @@ namespace MovieAndFragman.BLL.Concrete
 
         void Check(Fragman fragman)
         {
-            if (string.IsNullOrWhiteSpace(fragman.Name)|| string.IsNullOrWhiteSpace(fragman.Description)|| string.IsNullOrWhiteSpace(fragman.Director)|| string.IsNullOrWhiteSpace(fragman.Production))
+            if (string.IsNullOrWhiteSpace(fragman.Name)|| string.IsNullOrWhiteSpace(fragman.Description))
             {
                 throw new Exception("* Yerleri boş bırakmayınız.");
             }
             if (string.IsNullOrWhiteSpace(fragman.Poster))
             {
                 throw new Exception("Fragmanın posterini belirtiniz.");
-            }
-            if (fragman.IMDB<0)
-            {
-                throw new Exception("IMDB sıfırdan büyük olmalıdır.");
-            }
+            }            
         }
 
         public void Insert(Fragman entity)
