@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MovieAndFragman.UI.CoreMVC.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,10 @@ namespace MovieAndFragman.UI.CoreMVC.Helper
             string jsonAlbum = HttpService<EntityVM>.Get(method).Result;
             return JsonConvert.DeserializeObject<List<EntityVM>>(jsonAlbum);
         }
-        //public static EntityVM PostApiEntity(string method,EntityVM entityVM)
-        //{
-        //    string jsonAlbum = HttpService<EntityVM>.Post(method,entityVM).Result;
-        //    return JsonConvert.DeserializeObject<EntityVM>(jsonAlbum);
-        //}
+        public static PostVM PostApiEntity(string method, EntityVM entityVM)
+        {
+            string jsonAlbum = HttpService<EntityVM>.Post(method, entityVM).Result;
+            return JsonConvert.DeserializeObject<PostVM>(jsonAlbum);
+        }        
     }
 }

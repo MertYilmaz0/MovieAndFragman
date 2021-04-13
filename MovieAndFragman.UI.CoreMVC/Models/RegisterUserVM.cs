@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MovieAndFragman.UI.CoreMVC.Models
 {
-    public class UserVM
+    public class RegisterUserVM
     {
         public int UserID { get; set; }
         public string UserName { get; set; }
@@ -14,9 +14,6 @@ namespace MovieAndFragman.UI.CoreMVC.Models
         public DateTime BrithDate { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public string Password { get; set; }//ignore edildi.
-        public Guid ActivationCode { get; set; }
-        public string UserRole { get; set; }
-       
+        public string Password { get; set; }//ignore edildi. 
     }
 }

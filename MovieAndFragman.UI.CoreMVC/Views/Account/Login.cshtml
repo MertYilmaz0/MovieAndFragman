@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<header class="page-header">
+    <div class="container">
+        <h1>Login</h1>
+    </div>
+</header>
+<!-- end page-header -->
+<main>
+    <section class="content-section" data-background="images/section-pattern01.png">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    @if (ViewBag.Check != null)
+                    {
+                        if (!ViewBag.Check)
+                        {
+                            <div class="alert alert-danger col-lg-8" role="alert">
+                                <span>@ViewBag.Message</span>
+                            </div>
+                        }                        
+                    }
+                <div class="membership">
+                    <h6>Login Your Membership</h6>
+                    <form asp-controller="Account" asp-action="Login" method="post">
+
+                        <div class="form-group">
+                            <input type="email" name="Email" placeholder="Your E-mail">
+                        </div>
+                        <!-- end form-group -->
+                        <div class="form-group">
+                            <input type="password" name="Password" placeholder="Password"><i class="lni lni-eye"></i>
+                        </div>
+                        <!-- end form-group -->
+                        <div class="form-group">
+                            <p><input type="checkbox" checked> Remember me.</p>
+                        </div>
+                        <!-- end form-group -->
+                        <div class="form-group">
+                            <input type="submit" value="LOGIN MEMBERSHIP">
+                        </div>
+                        <!-- end form-group -->
+
+                        <div class="or">
+                            <span>or</span>
+                            <p>You can pick one of it to log-in</p>
+                            <a href="#">
+                                <i class="lni lni-facebook-filled"></i>
+                                <small>with Facebook</small>
+                            </a> <a href="#">
+                                <i class="lni lni-google"></i>
+                                <small>with Google+</small>
+                            </a>
+                        </div>
+                        <!-- end or -->
+                    </form>
+                </div>
+                    <!-- end membership -->
+                </div>
+                <!-- end col-7 -->
+                <div class="col-lg-5">
+                    <figure class="side-image">
+                        <img src="~/images/side-image02.png" alt="Image">
+                    </figure>
+                    <!-- end side-image -->
+                </div>
+                <!-- end col-5 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end content-section -->
+
+</main>

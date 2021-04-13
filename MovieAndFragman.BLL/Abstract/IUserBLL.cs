@@ -5,7 +5,8 @@ using System.Text;
 
 namespace MovieAndFragman.BLL.Abstract
 {
-    interface IUserBLL:IBaseBLL<User>
+    public interface IUserBLL:IBaseBLL<User>
     {
+        User GetLoginUser(string email, string password);
     }
 }

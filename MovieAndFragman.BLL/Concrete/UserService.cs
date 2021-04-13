@@ -176,5 +176,19 @@ namespace MovieAndFragman.BLL.Concrete
         {
             return userDAL.GetAll(a => a.UserRole != Model.Enums.UserRole.Admin);
         }
+
+        public User GetLoginUser(string email,string password)
+        {
+            User user = userDAL.Get(a => a.Email == email);
+            if (user==null)
+            {
+                throw new Exception("Kullanıcı bilgilerinizi kontrol ediniz.");
+            }
+            if (!HashSaltVerify(user))
+            {
+                throw new Exception("Kullanıcı bilgilerinizi kontrol ediniz.");
+            }
+            return user;
+        }        
     }
 }

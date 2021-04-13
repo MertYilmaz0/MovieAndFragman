@@ -42,7 +42,7 @@ namespace MovieAndFragman.Core.DataAccess.EntityFramework
      
         public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
-            return context.Set<TEntity>().Where(filter).MyInclude(includes).Single();
+            return context.Set<TEntity>().Where(filter).MyInclude(includes).SingleOrDefault();
         }
 
         public ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] includes)
