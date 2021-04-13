@@ -29,11 +29,13 @@ namespace MovieAndFragman.BLL.Concrete
 
         public void Insert(Fragman entity)
         {
+            Check(entity);
             fragmanDAL.Insert(entity);
         }
 
         public void Update(Fragman entity)
         {
+            Check(entity);
             fragmanDAL.Update(entity);
         }
 

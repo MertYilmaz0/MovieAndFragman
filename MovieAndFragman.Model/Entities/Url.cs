@@ -13,9 +13,11 @@ namespace MovieAndFragman.Model.Entities
             IsActive = true;
         }
 
-        public Language Language { get; set; }//dil
+       
         public string UrlPath { get; set; }//url uzantısı
 
+        public int LanguageID { get; set; }
+        public Language Language { get; set; }//Dil
         public int FragmanID { get; set; }
         public Fragman Fragman { get; set; }//bir urlin bir fragmanı olur
     }

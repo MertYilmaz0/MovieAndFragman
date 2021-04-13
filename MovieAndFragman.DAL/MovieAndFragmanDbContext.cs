@@ -24,6 +24,7 @@ namespace MovieAndFragman.DAL
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Url> Urls { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Language> Languages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,7 +35,7 @@ namespace MovieAndFragman.DAL
             modelBuilder.ApplyConfiguration(new UrlConfiguration());
             modelBuilder.ApplyConfiguration(new RatingConfiguration());
             modelBuilder.ApplyConfiguration(new FragmanConfiguration());
-
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
