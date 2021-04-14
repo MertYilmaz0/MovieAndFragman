@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieAndFragman.DAL;
 
 namespace MovieAndFragman.DAL.Migrations
 {
     [DbContext(typeof(MovieAndFragmanDbContext))]
-    partial class MovieAndFragmanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210413152000_13April2021")]
+    partial class _13April2021
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
