@@ -42,12 +42,11 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         {
             try
             {
-                //userBLL.Insert(ConvertUser(registerUserDto));
+                userBLL.Insert(ConvertUser(registerUserDto));
                 return Ok(new { Message = "Kullanıcı eklendi.", Check = true });
             }
             catch (Exception ex)
             {
-
                 return Ok(new { Message = ex.Message, Check = false });
             }
         }

@@ -13,14 +13,6 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
 {
     public class AccountController : Controller
     {
-
-        //IUserBLL userBll;
-        public AccountController()//IUserBLL bll
-        {
-            //userBLL=bll
-        }
-
-
         public IActionResult Login()
         {
             return View();
@@ -29,8 +21,6 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [HttpPost]
         public IActionResult Login(LoginVM loginVM)
         {
-
-            //Todo: UserVM userLogin=userBLL.GetUserByLoginData(login.Email,login.Password);  Normalde burada User kullanılıp datadan userların email ve passwordlari çekiliyordu... bunu şimdi api ile yapacağız..
 
             LoginUserVM userLogin = PostHelper<LoginVM, LoginUserVM>.PostApiEntity("user/LoginUser", loginVM);
 
@@ -65,19 +55,12 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
                 {
                     return View();
                 }
-
-
             }
             else
             {
                 ViewBag.Message = "Kullanıcı Bilgileriniz Kontrol Ediniz";
                 return View();
-
             }
-
-
-
-
         }
 
 
