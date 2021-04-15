@@ -26,6 +26,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         {
             List<Fragman> fragmans = fragmanBLL.GetLastThirdFragman().ToList();
             List<FragmanDto> dtos = new List<FragmanDto>();
+
             foreach (Fragman item in fragmans)
             {
                 FragmanDto added =new FragmanDto()

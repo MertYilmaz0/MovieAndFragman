@@ -3,6 +3,7 @@ using MovieAndFragman.DAL.Abstract;
 using MovieAndFragman.Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MovieAndFragman.BLL.Concrete
@@ -55,6 +56,26 @@ namespace MovieAndFragman.BLL.Concrete
         public ICollection<Genre> GetAll()
         {
             return genreDAL.GetAll();
+        }
+        public List<Genre> GetByFragId(int id)
+        {
+            if (id == 0)
+            {
+                return null;
+            }
+            List<Genre> genries = genreDAL.GetAll(null, a => a.GenreFragmens).ToList();
+            List<Genre> getGenre = new List<Genre>();
+            foreach (Genre item in genries)
+            {
+                foreach (GenreFragman itemP in item.GenreFragmens)
+                {
+                    if (itemP.FragmanID == id)
+                    {
+                        getGenre.Add(item);
+                    }
+                }
+            }
+            return getGenre;
         }
     }
 }
