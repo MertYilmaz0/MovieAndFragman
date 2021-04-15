@@ -57,5 +57,10 @@ namespace MovieAndFragman.BLL.Concrete
         {
             return urlDAL.GetAll();
         }
+
+        public ICollection<Url> GetListByFragId(int id)
+        {
+            return urlDAL.GetAll(a => a.FragmanID == id, a => a.Language);
+        }
     }
 }

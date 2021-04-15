@@ -1,0 +1,9 @@
+﻿@model List<UrlVM>
+
+<select class="form-select" aria-label="Default select example" id="urls" onchange="ChangeUrl(this.value)">
+    <option selected value="0">Lütfen Dil seçiniz</option>
+    @foreach (UrlVM item in Model)
+    {
+        <option value="@item.UrlPath">@item.Language</option>
+    }
+</select>
