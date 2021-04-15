@@ -3,6 +3,7 @@ using MovieAndFragman.DAL.Abstract;
 using MovieAndFragman.Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MovieAndFragman.BLL.Concrete
@@ -60,6 +61,10 @@ namespace MovieAndFragman.BLL.Concrete
         public ICollection<Fragman> GetAll()
         {
             return fragmanDAL.GetAll();
+        }
+        public ICollection<Fragman> GetLastThirdFragman()
+        {
+            return fragmanDAL.GetAll().OrderByDescending(a => a.CreatedDate).Take(3).ToList();
         }
     }
 }

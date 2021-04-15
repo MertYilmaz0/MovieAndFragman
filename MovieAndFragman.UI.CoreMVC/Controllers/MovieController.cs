@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieAndFragman.UI.CoreMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         public IActionResult MovieSinglePage()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult LastThird([FromBody] List<FragmanVM> fragmanVM)
+        {
+            return PartialView("_SingleSwiper", fragmanVM);
         }
     }
 }

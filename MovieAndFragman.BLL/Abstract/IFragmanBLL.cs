@@ -7,5 +7,6 @@ namespace MovieAndFragman.BLL.Abstract
 {
     public interface IFragmanBLL:IBaseBLL<Fragman>
     {
+        ICollection<Fragman> GetLastThirdFragman();
     }
 }

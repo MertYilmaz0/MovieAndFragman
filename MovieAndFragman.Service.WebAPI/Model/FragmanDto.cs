@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieAndFragman.UI.CoreMVC.Models
+namespace MovieAndFragman.Service.WebAPI.Model
 {
-    public class FragmanVM
+    public class FragmanDto
     {
         public int FragID { get; set; }
         public string Name { get; set; }
