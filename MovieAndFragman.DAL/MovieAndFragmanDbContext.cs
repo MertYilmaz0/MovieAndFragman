@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MovieAndFragman.DAL.Concrete.EntityTypeConfiguration;
 using MovieAndFragman.Model.Entities;
 using System;
@@ -11,8 +12,9 @@ namespace MovieAndFragman.DAL
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Server=94.73.144.8;Database=NapsDB;User Id=userNap;Password=142536NAPSnaps142536;
-            optionsBuilder.UseSqlServer("Server=94.73.144.8;Database=NapsDB;User Id=userNap;Password=142536NAPSnaps142536;");
+            IConfigurationBuilder configBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: false);
+            IConfiguration configuration = configBuilder.Build();
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             base.OnConfiguring(optionsBuilder);
         }
 
