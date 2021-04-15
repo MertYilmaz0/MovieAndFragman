@@ -28,16 +28,39 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             List<FragmanDto> dtos = new List<FragmanDto>();
             foreach (Fragman item in fragmans)
             {
-                FragmanDto added =new FragmanDto()
+                FragmanDto added = new FragmanDto()
                 {
                     FragID = item.ID,
                     Description = item.Description,
                     Name = item.Name,
                     Poster = item.Poster
-                };                
+                };
                 dtos.Add(added);
             }
             return Ok(dtos);
         }
+
+        List<FragmanDto> FragmanDTOList(ICollection<Fragman> listFragman)
+        {
+            List<FragmanDto> fragmanDtos = new List<FragmanDto>();
+            foreach (Fragman item in listFragman)
+            {
+                fragmanDtos.Add(new FragmanDto()
+                {
+                    FragID = item.ID,
+                    Name = item.Name,
+                    Description = item.Description,
+                    Poster = item.Poster
+                });
+            }
+            return fragmanDtos;
+        }
+
+        public IActionResult GetAllFragman()
+        {
+            List<FragmanDto> fragmans = FragmanDTOList(fragmanBLL.GetAll());
+            return Ok(fragmans);
+        }
+
     }
 }
