@@ -21,7 +21,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         {
             genreBLL = bLL;
         }
-        internal List<GenreDto> GetGenreByFragId(int id)
+        List<GenreDto> GetGenreByFragId(int id)
         {
             List<Genre> genres = genreBLL.GetByFragId(id);
             List<GenreDto> dtos = new List<GenreDto>();

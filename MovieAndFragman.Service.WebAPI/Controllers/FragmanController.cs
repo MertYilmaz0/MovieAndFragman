@@ -36,6 +36,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     Name = item.Name,
                     Poster = item.Poster
                 };
+                
                 dtos.Add(added);
             }
             return Ok(dtos);
@@ -54,6 +55,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     Poster = item.Poster
                 });
             }
+            
             return fragmanDtos;
         }
 
