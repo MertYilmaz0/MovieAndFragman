@@ -127,9 +127,9 @@ namespace MovieAndFragman.BLL.Concrete
             return user;
         }
 
-        bool HashSaltVerify(User user)//  Verify=Doğrulama >>>>Login işlemlerinde lazım olacak
+        bool HashSaltVerify(User user,string password)//  Verify=Doğrulama >>>>Login işlemlerinde lazım olacak
         {
-            return PasswordHelperBLL.VerifyPasswordHash(user.Password, user.PasswordHash, user.PasswordSalt);
+            return PasswordHelperBLL.VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt);
         }
 
         public void Insert(User entity)
@@ -184,7 +184,11 @@ namespace MovieAndFragman.BLL.Concrete
             {
                 throw new Exception("Kullanıcı bilgilerinizi kontrol ediniz.");
             }
-            if (!HashSaltVerify(user))
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                throw new Exception("Kullanıcı bilgilerinizi kontrol ediniz.");
+            }
+            if (!HashSaltVerify(user,password))
             {
                 throw new Exception("Kullanıcı bilgilerinizi kontrol ediniz.");
             }
