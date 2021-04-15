@@ -64,7 +64,7 @@ namespace MovieAndFragman.BLL.Concrete
         }
         public ICollection<Fragman> GetLastThirdFragman()
         {
-            return fragmanDAL.GetAll(null,a=>a.GenreFragmens).OrderByDescending(a => a.CreatedDate).Take(3).ToList();
+            return fragmanDAL.GetAll().OrderByDescending(a => a.CreatedDate).Take(3).ToList();
         }
     }
 }

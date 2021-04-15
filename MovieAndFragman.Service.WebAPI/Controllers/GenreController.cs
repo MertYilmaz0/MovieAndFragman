@@ -21,7 +21,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         {
             genreBLL = bLL;
         }
-        List<GenreDto> GetGenreByFragId(int id)
+        List<GenreDto> GetGenreLByFragId(int id)
         {
             List<Genre> genres = genreBLL.GetByFragId(id);
             List<GenreDto> dtos = new List<GenreDto>();
@@ -34,6 +34,11 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                 });
             }
             return dtos;
+        }
+        [HttpGet]
+        public IActionResult GetGenreListByFragId(int id)
+        {
+            return Ok(GetGenreLByFragId(id));
         }
     }
 }

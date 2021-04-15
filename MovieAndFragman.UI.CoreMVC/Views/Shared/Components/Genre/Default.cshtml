@@ -1,0 +1,9 @@
+﻿@model List<GenreVM>
+
+<div class="tags">
+
+    @foreach (GenreVM item in Model)
+    {
+        @item.Name <label>&nbsp;</label>
+    }
+</div>

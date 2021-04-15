@@ -22,7 +22,7 @@
             <div class="video-content">
                 <small class="range">190 min,</small>
                 <ul class="tags">
-                    <li>Romance</li>
+                    @await Component.InvokeAsync("SingleGenre", item.FragID)
                 </ul>
                 <div class="age">PG13</div>
                 <!-- end age -->

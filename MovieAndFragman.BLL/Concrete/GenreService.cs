@@ -76,6 +76,6 @@ namespace MovieAndFragman.BLL.Concrete
                 }
             }
             return getGenre;
-        }
+        }        
     }
 }
