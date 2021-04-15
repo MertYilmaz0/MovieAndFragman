@@ -7,5 +7,6 @@ namespace MovieAndFragman.BLL.Abstract
 {
     public interface IUrlBLL:IBaseBLL<Url>
     {
+        ICollection<Url> GetListByFragId(int id);
     }
 }

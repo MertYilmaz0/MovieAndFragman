@@ -5,13 +5,13 @@
 @model FragmanVM
 
 <main>
-    <header class="page-header single" data-background="~/images/movie-poster-bg.jpg">
+    <header class="page-header single" data-background="@Model.Poster">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="video-player">
                         <a href="javascript:history.go(-1)" class="back-btn"><i class="lni lni-chevron-left"></i> BACK</a>
-                        <video src="videos/video02.mp4" poster="~/images/movie-poster.jpg" controls playsinline></video>
+                        <video src="~/videos/Naps-Logo-Animation-1920x1080.mp4" poster="@Model.Poster" controls playsinline id="fragmanVideo"></video>
                     </div>
                     <!-- end video-player -->
                 </div>
@@ -47,13 +47,15 @@
                                 <div class="hd">1080 <b>HD</b></div>
                             </li>
                             <li>
-                                
-                                <div class="tags">Romance, Action</div>
+                                @await Component.InvokeAsync("Genre", Model.FragID)
                             </li>
                         </ul>
                         <p class="description">
                             @Model.Description
                         </p>
+                        <div class="row mb-5">
+                            @await Component.InvokeAsync("Url", Model.FragID)
+                        </div>
                         <a href="#" class="add-btn">+ ADD YOUR LIST</a>
 
                         <div class="rate-box">
@@ -356,3 +358,13 @@
     </section>
     <!-- end content-section -->
 </main>
+
+@section scripts{
+    <script>
+        function ChangeUrl(path) {
+            if (path != 0) {
+                $("#fragmanVideo").attr("src", path)
+            }
+        }
+    </script>
+}
