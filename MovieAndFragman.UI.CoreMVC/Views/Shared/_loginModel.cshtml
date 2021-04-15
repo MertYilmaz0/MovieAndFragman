@@ -1,0 +1,14 @@
+﻿
+
+@model string
+
+@if (!string.IsNullOrEmpty(Model))
+{
+
+    <div class="navbar-account"> <a asp-controller="account" asp-action="Logout">Logout</a>/<a asp-controller="account" asp-action="login">@Model</a><i class="lni lni-user"></i></div>
+}
+else
+{
+
+    <div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>
+}

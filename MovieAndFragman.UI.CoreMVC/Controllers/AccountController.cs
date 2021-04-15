@@ -76,5 +76,19 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             ViewBag.Check = postVM.Check;
             return View();
         }
+
+
+        public IActionResult LoginName()
+        {
+            string name = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return PartialView("_loginModel", name);
+        }
+
+
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

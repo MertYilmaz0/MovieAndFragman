@@ -1,10 +1,13 @@
-﻿<!DOCTYPE html>
+
+@{ Layout = null; }
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <meta charset="utf-8">
-    <title>@ViewBag.Title</title>
+    <title>_AdminLayout</title>
+    <meta charset="utf-8" />
     <!-- FAVICON FILES -->
     <link href="~/ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
     <link href="~/ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
@@ -41,8 +44,9 @@
             <!-- end button-account -->
             <div class="site-menu">
                 <ul>
-                    <li><a href="/home/index">HOME</a></li>
-                    <li><a href="/movie/movies">MOVIES</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
+                    <li><a asp-controller="Genre" asp-action="GenreList">Genre</a></li>
                     <li><a href="tv-shows.html">TV SHOWS</a></li>
                     <li><a href="tips.html">TIPS</a></li>
                 </ul>
@@ -53,12 +57,16 @@
     </nav>
     <!-- end mobile-menu -->
     <nav class="navbar">
-        <div class="logo"> <a href="/home/index"> <img src="~/images/logo.png" alt="Image"> </a> </div>
+        <div class="logo"> <a asp-controller="Home" asp-action="Index"> <img src="~/images/logo.png" alt="Image"> </a> </div>
         <!-- end logo -->
         <div class="site-menu">
             <ul>
-                <li><a href="/home/index">HOME</a></li>
-                <li><a href="/movie/movies">MOVIES</a></li>
+                <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li>
+                    @*<a asp-area="Admin" asp-controller="Movie" asp-action="Movies">MOVIES</a>*@
+                </li>
+
+
                 <li><a href="tv-shows.html">TV SHOWS</a></li>
                 <li><a href="tips.html">TIPS</a></li>
             </ul>
@@ -120,6 +128,7 @@
         </div>
         <!-- end container -->
     </section>
+
     <div>
         @RenderBody()
     </div>
@@ -178,7 +187,7 @@
         </div>
         <!-- end container -->
         <div class="bottom-bar">
-            <div class="container"> <span>© 2020 Digiflex | Online Movie Streaming</span> <span>Site create by <a href="#">Themezinho</a></span> </div>
+            <div class="container"> <span>� 2020 Digiflex | Online Movie Streaming</span> <span>Site create by <a href="#">Themezinho</a></span> </div>
             <!-- end container -->
         </div>
         <!-- end bottom-bar -->

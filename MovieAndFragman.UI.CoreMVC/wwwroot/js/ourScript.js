@@ -4,7 +4,7 @@
     var browserWindow = $(window);
 
     browserWindow.on('load', function () {
-        $('.preloader').fadeOut(6000, function () {
+        $('.preloader').fadeOut(3000, function () {
             $(this).remove();
         });
     });

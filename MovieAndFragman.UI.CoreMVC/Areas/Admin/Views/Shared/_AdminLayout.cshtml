@@ -1,15 +1,10 @@
-﻿@{
-    Layout = null;
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-
-
+    <meta charset="utf-8" />
     <!-- FAVICON FILES -->
     <link href="~/ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
     <link href="~/ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
@@ -24,7 +19,6 @@
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/ourStyle.css" rel="stylesheet" />
-
 </head>
 <body>
     <!-- Preloader -->
@@ -47,8 +41,9 @@
             <!-- end button-account -->
             <div class="site-menu">
                 <ul>
-                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">HOME</a></li>
                     <li><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
+                    <li><a asp-controller="Genre" asp-action="GenreList">Genre</a></li>
                     <li><a href="tv-shows.html">TV SHOWS</a></li>
                     <li><a href="tips.html">TIPS</a></li>
                 </ul>
@@ -59,12 +54,16 @@
     </nav>
     <!-- end mobile-menu -->
     <nav class="navbar">
-        <div class="logo"> <a href="/home/index"> <img src="~/images/logo.png" alt="Image"> </a> </div>
+        <div class="logo"> <a asp-controller="Home" asp-action="Index"> <img src="~/images/logo.png" alt="Image"> </a> </div>
         <!-- end logo -->
         <div class="site-menu">
             <ul>
-                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
+                <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li>
+                    @*<a asp-area="Admin" asp-controller="Movie" asp-action="Movies">MOVIES</a>*@
+                </li>
+
+
                 <li><a href="tv-shows.html">TV SHOWS</a></li>
                 <li><a href="tips.html">TIPS</a></li>
             </ul>
@@ -95,12 +94,7 @@
                 <!-- end notify-dropdown -->
             </div>
             <!-- end navbar-notify -->
-            @*<div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>*@
-            <div id="userName">
-
-                <!--Login Name ve Logout gösterme işlemi bu alanda yapıldı-->
-            </div>
-
+            <div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>
             <!-- end navbar-account -->
         </div>
         <!-- end user-menu -->
@@ -131,11 +125,9 @@
         </div>
         <!-- end container -->
     </section>
-
-
-    @RenderBody()
-
-
+    <div>
+        @RenderBody()
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -205,25 +197,6 @@
     <script src="~/js/scripts.js"></script>
     <script src="~/js/AjaxScript.js"></script>
     <script src="~/js/ourScript.js"></script>
-    <script>
-
-        $(document).ready(function () {
-            $.ajax({
-                type: "Get",
-                url: "/Account/LoginName",
-                success: function (data) {
-                    $("#userName").html(data);
-                }
-
-            })
-
-        })
-
-    </script>
-
-
-
     @RenderSection("scripts", false)
-
 </body>
 </html>
