@@ -65,6 +65,22 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             List<FragmanDto> fragmans = FragmanDTOList(fragmanBLL.GetAll());
             return Ok(fragmans);
         }
+        public IActionResult Get(int id)
+        {
+            Fragman fragman = fragmanBLL.Get(id);
+            if (fragman != null)
+            {
+                FragmanDto dto = new FragmanDto()
+                {
+                    FragID = fragman.ID,
+                    Description = fragman.Description,
+                    Name = fragman.Name,
+                    Poster = fragman.Poster
+                };
+                return Ok(dto);
+            }
+            return Ok();
+        }
 
     }
 }

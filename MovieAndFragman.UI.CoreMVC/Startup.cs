@@ -40,6 +40,7 @@ namespace MovieAndFragman.UI.CoreMVC
             app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

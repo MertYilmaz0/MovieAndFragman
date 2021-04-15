@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "MovieSinglePage";
 }
+@model FragmanVM
 
 <main>
     <header class="page-header single" data-background="~/images/movie-poster-bg.jpg">
@@ -27,10 +28,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="movie-info-box">
-                        <h2 class="name">
-                            Rise of Empires: <br>
-                            <strong>Ottoman</strong>
-                        </h2>
+                        <h2 class="name">@Model.Name</h2>
                         <ul class="features">
                             <li>
                                 <div class="rate">
@@ -53,9 +51,7 @@
                             </li>
                         </ul>
                         <p class="description">
-                            A hardened mercenary's mission becomes a soul-searching
-                            race to survive when he's sent into Bangladesh to rescue a
-                            drug lord's kidnapped son.
+                            @Model.Description
                         </p>
                         <a href="#" class="add-btn">+ ADD YOUR LIST</a>
 
@@ -68,7 +64,7 @@
                 <!-- end col-8 -->
                 <div class="col-lg-4">
                     <div class="movie-side-info-box">
-                        <figure><img src="~/images/movies01.jpg" alt="Image"></figure>
+                        <figure><img src="@Model.Poster" alt="Image"></figure>
                         <ul>
                             <li><strong>Initial release: </strong> Sept 16, 2020</li>
                             <li><strong>Director:</strong> Carles Torras</li>
