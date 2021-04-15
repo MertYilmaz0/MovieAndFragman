@@ -9,12 +9,12 @@ namespace MovieAndFragman.Service.WebAPI.Model
     {
         public FragmanDto()
         {
-            Genres = new HashSet<GenreDto>();
+            GenreIds = new HashSet<int>();
         }
         public int FragID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Poster { get; set; }
-        public ICollection<GenreDto> Genres { get; set; }
+        public ICollection<int> GenreIds { get; set; }
     }
 }

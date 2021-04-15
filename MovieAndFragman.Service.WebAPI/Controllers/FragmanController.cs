@@ -25,6 +25,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         public IActionResult GetLastThirdFragman()
         {
             List<Fragman> fragmans = fragmanBLL.GetLastThirdFragman().ToList();
+            
             List<FragmanDto> dtos = new List<FragmanDto>();
 
             foreach (Fragman item in fragmans)
@@ -36,7 +37,12 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     Name = item.Name,
                     Poster = item.Poster
                 };
-                
+
+                foreach (GenreFragman gf in item.GenreFragmens)
+                {
+                    added.GenreIds.Add(gf.GenreID);
+                }
+
                 dtos.Add(added);
             }
             return Ok(dtos);
