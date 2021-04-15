@@ -35,28 +35,28 @@
   // END DOCUMENT READY
 
 
-  //var swiper = new Swiper('.carousel-tv-shows', {
-  //  slidesPerView: 5,
-  //  spaceBetween: 30,
-  //  navigation: {
-  //    nextEl: '.swiper-button-next',
-  //    prevEl: '.swiper-button-prev',
-  //  },
-  //  breakpoints: {
-  //    1024: {
-  //      slidesPerView: 4
-  //    },
-  //    768: {
-  //      slidesPerView: 3
-  //    },
-  //    640: {
-  //      slidesPerView: 2
-  //    },
-  //    320: {
-  //      slidesPerView: 1
-  //    }
-  //  }
-  //});
+  var swiper = new Swiper('.carousel-tv-shows', {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4
+      },
+      768: {
+        slidesPerView: 3
+      },
+      640: {
+        slidesPerView: 2
+      },
+      320: {
+        slidesPerView: 1
+      }
+    }
+  });
 
 
   //// SLIDER

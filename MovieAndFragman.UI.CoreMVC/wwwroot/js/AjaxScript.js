@@ -5,11 +5,13 @@ var apikey = "YWhtZXRtZXJ0YmlsYWw="
 function GetLastThirdMovie() {
     $.ajax({
         type: "Get",
+        async: false,
         url: apiurl + "fragman/GetLastThirdFragman",
         headers: { "ApiKey": apikey },
         success: function (response) {
             $.ajax({
                 type: "Post",
+                async: false,
                 url: "Movie/LastThird",
                 data: JSON.stringify(response),
                 contentType: "application/json; charset=utf-8",
@@ -22,28 +24,6 @@ function GetLastThirdMovie() {
 }
 
 function SwiperScript() {
-    var swiper = new Swiper('.carousel-tv-shows', {
-        slidesPerView: 5,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            1024: {
-                slidesPerView: 4
-            },
-            768: {
-                slidesPerView: 3
-            },
-            640: {
-                slidesPerView: 2
-            },
-            320: {
-                slidesPerView: 1
-            }
-        }
-    });
 
 
     // SLIDER
@@ -94,4 +74,4 @@ function SwiperScript() {
     };
 
     var swiper = new Swiper(".main-slider", swiperOptions);
-}
+} (jQuery)
