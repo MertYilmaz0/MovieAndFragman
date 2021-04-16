@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    @if (ViewBag.Check != null)
+                    @*@if (ViewBag.Check != null)
                     {
                         if (ViewBag.Check)
                         {
@@ -28,7 +28,7 @@
                                 <span>@ViewBag.Message</span>
                             </div>
                         }
-                    }
+                    }*@
                     <div class="membership">
                         <h6>Start Your Membership</h6>
                         <form asp-controller="Account" asp-action="Register" method="post">
@@ -98,3 +98,13 @@
     <!-- end content-section -->
 
 </main>
+
+@section scripts{
+    <script>
+        var check = "@ViewBag.Check"
+        var message = "@ViewBag.Message"
+        if (check != "" && message != "") {
+            alertify.alert("Naps",message)
+        }
+    </script>
+}
