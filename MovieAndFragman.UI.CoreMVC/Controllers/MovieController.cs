@@ -15,8 +15,8 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "User")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "User,Admin")]
+       
         public IActionResult MovieSinglePage(int id)
         {
             FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id="+id);
