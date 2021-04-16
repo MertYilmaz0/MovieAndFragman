@@ -93,8 +93,12 @@
                 </div>
                 <!-- end notify-dropdown -->
             </div>
+            <div id="userName">
+
+                <!--Login Name ve Logout gösterme işlemi bu alanda yapıldı-->
+            </div>
             <!-- end navbar-notify -->
-            <div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>
+            @*<div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>*@
             <!-- end navbar-account -->
         </div>
         <!-- end user-menu -->
@@ -197,6 +201,22 @@
     <script src="~/js/scripts.js"></script>
     <script src="~/js/AjaxScript.js"></script>
     <script src="~/js/ourScript.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "Get",
+                url: "/Account/LoginName",
+                success: function (data) {
+                    $("#userName").html(data);
+                }
+
+            })
+
+        })
+
+    </script>
+
     @RenderSection("scripts", false)
 </body>
 </html>
