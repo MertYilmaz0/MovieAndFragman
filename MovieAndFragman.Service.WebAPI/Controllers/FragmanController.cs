@@ -93,7 +93,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                 bool check = false;
                 foreach (GenreFragman genre in frag.GenreFragmens)
                 {
-                    if (genre.GenreID==id)
+                    if (genre.GenreID == id)
                     {
                         check = true;
                     }
@@ -110,6 +110,45 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         {
             List<Fragman> fragmans = fragmanBLL.GetByName(name).ToList();
             return Ok(FragmanDTOList(fragmans));
+        }
+        [HttpGet]
+        public IActionResult GetFragRating(int id)
+        {
+            Fragman fragman = fragmanBLL.Get(id);
+            RatingDto dto = new RatingDto()
+            {
+                CounterDislike = fragman.CounterDisLike,
+                CounterLike = fragman.CounterLike,
+                Ratio = fragman.Ratio
+            };
+            
+            return Ok(dto);
+        }
+        [HttpGet]
+        public IActionResult UpdateRating(int fid,int uid,char token)
+        {
+            try
+            {
+                fragmanBLL.UpdateRating(fid, uid, token);
+                return Ok(new { check = true, message = "Oyladığınız için teşekkür ederiz." });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { check = false, message = ex.Message });
+            }
+        }
+        [HttpGet]
+        public IActionResult AddRating(int fid,int uid)
+        {
+            try
+            {
+                fragmanBLL.AddRating(fid, uid);
+                return Ok(new { check = true });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { check = false, message = ex.Message });
+            }
         }
     }
 }

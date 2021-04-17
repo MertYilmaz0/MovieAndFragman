@@ -5,6 +5,7 @@ using MovieAndFragman.UI.CoreMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MovieAndFragman.UI.CoreMVC.Controllers
@@ -18,9 +19,10 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [Authorize(Roles = "User,Admin")]
         public IActionResult MovieSinglePage(int id)
         {
-            FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id="+id);
+            FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id=" + id);
             if (fragmanVM != null)
             {
+                ViewBag.UId = User.FindFirstValue(ClaimTypes.UserData);
                 return View(fragmanVM);
             }
             ViewBag.Alert = "Böyle bir fragman bulunmamaktadır.";
@@ -34,11 +36,18 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [HttpPost]
         public IActionResult GetMovieList([FromBody] List<FragmanVM> fragmanVMs)
         {
-            if (fragmanVMs.Count==0)
+            if (fragmanVMs.Count == 0)
             {
                 return PartialView("_nullMovie");
             }
             return PartialView("_singleMovie", fragmanVMs);
+        }
+
+        [HttpGet]
+        public IActionResult GetRating(int id)
+        {
+            RatingVM ratingVM = ApiJsonHelper<RatingVM>.GetApiEntity("fragman/GetFragRating?id=" + id);
+            return PartialView("_rating", ratingVM);
         }
     }
 }
