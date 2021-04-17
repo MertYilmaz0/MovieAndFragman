@@ -23,6 +23,68 @@ function GetLastThirdMovie() {
     })
 }
 
+function GetFragmanListAll(method) {
+    $.ajax({
+        type: "Get",
+        url: apiurl + "Fragman/GetAllFragman",
+        headers: { "ApiKey": apikey },
+        success: function (response) {
+            $.ajax({
+                type: "Post",
+                url: method,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(response),
+                success: function (data) {
+                    $("#singleFragman").html(data);
+                }
+            })
+        }
+
+    })
+}
+
+function GetMovieByCId(id) {
+    $.ajax({
+        type: "GET",
+        url: apiurl + "fragman/GetByGenreId?id=" + id,
+        headers: { "ApiKey": apikey },
+        success: function (response) {
+            $.ajax({
+                type: "Post",
+                url: "GetMovieList",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(response),
+                success: function (data) {
+                    $("#singleFragman").html(data);
+                }
+            })
+        }
+    })
+}
+
+function GetFragmanByName(name) {
+    if (name == "") {
+        GetFragmanListAll("GetMovieList")
+    } else {
+        $.ajax({
+            type: "GET",
+            url: apiurl + "fragman/GetByName?name=" + name,
+            headers: { "ApiKey": apikey },
+            success: function (response) {                
+                $.ajax({
+                    type: "Post",
+                    url: "GetMovieList",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(response),
+                    success: function (data) {                        
+                        $("#singleFragman").html(data);
+                    }
+                })
+            }
+        })
+    }
+}
+
 function SwiperScript() {
 
 
