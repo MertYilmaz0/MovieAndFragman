@@ -8,7 +8,11 @@ namespace MovieAndFragman.Model.Entities
     //İzlenme Takip
    public class Rating:IEntity
     {
-      
+        public Rating()
+        {
+            LoveLike = false;
+            UnLike = false;
+        }
         public bool LoveLike { get; set; }//beğenme
         public bool UnLike { get; set; }//beğenmeme
         public int UserID { get; set; }

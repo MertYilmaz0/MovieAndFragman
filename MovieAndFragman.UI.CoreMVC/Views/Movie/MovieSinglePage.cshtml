@@ -58,8 +58,8 @@
                         </div>
                         <a href="#" class="add-btn">+ ADD YOUR LIST</a>
 
-                        <div class="rate-box">
-                            <a href="#"><i class="lni lni-thumbs-up"></i></a> <a href="#"><i class="lni lni-thumbs-down"></i></a> <strong>61% liked this film</strong>
+                        <div class="rate-box" id="rating">
+                            <!-- rating işlemleri -->
                         </div>
                     </div>
                     <!-- end movie-info-box -->
@@ -68,12 +68,6 @@
                 <div class="col-lg-4">
                     <div class="movie-side-info-box">
                         <figure><img src="@Model.Poster" alt="Image"></figure>
-                        <ul>
-                            <li><strong>Initial release: </strong> Sept 16, 2020</li>
-                            <li><strong>Director:</strong> Carles Torras</li>
-                            <li><strong>Production:</strong> digiflex</li>
-                            <li><strong>Screenplay:</strong> Carles Torras</li>
-                        </ul>
                     </div>
                     <!-- end movie-side-info-box -->
                 </div>
@@ -95,182 +89,11 @@
                     </div>
                     <!-- end section-title -->
                 </div>
-                <!-- end col-12 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="~/images/movies07.jpg" alt="Image"></a>
-                            <div class="circle-rate">
-                                <svg class="circle-chart" viewBox="0 0 30 30" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                </svg>
-                                <b>5.7</b>
-                            </div>
-                            <!-- end circle-rate -->
-                            <div class="hd">1080 <b>HD</b></div>
-                            <!-- end hd -->
-                        </figure>
-                        <div class="video-content">
-                            <small class="range">190 min,</small>
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <div class="age">PG13</div>
-                            <!-- end age -->
-                            <h3 class="name"><a href="#">Secret Michael's Staff</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
+                <div class="row" id="singleFragman">
+                    <!--SingleFragman Sergilenecek*-->
                 </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="~/images/movies08.jpg" alt="Image"></a>
-                            <div class="circle-rate">
-                                <svg class="circle-chart" viewBox="0 0 30 30" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                </svg>
-                                <b>5.7</b>
-                            </div>
-                            <!-- end circle-rate -->
-                            <div class="hd">1080 <b>HD</b></div>
-                            <!-- end hd -->
-                        </figure>
-                        <div class="video-content">
-                            <small class="range">190 min,</small>
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <div class="age">PG13</div>
-                            <!-- end age -->
-                            <h3 class="name"><a href="#">Trolls: World Tour</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="~/images/movies09.jpg" alt="Image"></a>
-                            <div class="circle-rate">
-                                <svg class="circle-chart" viewBox="0 0 30 30" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                </svg>
-                                <b>5.7</b>
-                            </div>
-                            <!-- end circle-rate -->
-                            <div class="hd">1080 <b>HD</b></div>
-                            <!-- end hd -->
-                        </figure>
-                        <div class="video-content">
-                            <small class="range">190 min,</small>
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <div class="age">PG13</div>
-                            <!-- end age -->
-                            <h3 class="name"><a href="#">Thrill Crazy</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="~/images/movies10.jpg" alt="Image"></a>
-                            <div class="circle-rate">
-                                <svg class="circle-chart" viewBox="0 0 30 30" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                </svg>
-                                <b>5.7</b>
-                            </div>
-                            <!-- end circle-rate -->
-                            <div class="hd">1080 <b>HD</b></div>
-                            <!-- end hd -->
-                        </figure>
-                        <div class="video-content">
-                            <small class="range">190 min,</small>
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <div class="age">PG13</div>
-                            <!-- end age -->
-                            <h3 class="name"><a href="#">Not Out</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="~/images/movies11.jpg" alt="Image"></a>
-                            <div class="circle-rate">
-                                <svg class="circle-chart" viewBox="0 0 30 30" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                </svg>
-                                <b>5.7</b>
-                            </div>
-                            <!-- end circle-rate -->
-                            <div class="hd">1080 <b>HD</b></div>
-                            <!-- end hd -->
-                        </figure>
-                        <div class="video-content">
-                            <small class="range">190 min,</small>
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <div class="age">PG13</div>
-                            <!-- end age -->
-                            <h3 class="name"><a href="#">World of War</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="~/images/movies12.jpg" alt="Image"></a>
-                            <div class="circle-rate">
-                                <svg class="circle-chart" viewBox="0 0 30 30" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                </svg>
-                                <b>5.7</b>
-                            </div>
-                            <!-- end circle-rate -->
-                            <div class="hd">1080 <b>HD</b></div>
-                            <!-- end hd -->
-                        </figure>
-                        <div class="video-content">
-                            <small class="range">190 min,</small>
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <div class="age">PG13</div>
-                            <!-- end age -->
-                            <h3 class="name"><a href="#">Love Everywhere</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-12 text-center"> <a href="#" class="custom-button">BROWSE ALL MOVIES</a> </div>
+
+                <div class="col-12 text-center"> <a asp-controller="Movie" asp-action="Movies" class="custom-button">BROWSE ALL MOVIES</a> </div>
                 <!-- end col-12 -->
             </div>
             <!-- end row -->
@@ -361,10 +184,35 @@
 
 @section scripts{
     <script>
+        var fragId =@ViewContext.RouteData.Values["id"]
+        var uid =@ViewBag.UId
+        $(document).ready(function () {
+            GetFragmanListAll("../../Home/GetFragman")
+            GetRating(fragId)
+            AddRating(fragId, uid)
+        })
         function ChangeUrl(path) {
             if (path != 0) {
                 $("#fragmanVideo").attr("src", path)
             }
         }
+
+        function Like(token) {
+            $.ajax({
+                type: "GET",
+                url: apiurl + "fragman/UpdateRating?fid=" + fragId + "&uid=" + uid + "&token=" + token,
+                headers: { "ApiKey": apikey },
+                success: function (response) {
+                    if (response.check) {
+                        alertify.success(response.message)
+                    } else {
+                        alertify.error(response.message)
+                    }
+                    GetRating(fragId)
+                }
+            })
+        }
+
+       
     </script>
 }

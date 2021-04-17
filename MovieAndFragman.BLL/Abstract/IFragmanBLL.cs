@@ -9,5 +9,7 @@ namespace MovieAndFragman.BLL.Abstract
     {
         ICollection<Fragman> GetLastThirdFragman();
         ICollection<Fragman> GetByName(string name);
+        void UpdateRating(int fid, int uid, char token);
+        void AddRating(int fid, int uid);
     }
 }
