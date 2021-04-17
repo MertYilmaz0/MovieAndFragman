@@ -173,12 +173,9 @@
                 </div>
                 <!-- end col-12 -->
                 <div class="row" id="singleFragman">
-
                     @*SingleFragman Sergilenecek*@
-
-
                 </div>
-               
+
                 <!-- end col-2 -->
                 <div class="col-12 text-center"> <a href="#" class="custom-button">BROWSE ALL MOVIES</a> </div>
                 <!-- end col-12 -->
@@ -308,30 +305,12 @@
 
 @section scripts{
     <script>
-        $(document).ready(function () {            
-                GetLastThirdMovie()
+        $(document).ready(function () {
+            GetLastThirdMovie()
             SwiperScript()
-            GetFragmanListAll()            
+            GetFragmanListAll("Home/GetFragman")
         })
 
-        function GetFragmanListAll() {
-            $.ajax({
-                type: "Get",
-                url: "http://localhost:52154/api/Fragman/GetAllFragman",
-                headers: { "ApiKey": apikey },
-                success: function (response) {
-                    $.ajax({
-                        type: "Post",
-                        url: "Home/GetFragman",
-                        contentType: "application/json; charset=utf-8",
-                        data: JSON.stringify(response),
-                        success: function (data) {
-                            $("#singleFragman").html(data);
-                        }
-                    })
-                }
 
-            })
-        }        
     </script>
 }

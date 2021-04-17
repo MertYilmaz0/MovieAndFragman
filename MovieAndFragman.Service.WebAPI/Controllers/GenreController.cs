@@ -40,5 +40,20 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         {
             return Ok(GetGenreLByFragId(id));
         }
+        [HttpGet]
+        public IActionResult GetAllCategories()
+        {
+            List<Genre> genres = genreBLL.GetAll().ToList();
+            List<GenreDto> categories = new List<GenreDto>();
+            foreach (Genre item in genres)
+            {
+                categories.Add(new GenreDto()
+                {
+                    GenreId = item.ID,
+                    Name = item.Name
+                });
+            }
+            return Ok(categories);
+        }
     }
 }
