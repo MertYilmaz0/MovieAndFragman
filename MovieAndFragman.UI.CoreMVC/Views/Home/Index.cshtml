@@ -3,6 +3,11 @@
     ViewData["Title"] = "Home";
 }
 
+<!-- Preloader -->
+<div class="preloader d-flex align-items-center justify-content-center">
+    <img src="~/videos/Naps-Logo-Animation-1920x1080.gif" />
+</div>
+
 <header class="slider">
     <div class="main-slider">
         <div class="swiper-wrapper" id="thirdMovie">
@@ -17,96 +22,7 @@
 </header>
 <!-- end slider -->
 <main>
-    <section class="content-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h6>ONLINE STREAMING</h6>
-                        <h2>Watch Shows Online</h2>
-                    </div>
-                    <!-- end section-title -->
-                </div>
-                <!-- end col-12 -->
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="category-thumb">
-                        <figure class="category-image"> <img src="~/images/serial-category01.jpg" alt="Image"> </figure>
-                        <div class="category-content">
-                            <ul class="tags">
-                                <li>Romance</li>
-                                <li>Drama</li>
-                            </ul>
-                            <h3 class="name">Thinking You</h3>
-                            <div class="play-btn"><a href="/movie/moviesinglepage">+</a></div>
-                            <small class="details">SEASON 1 <span>-</span> 2020</small>
-                        </div>
-                        <!-- end category-content -->
-                    </div>
-                    <!-- end category-thumb -->
-                </div>
-
-                <!-- end col-3 -->
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="category-thumb">
-                        <figure class="category-image"> <img src="~/images/serial-category02.jpg" alt="Image"> </figure>
-                        <div class="category-content">
-                            <ul class="tags">
-                                <li>Action</li>
-                            </ul>
-                            <h3 class="name">Civil War</h3>
-                            <div class="play-btn"><a href="/movie/moviesinglepage">+</a></div>
-                            <small class="details">SEASON 2 <span>-</span> 2020</small>
-                        </div>
-                        <!-- end category-content -->
-                    </div>
-                    <!-- end category-thumb -->
-                </div>
-
-                <!-- end col-3 -->
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="category-thumb">
-                        <figure class="category-image"> <img src="~/images/serial-category03.jpg" alt="Image"> </figure>
-                        <div class="category-content">
-                            <ul class="tags">
-                                <li>Romance</li>
-                            </ul>
-                            <h3 class="name">Best Game</h3>
-                            <div class="play-btn"><a href="/movie/moviesinglepage">+</a></div>
-                            <small class="details">SEASON 5 <span>-</span> 2020</small>
-                        </div>
-                        <!-- end category-content -->
-                    </div>
-                    <!-- end category-thumb -->
-                </div>
-
-                <!-- end col-3 -->
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="category-thumb">
-                        <figure class="category-image"> <img src="~/images/serial-category04.jpg" alt="Image"> </figure>
-                        <div class="category-content">
-                            <ul class="tags">
-                                <li>Romance</li>
-                                <li>Action</li>
-                            </ul>
-                            <h3 class="name">Antoshka</h3>
-                            <div class="play-btn"><a href="/movie/moviesinglepage">+</a></div>
-                            <small class="details">SEASON 8 <span>-</span> 2020</small>
-                        </div>
-                        <!-- end category-content -->
-                    </div>
-                    <!-- end category-thumb -->
-                </div>
-
-                <!-- end col-3 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
+    @await Component.InvokeAsync("Fragman")
     <!-- end content-section -->
     <section class="content-section no-top-spacing">
         <div class="container">
@@ -219,66 +135,7 @@
         </div>
         <!-- end container -->
     </section>
-    <!-- end content-section -->
-    <section class="content-section">
-        <div class="video-bg">
-            <video src="videos/video01.mp4" autoplay muted playsinline loop></video>
-        </div>
-        <!-- end video-bg -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title text-center light">
-                        <h6>START SECURE BROWSING</h6>
-                        <h2>Ready to Grab the deal?</h2>
-                    </div>
-                    <!-- end section-title -->
-                </div>
-                <!-- end col-12 -->
-            </div>
-            <!-- end row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="price-box">
-                        <figure class="icon"><img src="~/images/icon04.png" alt="Image"></figure>
-                        <div class="months">1-month plan</div>
-                        <div class="price"><span>$</span> <b>9.99</b> <small>per month</small> </div>
-                        <a href="#">GET THE DEAL</a>
-                        <div class="guarantee"><i class="lni lni-protection"></i> 30-days money-back guarantee</div>
-                    </div>
-                    <!-- end price-box -->
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4">
-                    <div class="price-box">
-                        <figure class="icon"><img src="~/images/icon05.png" alt="Image"></figure>
-                        <div class="months">12-months plan</div>
-                        <div class="price"><span>$</span> <b>3.99</b> <small>per month</small> </div>
-                        <div class="save">Save 68%</div>
-                        <div class="note"><u>$286.80</u>  $89.00 for the first 2 years</div>
-                        <a href="#">GET THE DEAL</a>
-                        <div class="guarantee"><i class="lni lni-protection"></i> 30-days money-back guarantee</div>
-                    </div>
-                    <!-- end price-box -->
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-4">
-                    <div class="price-box">
-                        <figure class="icon"><img src="~/images/icon06.png" alt="Image"></figure>
-                        <div class="months">6-months plan</div>
-                        <div class="price"><span>$</span> <b>6.99</b> <small>per month</small> </div>
-                        <a href="#">GET THE DEAL</a>
-                        <div class="guarantee"><i class="lni lni-protection"></i> 30-days money-back guarantee</div>
-                    </div>
-                    <!-- end price-box -->
-                </div>
-                <!-- end col-4 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end content-section -->
+    
     <section class="content-section no-spacing" data-background="#111111">
         <div class="container">
             <div class="row">
