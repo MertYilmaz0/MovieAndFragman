@@ -16,7 +16,6 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             return View();
         }
         [Authorize(Roles = "User,Admin")]
-       
         public IActionResult MovieSinglePage(int id)
         {
             FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id="+id);
@@ -31,6 +30,15 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         public IActionResult LastThird([FromBody] List<FragmanVM> fragmanVM)
         {
             return PartialView("_SingleSwiper", fragmanVM);
+        }
+        [HttpPost]
+        public IActionResult GetMovieList([FromBody] List<FragmanVM> fragmanVMs)
+        {
+            if (fragmanVMs.Count==0)
+            {
+                return PartialView("_nullMovie");
+            }
+            return PartialView("_singleMovie", fragmanVMs);
         }
     }
 }

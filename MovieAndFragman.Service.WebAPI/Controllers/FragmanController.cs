@@ -82,5 +82,34 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        public IActionResult GetByGenreId(int id)
+        {
+            List<Fragman> fragmans = fragmanBLL.GetAll().ToList();
+            List<Fragman> sended = new List<Fragman>();
+            List<FragmanDto> dtos = new List<FragmanDto>();
+            foreach (Fragman frag in fragmans)
+            {
+                bool check = false;
+                foreach (GenreFragman genre in frag.GenreFragmens)
+                {
+                    if (genre.GenreID==id)
+                    {
+                        check = true;
+                    }
+                }
+                if (check)
+                {
+                    sended.Add(frag);
+                }
+            }
+            return Ok(FragmanDTOList(sended));
+        }
+        [HttpGet]
+        public IActionResult GetByName(string name)
+        {
+            List<Fragman> fragmans = fragmanBLL.GetByName(name).ToList();
+            return Ok(FragmanDTOList(fragmans));
+        }
     }
 }

@@ -14,18 +14,18 @@ namespace MovieAndFragman.BLL.Concrete
         public FragmanService(IFragmanDAL dAL)
         {
             fragmanDAL = dAL;
-        }        
+        }
 
         void Check(Fragman fragman)
         {
-            if (string.IsNullOrWhiteSpace(fragman.Name)|| string.IsNullOrWhiteSpace(fragman.Description))
+            if (string.IsNullOrWhiteSpace(fragman.Name) || string.IsNullOrWhiteSpace(fragman.Description))
             {
                 throw new Exception("* Yerleri boş bırakmayınız.");
             }
             if (string.IsNullOrWhiteSpace(fragman.Poster))
             {
                 throw new Exception("Fragmanın posterini belirtiniz.");
-            }            
+            }
         }
 
         public void Insert(Fragman entity)
@@ -60,11 +60,15 @@ namespace MovieAndFragman.BLL.Concrete
 
         public ICollection<Fragman> GetAll()
         {
-            return fragmanDAL.GetAll();
+            return fragmanDAL.GetAll(null, a => a.GenreFragmens);
         }
         public ICollection<Fragman> GetLastThirdFragman()
         {
             return fragmanDAL.GetAll().OrderByDescending(a => a.CreatedDate).Take(3).ToList();
+        }
+        public ICollection<Fragman> GetByName(string name)
+        {
+            return fragmanDAL.GetAll(a => a.Name.Contains(name));
         }
     }
 }

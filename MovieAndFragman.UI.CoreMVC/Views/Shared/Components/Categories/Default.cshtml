@@ -1,0 +1,13 @@
+﻿@model List<GenreVM>
+
+<ul class="categories">
+    <li>
+        <a style="cursor:pointer;" onclick="GetFragmanListAll('GetMovieList')">All</a>
+    </li>
+    @foreach (GenreVM item in Model)
+    {
+        <li>
+            <a style="cursor:pointer;" onclick="GetMovieByCId(@item.GenreId)">@item.Name</a>
+        </li>
+    }
+</ul>
