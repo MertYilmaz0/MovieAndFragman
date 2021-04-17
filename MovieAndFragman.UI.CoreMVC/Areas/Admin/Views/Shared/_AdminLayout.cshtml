@@ -1,222 +1,462 @@
 ﻿<!DOCTYPE html>
-
-<html>
+<html lang="en" style="overflow: hidden;">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <meta charset="utf-8" />
-    <!-- FAVICON FILES -->
-    <link href="~/ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
-    <link href="~/ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
-    <link href="~/ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
-    <link href="~/ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
-    <link href="~/ico/favicon.png" rel="shortcut icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Bilal, Ahmet, Mert">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="~/flatAdmin/assets/img/favicon.png">
 
-    <!-- CSS FILES -->
-    <link href="~/css/lineicons.css" rel="stylesheet" />
-    <link href="~/css/fancybox.min.css" rel="stylesheet" />
-    <link href="~/css/swiper.min.css" rel="stylesheet" />
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/style.css" rel="stylesheet" />
-    <link href="~/css/ourStyle.css" rel="stylesheet" />
+    <title>FlatLab - Flat &amp; Responsive Bootstrap Admin Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/flatAdmin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/flatAdmin/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/flatAdmin/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/flatAdmin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/flatAdmin/css/owl.carousel.css" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="~/flatAdmin/css/style.css" rel="stylesheet">
+    <link href="~/flatAdmin/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            border: 1px solid white;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            padding: 5px 5px 8px 5px;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <img src="~/videos/Naps-Logo-Animation-1920x1080.gif" />
-    </div>
 
-    <nav class="mobile-menu">
-        <div class="inner">
-            <div class="mobile-search">
-                <h6>Type movie or tv show name to find it</h6>
-                <form>
-                    <input type="search" placeholder="Search here">
-                    <input type="submit" value="FIND">
-                </form>
+<body style="">
+
+    <section id="container" class="">
+        <!--header start-->
+        <!--Navbar üst kısım-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
-            <!-- end mobile-search -->
-            <a href="account.html" class="button-account"><i class="lni lni-user"></i> ACCOUNT </a>
+            <!--logo start-->
+            <a href="index.html" class="logo">Naps<span>Admin</span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-tasks"></i>
+                            <span class="badge bg-success">6</span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green">You have 6 pending tasks</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Dashboard v1.3</div>
+                                        <div class="percent">40%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Database Update</div>
+                                        <div class="percent">60%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Iphone Development</div>
+                                        <div class="percent">87%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
+                                            <span class="sr-only">87% Complete</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Mobile App</div>
+                                        <div class="percent">33%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+                                            <span class="sr-only">33% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Dashboard v1.3</div>
+                                        <div class="percent">45%</div>
+                                    </div>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                            <span class="sr-only">45% Complete</span>
+                                        </div>
+                                    </div>
 
-            <!-- end button-account -->
-            <div class="site-menu">
-                <ul>
-                    <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">HOME</a></li>
-                    <li><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
-                    <li><a asp-controller="Genre" asp-action="GenreList">Genre</a></li>
-                    <li><a href="tv-shows.html">TV SHOWS</a></li>
-                    <li><a href="tips.html">TIPS</a></li>
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="#">See All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-alt"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-red"></div>
+                            <li>
+                                <p class="red">You have 5 new messages</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/flatAdmin/img/avatar-mini.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Jonathan Smith</span>
+                                        <span class="time">Just now</span>
+                                    </span>
+                                    <span class="message">
+                                        Hello, this is an example msg.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/flatAdmin/img/avatar-mini2.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Jhon Doe</span>
+                                        <span class="time">10 mins</span>
+                                    </span>
+                                    <span class="message">
+                                        Hi, Jhon Doe Bhai how are you ?
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/flatAdmin/img/avatar-mini3.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Jason Stathum</span>
+                                        <span class="time">3 hrs</span>
+                                    </span>
+                                    <span class="message">
+                                        This is awesome dashboard.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/flatAdmin/img/avatar-mini4.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Jondi Rose</span>
+                                        <span class="time">Just now</span>
+                                    </span>
+                                    <span class="message">
+                                        Hello, this is metrolab
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">See all messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- inbox dropdown end -->
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <i class="icon-bell-alt"></i>
+                            <span class="badge bg-warning">7</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">You have 7 new notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-danger"><i class="icon-bolt"></i></span>
+                                    Server #3 overloaded.
+                                    <span class="small italic">34 mins</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="icon-bell"></i></span>
+                                    Server #10 not respoding.
+                                    <span class="small italic">1 Hours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-danger"><i class="icon-bolt"></i></span>
+                                    Database overloaded 24%.
+                                    <span class="small italic">4 hrs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="icon-plus"></i></span>
+                                    New user registered.
+                                    <span class="small italic">Just now</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-info"><i class="icon-bullhorn"></i></span>
+                                    Application error.
+                                    <span class="small italic">10 mins</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">See all notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
                 </ul>
+                <!--  notification end -->
             </div>
-            <!-- end site-menu -->
-        </div>
-        <!-- end inner -->
-    </nav>
-    <!-- end mobile-menu -->
-    <nav class="navbar">
-        <div class="logo"> <a asp-controller="Home" asp-action="Index"> <img src="~/images/logo.png" alt="Image"> </a> </div>
-        <!-- end logo -->
-        <div class="site-menu">
-            <ul>
-                <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li>
-                    @*<a asp-area="Admin" asp-controller="Movie" asp-action="Movies">MOVIES</a>*@
-                </li>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown" id="userName">
+                        <!--_loginName Partial-->
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+
+        <aside>
+            <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion" style="display: block;">
+                    <li>
+                        <a class="active" href="index.html">
+                            <i class="icon-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
 
-                <li><a href="tv-shows.html">TV SHOWS</a></li>
-                <li><a href="tips.html">TIPS</a></li>
-            </ul>
-        </div>
-        <!-- end site-menu -->
-        <div class="user-menu">
-            <div class="navbar-search"> <i class="lni lni-search-alt"></i> </div>
-            <!-- end navbar-search -->
-            <div class="navbar-notify">
-                <i class="lni lni-alarm"></i><b>2</b>
-                <div class="notify-dropdown">
-                    <div class="total-notify">
-                        <h6>Notification</h6>
-                        <span>3</span>
-                    </div>
-                    <!-- end total-notify -->
-                    <ul>
-                        <li>
-                            <p><u>Marcus</u> download 2000+ Simple Line Icons and Explore</p>
-                            <span>2 Days</span>
-                        </li>
-                        <li>
-                            <p>Added new movie <u>Afterlife</u> Cheatsheet to Start Using With Your Projects.</p>
-                            <span>3 Days</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- end notify-dropdown -->
-            </div>
-            <div id="userName">
 
-                <!--Login Name ve Logout gösterme işlemi bu alanda yapıldı-->
+                    <li class="sub-menu dcjq-parent-li">
+                        <a href="javascript:;" class="dcjq-parent">
+                            <i class="icon-book"></i>
+                            <span>Users</span>
+                            <span class="dcjq-icon"></span>
+                        </a>
+                        <ul class="sub" style="display: none;">
+                            <li><a href="general.html">General</a></li>
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="widget.html">Widget</a></li>
+                            <li><a href="slider.html">Slider</a></li>
+                            <li><a href="nestable.html">Nestable</a></li>
+                            <li><a href="font_awesome.html">Font Awesome</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu dcjq-parent-li">
+                        <a href="javascript:;" class="dcjq-parent">
+                            <i class="icon-th"></i>
+                            <span>Movies</span>
+                            <span class="dcjq-icon"></span>
+                        </a>
+                        <ul class="sub" style="display: none;">
+                            <li><a href="basic_table.html">Basic Table</a></li>
+                            <li><a href="responsive_table.html">Responsive Table</a></li>
+                            <li><a href="dynamic_table.html">Dynamic Table</a></li>
+                            <li><a href="advanced_table.html">Advanced Table</a></li>
+                            <li><a href="editable_table.html">Editable Table</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu dcjq-parent-li">
+                        <a href="javascript:;" class="dcjq-parent">
+                            <i class="icon-cogs"></i>
+                            <span>Genre</span>
+                            <span class="dcjq-icon"></span>
+                        </a>
+                        <ul class="sub" style="display: none;">
+                            <li><a href="grids.html">Grids</a></li>
+                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="todo_list.html">Todo List</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu dcjq-parent-li">
+                        <a href="javascript:;" class="dcjq-parent">
+                            <i class="icon-tasks"></i>
+                            <span>Language</span>
+                            <span class="dcjq-icon"></span>
+                        </a>
+                        <ul class="sub" style="display: none;">
+                            <li><a href="form_component.html">Form Components</a></li>
+                            <li><a href="advanced_form_components.html">Advanced Components</a></li>
+                            <li><a href="form_wizard.html">Form Wizard</a></li>
+                            <li><a href="form_validation.html">Form Validation</a></li>
+                            <li><a href="dropzone.html">Dropzone File Upload</a></li>
+                            <li><a href="inline_editor.html">Inline Editor</a></li>
+                            <li><a href="image_cropping.html">Image Cropping</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="inbox.html">
+                            <i class="icon-envelope"></i>
+                            <span>Mail </span>
+                            <span class="label label-danger pull-right mail-info">2</span>
+                        </a>
+                    </li>
+                    <!--multi level menu end-->
+                    <!-- #endregion -->
+
+                </ul>
+                <!-- sidebar menu end-->
             </div>
-            <!-- end navbar-notify -->
-            @*<div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>*@
-            <!-- end navbar-account -->
-        </div>
-        <!-- end user-menu -->
-        <div class="hamburger-menu">
-            <button class="hamburger">
-                <svg width="45" height="45" viewBox="0 0 100 100">
-                    <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                    <path class="line line2" d="M 20,50 H 80" />
-                    <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                </svg>
-            </button>
-        </div>
-        <!-- end hamburger-menu -->
-    </nav>
-    <!-- end navbar -->
-    <section class="search-box">
-        <div class="container">
-            <h6>Type movie or tv show name to find it</h6>
-            <form>
-                <input type="search" placeholder="Search here">
-                <input type="submit" value="FIND">
-            </form>
-            <ul>
-                <li><a href="#">Pulp Function</a></li>
-                <li><a href="#">Henry Porter</a></li>
-                <li><a href="#">The Racer</a></li>
-            </ul>
-        </div>
-        <!-- end container -->
+        </aside>
+        <!--sidebar end-->
+
     </section>
-    <div>
-        @RenderBody()
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h5 class="call-us">Questions? <strong>Call 0850-380-6444</strong></h5>
-                    <p>
-                        Format for custom post types that are not book
-                        or you can use else if to <u>specify a second</u> post type the
-                        same way as above.
-                    </p>
-                    <div class="language">
-                        <i class="lni lni-world"></i>
-                        <select>
-                            <option>English</option>
-                            <option>Spanish</option>
-                        </select>
-                    </div>
-                    <!-- end language -->
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-2 offset-lg-1 col-md-4">
-                    <h6 class="widget-title">DIGIFLEX</h6>
-                    <ul class="footer-menu">
-                        <li><a href="digiflex.html">Digiflex</a></li>
-                        <li><a href="devices.html">Devices</a></li>
-                        <li><a href="tips.html">Tips</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-2 col-md-4">
-                    <h6 class="widget-title">SUPPORT</h6>
-                    <ul class="footer-menu">
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="help-center.html">Help Center</a></li>
-                        <li><a href="account.html">Account</a></li>
-                        <li><a href="support.html">Support <i class="lni lni-question-circle"></i></a></li>
-                        <li><a href="media-center.html">Media Center</a></li>
-                    </ul>
-                </div>
-                <!-- end col-4 -->
-                <div class="col-lg-2 col-md-4">
-                    <h6 class="widget-title">POLICIES</h6>
-                    <ul class="footer-menu">
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-agreement.html">Terms & Agreement</a></li>
-                        <li><a href="legal-notices.html">Legal Notices</a></li>
-                    </ul>
-                </div>
-                <!-- end col-4 -->
-            </div>
-            <!-- end row -->
+    <section id="main-content">
+        <div class="wrapper">
+            @RenderBody()
         </div>
-        <!-- end container -->
-        <div class="bottom-bar">
-            <div class="container"> <span>© 2020 Digiflex | Online Movie Streaming</span> <span>Site create by <a href="#">Themezinho</a></span> </div>
-            <!-- end container -->
+    </section>
+
+
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            2021 © NapsLab by Admin.
+            <a href="#" class="go-top">
+                <i class="icon-angle-up"></i>
+            </a>
         </div>
-        <!-- end bottom-bar -->
     </footer>
-    <!-- end footer -->
-    <!-- JS FILES -->
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/swiper.min.js"></script>
-    <script src="~/js/fancybox.min.js"></script>
-    <script src="~/js/scripts.js"></script>
-    <script src="~/js/AjaxScript.js"></script>
-    <script src="~/js/ourScript.js"></script>
+
+    <!--footer end-->
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="~/flatAdmin/js/jquery.js"></script>
+    <script src="~/flatAdmin/js/jquery-1.8.3.min.js"></script>
+    <script src="~/flatAdmin/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/flatAdmin/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/flatAdmin/js/jquery.scrollTo.min.js"></script>
+    <script src="~/flatAdmin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="~/flatAdmin/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="~/flatAdmin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/flatAdmin/js/owl.carousel.js"></script>
+    <script src="~/flatAdmin/js/jquery.customSelect.min.js"></script>
+    <script src="~/flatAdmin/js/respond.min.js"></script>
+
+    <script class="include" type="text/javascript" src="~/flatAdmin/js/jquery.dcjqaccordion.2.7.js"></script>
+
+    <!--common script for all pages-->
+    <script src="~/flatAdmin/js/common-scripts.js"></script><div id="ascrail2000" class="nicescroll-rails" style="width: 3px; z-index: auto; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; left: 207px; height: 208px; display: block; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 3px; height: 490px; background-color: rgb(232, 64, 63); background-clip: padding-box; border-radius: 10px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 3px; z-index: auto; background: rgb(64, 64, 64); top: 205px; left: 0px; position: fixed; cursor: default; display: none; width: 207px; opacity: 0;"><div style="position: relative; top: 0px; height: 3px; width: 210px; background-color: rgb(232, 64, 63); background-clip: padding-box; border-radius: 10px;"></div></div><div id="ascrail2001" class="nicescroll-rails" style="width: 6px; z-index: 1000; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;"><div style="position: relative; top: 423px; float: right; width: 6px; height: 180px; background-color: rgb(232, 64, 63); background-clip: padding-box; border-radius: 10px;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails" style="height: 6px; z-index: 1000; background: rgb(64, 64, 64); position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 6px; width: 1920px; background-color: rgb(232, 64, 63); background-clip: padding-box; border-radius: 10px; left: 0px;"></div></div>
+
+    <!--script for this page-->
+    <script src="~/flatAdmin/js/sparkline-chart.js"></script>
+    <script src="~/flatAdmin/js/easy-pie-chart.js"></script>
+    <script src="~/flatAdmin/js/count.js"></script>
+
     <script>
 
+        //owl carousel
+
         $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: true
+
+            });
             $.ajax({
                 type: "Get",
-                url: "/Account/LoginName",
+                url: "../Account/LoginName",
                 success: function (data) {
                     $("#userName").html(data);
+
                 }
 
             })
+        });
 
-        })
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
 
     </script>
+
 
     @RenderSection("scripts", false)
 </body>
 </html>
+

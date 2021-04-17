@@ -1,11 +1,31 @@
 ﻿
 
-@model string
+@model AccountVM
 
-@if (!string.IsNullOrEmpty(Model))
+@if (!string.IsNullOrEmpty(Model.UserRole))
 {
+    if (Model.UserRole == "User")
+    {
+        <div class="navbar-account"> <a asp-controller="account" asp-action="Logout">Logout</a>/<a asp-controller="account" asp-action="login">@Model.UserName</a><i class="lni lni-user"></i></div>
+    }
+    else if (Model.UserRole == "Admin")
+    {
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <img alt="" src="~/flatAdmin/img/avatar1_small.jpg">
+            <span class="username">@Model.UserName</span>
 
-    <div class="navbar-account"> <a asp-controller="account" asp-action="Logout">Logout</a>/<a asp-controller="account" asp-action="login">@Model</a><i class="lni lni-user"></i></div>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu extended logout">
+            <div class="log-arrow-up"></div>
+            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+            <li><a asp-controller="Account" asp-action="Logout"><i class="icon-key"></i> Log Out</a></li>
+        </ul>
+    }
+
+
 }
 else
 {

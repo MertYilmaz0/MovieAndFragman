@@ -81,7 +81,13 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         public IActionResult LoginName()
         {
             string name = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            return PartialView("_loginModel", name);
+            string userRole = User.FindFirstValue(ClaimTypes.Role);
+
+            AccountVM accountVM = new AccountVM();
+            accountVM.UserName = name;
+            accountVM.UserRole = userRole;
+
+            return PartialView("_loginModel", accountVM);
         }
 
 
