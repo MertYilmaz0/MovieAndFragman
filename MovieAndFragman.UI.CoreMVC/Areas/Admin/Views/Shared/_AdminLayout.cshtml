@@ -296,7 +296,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion" style="display: block;">
                     <li>
-                        <a class="active" href="index.html">
+                        <a class="active" asp-controller="Home" asp-action="Index">
                             <i class="icon-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -306,62 +306,47 @@
 
                     <li class="sub-menu dcjq-parent-li">
                         <a href="javascript:;" class="dcjq-parent">
-                            <i class="icon-book"></i>
+                            <i class="icon-user"></i>
                             <span>Users</span>
                             <span class="dcjq-icon"></span>
                         </a>
                         <ul class="sub" style="display: none;">
-                            <li><a href="general.html">General</a></li>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="widget.html">Widget</a></li>
-                            <li><a href="slider.html">Slider</a></li>
-                            <li><a href="nestable.html">Nestable</a></li>
-                            <li><a href="font_awesome.html">Font Awesome</a></li>
+                            <li><a asp-controller="User" asp-action="Index">User List</a></li>
+
                         </ul>
                     </li>
 
                     <li class="sub-menu dcjq-parent-li">
                         <a href="javascript:;" class="dcjq-parent">
-                            <i class="icon-th"></i>
+                            <i class="icon-youtube-play"></i>
                             <span>Movies</span>
                             <span class="dcjq-icon"></span>
                         </a>
                         <ul class="sub" style="display: none;">
-                            <li><a href="basic_table.html">Basic Table</a></li>
-                            <li><a href="responsive_table.html">Responsive Table</a></li>
-                            <li><a href="dynamic_table.html">Dynamic Table</a></li>
-                            <li><a href="advanced_table.html">Advanced Table</a></li>
-                            <li><a href="editable_table.html">Editable Table</a></li>
-                        </ul>
+                            <li><a asp-controller="Movie" asp-action="Index">List Movie</a></li>
+                         </ul>
                     </li>
 
                     <li class="sub-menu dcjq-parent-li">
                         <a href="javascript:;" class="dcjq-parent">
-                            <i class="icon-cogs"></i>
+                            <i class=" icon-folder-open"></i>
                             <span>Genre</span>
                             <span class="dcjq-icon"></span>
                         </a>
                         <ul class="sub" style="display: none;">
-                            <li><a href="grids.html">Grids</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="todo_list.html">Todo List</a></li>
+                            <li><a asp-controller="Genre" asp-action="Index">Genre List</a></li>
+                         
                         </ul>
                     </li>
                     <li class="sub-menu dcjq-parent-li">
                         <a href="javascript:;" class="dcjq-parent">
-                            <i class="icon-tasks"></i>
+                            <i class="icon-tags"></i>
                             <span>Language</span>
                             <span class="dcjq-icon"></span>
                         </a>
                         <ul class="sub" style="display: none;">
-                            <li><a href="form_component.html">Form Components</a></li>
-                            <li><a href="advanced_form_components.html">Advanced Components</a></li>
-                            <li><a href="form_wizard.html">Form Wizard</a></li>
-                            <li><a href="form_validation.html">Form Validation</a></li>
-                            <li><a href="dropzone.html">Dropzone File Upload</a></li>
-                            <li><a href="inline_editor.html">Inline Editor</a></li>
-                            <li><a href="image_cropping.html">Image Cropping</a></li>
+                            <li><a asp-controller="Language" asp-action="Index">Language List </a></li>
+
                         </ul>
                     </li>
 
