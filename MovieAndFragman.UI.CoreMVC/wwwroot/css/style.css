@@ -62,25 +62,25 @@ theme.
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;800&display=swap");
 /* CUSTOM FONTS */
 @font-face {
-    font-family: 'Mont';
-    src: url("../fonts/Mont-Regular.eot");
-    src: local("☺"), url("../fonts/Mont-Regular.woff") format("woff"), url("../fonts/Mont-Regular.ttf") format("truetype"), url("../fonts/Mont-Regular.svg") format("svg");
+    font-family: 'Exo2';
+    src: url("../fonts/Exo2-Regular.eot");
+    src: local("☺"), url("../fonts/Exo2-Regular.woff") format("woff"), url("../fonts/Exo2-Regular.ttf") format("truetype"), url("../fonts/Exo2-Regular.svg") format("svg");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Mont';
-    src: url("../fonts/Mont-Bold.eot");
-    src: local("☺"), url("../fonts/Mont-Bold.woff") format("woff"), url("../fonts/Mont-Bold.ttf") format("truetype"), url("../fonts/Mont-Bold.svg") format("svg");
+    font-family: 'Exo2';
+    src: url("../fonts/Exo2-Bold.eot");
+    src: local("☺"), url("../fonts/Exo2-Bold.woff") format("woff"), url("../fonts/Exo2-Bold.ttf") format("truetype"), url("../fonts/Exo2-Bold.svg") format("svg");
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Mont';
-    src: url("../fonts/Mont-Heavy.eot");
-    src: local("☺"), url("../fonts/Mont-Heavy.woff") format("woff"), url("../fonts/Mont-Heavy.ttf") format("truetype"), url("../fonts/Mont-Heavy.svg") format("svg");
+    font-family: 'Exo2';
+    src: url("../fonts/Exo2-ExtraBold.eot");
+    src: local("☺"), url("../fonts/Exo2-ExtraBold.woff") format("woff"), url("../fonts/Exo2-ExtraBold.ttf") format("truetype"), url("../fonts/Exo2-ExtraBold.svg") format("svg");
     font-weight: 800;
     font-style: normal;
 }
@@ -92,7 +92,7 @@ theme.
 body {
     margin: 0;
     padding: 0;
-    font-family: "Mont";
+    font-family: "Exo2";
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
