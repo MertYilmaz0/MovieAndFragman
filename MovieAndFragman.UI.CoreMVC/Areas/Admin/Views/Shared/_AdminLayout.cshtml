@@ -21,6 +21,8 @@
     <link href="~/flatAdmin/css/style.css" rel="stylesheet">
     <link href="~/flatAdmin/css/style-responsive.css" rel="stylesheet">
 
+    @RenderSection("heads",false)
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -280,9 +282,10 @@
                         <input type="text" class="form-control search" placeholder="Search">
                     </li>
                     <!-- user login dropdown start-->
-                    <li class="dropdown" id="userName">
+                    <!--<li class="dropdown" id="userName">-->
                         <!--_loginName Partial-->
-                    </li>
+                    <!--</li>-->
+                    @await Component.InvokeAsync("DBAdmin",new{ name="Admin" })
                     <!-- user login dropdown end -->
                 </ul>
                 <!--search & user info end-->
@@ -421,15 +424,15 @@
                 autoPlay: true
 
             });
-            $.ajax({
-                type: "Get",
-                url: "../Account/LoginName",
-                success: function (data) {
-                    $("#userName").html(data);
+            //$.ajax({
+            //    type: "Get",
+            //    url: "../Account/LoginName",
+            //    success: function (data) {
+            //        $("#userName").html(data);
 
-                }
+            //    }
 
-            })
+            //})
         });
 
         //custom select box

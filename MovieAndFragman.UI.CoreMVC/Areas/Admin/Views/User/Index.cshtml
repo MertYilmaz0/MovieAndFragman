@@ -4,8 +4,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+@section heads{
+    <link href="~/flatAdmin/assets/advanced-datatable/docs/media/css/demo_page.css" rel="stylesheet" />
+    <link href="~/flatAdmin/assets/advanced-datatable/docs/media/css/demo_table.css" rel="stylesheet" />
+}
+
 <section class="panel">
-    <header class="panel-body">
+    <header class="panel-heading">
         DataTables hidden row details example
         <a href="#myModal" data-toggle="modal" class="btn btn-xs btn-success float-left">
             Add User
@@ -22,32 +27,32 @@
                         <form role="form">
                             <div class="form-group">
                                 <label>User Name</label>
-                                <input type="text" class="form-control"  placeholder="Please enter a movie name.">
+                                <input type="text" class="form-control" placeholder="Please enter a movie name.">
 
                             </div>
                             <div class="form-group">
                                 <label>Firs Name</label>
-                                <input type="text" class="form-control"  placeholder="Please enter a first name.">
+                                <input type="text" class="form-control" placeholder="Please enter a first name.">
 
                             </div>
                             <div class="form-group">
                                 <label>Last Name</label>
-                                <input type="text" class="form-control"  placeholder="Please enter a last name.">
+                                <input type="text" class="form-control" placeholder="Please enter a last name.">
 
                             </div>
                             <div class="form-group">
                                 <label>BirthDate</label>
-                                <input type="date" class="form-control"  placeholder="Please enter a birth date.">
+                                <input type="date" class="form-control" placeholder="Please enter a birth date.">
 
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control"  placeholder="Please enter a email.">
+                                <input type="email" class="form-control" placeholder="Please enter a email.">
 
                             </div>
                             <div class="form-group">
                                 <label>Phone Number</label>
-                                <input type="text" class="form-control"  placeholder="Please enter a phone numbers.">
+                                <input type="text" class="form-control" placeholder="Please enter a phone numbers.">
 
                             </div>
                             <div class="form-group">
@@ -64,98 +69,72 @@
     </header>
     <div class="panel-body">
         <div class="adv-table">
-            <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                <div id="hidden-table-info_length" class="dataTables_length"><label>Show <select class="form-control" size="1" name="hidden-table-info_length" aria-controls="hidden-table-info"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div class="dataTables_filter" id="hidden-table-info_filter"><label>Search: <input type="text" class="form-control" aria-controls="hidden-table-info"></label></div><table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered dataTable" id="hidden-table-info" aria-describedby="hidden-table-info_info">
-                    <thead>
-                        <tr role="row"><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 26px;"></th><th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 282px;">Rendering engine</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 406px;">Browser</th><th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 376px;">Platform(s)</th><th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 246px;">Engine version</th><th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 181px;">CSS grade</th></tr>
-                    </thead>
-
-                    <tbody role="alert" aria-live="polite" aria-relevant="all">
-                        <tr class="gradeA odd">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Firefox 1.0</td>
-                            <td class="hidden-phone ">Win 98+ / OSX.2+</td>
-                            <td class="center hidden-phone ">1.7</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA even">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Firefox 1.5</td>
-                            <td class="hidden-phone ">Win 98+ / OSX.2+</td>
-                            <td class="center hidden-phone ">1.8</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA odd">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Firefox 2.0</td>
-                            <td class="hidden-phone ">Win 98+ / OSX.2+</td>
-                            <td class="center hidden-phone ">1.8</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA even">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Firefox 3.0</td>
-                            <td class="hidden-phone ">Win 2k+ / OSX.3+</td>
-                            <td class="center hidden-phone ">1.9</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA odd">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Camino 1.0</td>
-                            <td class="hidden-phone ">OSX.2+</td>
-                            <td class="center hidden-phone ">1.8</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA even">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Camino 1.5</td>
-                            <td class="hidden-phone ">OSX.3+</td>
-                            <td class="center hidden-phone ">1.8</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA odd">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Netscape 7.2</td>
-                            <td class="hidden-phone ">Win 95+ / Mac OS 8.6-9.2</td>
-                            <td class="center hidden-phone ">1.7</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA even">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Netscape Browser 8</td>
-                            <td class="hidden-phone ">Win 98SE+</td>
-                            <td class="center hidden-phone ">1.7</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA odd">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Netscape Navigator 9</td>
-                            <td class="hidden-phone ">Win 98+ / OSX.2+</td>
-                            <td class="center hidden-phone ">1.8</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                        <tr class="gradeA even">
-                            <td class="center "><img src="~/flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png"></td>
-                            <td class="  sorting_1">Gecko</td>
-                            <td class=" ">Mozilla 1.0</td>
-                            <td class="hidden-phone ">Win 95+ / OSX.1+</td>
-                            <td class="center hidden-phone ">1</td>
-                            <td class="center hidden-phone ">A</td>
-                        </tr>
-                    </tbody>
-                </table><div class="dataTables_info" id="hidden-table-info_info">Showing 1 to 10 of 57 entries</div><div class="dataTables_paginate paging_two_button" id="hidden-table-info_paginate"><a class="paginate_disabled_previous" tabindex="0" role="button" id="hidden-table-info_previous" aria-controls="hidden-table-info">Previous</a><a class="paginate_enabled_next" tabindex="0" role="button" id="hidden-table-info_next" aria-controls="hidden-table-info">Next</a></div>
-            </div>
-
+            @await Component.InvokeAsync("UserTable")
         </div>
     </div>
 </section>
 
+@section scripts{
+    <script src="~/flatAdmin/assets/advanced-datatable/docs/media/js/jquery.dataTables.js"></script>
+
+    <script>
+        /* Formating function for row details */
+        function fnFormatDetails(oTable, nTr) {
+            var aData = oTable.fnGetData(nTr);
+            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+            sOut += '<tr><td>Rendering engine:</td><td>' + aData[1] + ' ' + aData[4] + '</td></tr>';
+            sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
+            sOut += '<tr><td>Extra info:</td><td>And any further details here (images etc)</td></tr>';
+            sOut += '</table>';
+
+            return sOut;
+        }
+
+        $(document).ready(function () {
+            /*
+             * Insert a 'details' column to the table
+             */
+            var nCloneTh = document.createElement('th');
+            var nCloneTd = document.createElement('td');
+            nCloneTd.innerHTML = '<img src="../flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png">';
+            nCloneTd.className = "center";
+
+            $('#hidden-table-info thead tr').each(function () {
+                this.insertBefore(nCloneTh, this.childNodes[0]);
+            });
+
+            $('#hidden-table-info tbody tr').each(function () {
+                this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
+            });
+
+            /*
+             * Initialse DataTables, with no sorting on the 'details' column
+             */
+            var oTable = $('#hidden-table-info').dataTable({
+                "aoColumnDefs": [
+                    { "bSortable": false, "aTargets": [0] }
+                ],
+                "aaSorting": [[1, 'asc']]
+            });
+
+            /* Add event listener for opening and closing details
+             * Note that the indicator for showing which row is open is not controlled by DataTables,
+             * rather it is done here
+             */
+            $('#hidden-table-info tbody td img').live('click', function () {
+                var nTr = $(this).parents('tr')[0];
+                if (oTable.fnIsOpen(nTr)) {
+                    /* This row is already open - close it */
+                    this.src = "../flatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png";
+                    oTable.fnClose(nTr);
+                }
+                else {
+                    /* Open this row */
+                    this.src = "../flatAdmin/assets/advanced-datatable/examples/examples_support/details_close.png";
+                    oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
+                }
+            });
+        });
+    </script>
+
+}

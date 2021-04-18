@@ -1,0 +1,24 @@
+﻿@model List<FragmanVM>
+
+<table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th class="hidden-phone">Like</th>
+            <th class="hidden-phone">Dislike</th>
+            <th class="hidden-phone">Ratio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (FragmanVM item in Model)
+        {
+<tr class="gradeA">
+    <td>@item.Name</td>
+    <td>@item.Description</td>
+    <td class="hidden-phone">@item.CounterLike</td>
+    <td class="center hidden-phone">@item.CounterDisLike</td>
+    <td class="center hidden-phone">@item.Ratio</td>
+</tr>}
+    </tbody>
+</table>

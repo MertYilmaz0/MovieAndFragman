@@ -150,5 +150,23 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                 return Ok(new { check = false, message = ex.Message });
             }
         }
+        [HttpGet]
+        public IActionResult GetAllListForAdmin()
+        {
+            List<Fragman> fragmans = fragmanBLL.GetAll().ToList();
+            List<FragmanForAdminDto> dtos = new List<FragmanForAdminDto>();
+            foreach (Fragman item in fragmans)
+            {
+                dtos.Add(new FragmanForAdminDto()
+                {
+                    CounterDisLike = item.CounterDisLike,
+                    CounterLike = item.CounterLike,
+                    Description = item.Description,
+                    Name = item.Name,
+                    Ratio = item.Ratio
+                });
+            }
+            return Ok(dtos);
+        }
     }
 }
