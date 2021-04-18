@@ -163,7 +163,8 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     CounterLike = item.CounterLike,
                     Description = item.Description,
                     Name = item.Name,
-                    Ratio = item.Ratio
+                    Ratio = item.Ratio,
+                    CounterView=item.CounterView
                 });
             }
             return Ok(dtos);

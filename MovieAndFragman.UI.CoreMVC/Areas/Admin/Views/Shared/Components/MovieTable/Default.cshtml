@@ -4,10 +4,11 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Description</th>
+            <th>Counter View</th>
             <th class="hidden-phone">Like</th>
             <th class="hidden-phone">Dislike</th>
             <th class="hidden-phone">Ratio</th>
+            <th style="display: none;"></th>
         </tr>
     </thead>
     <tbody>
@@ -15,10 +16,12 @@
         {
 <tr class="gradeA">
     <td>@item.Name</td>
-    <td>@item.Description</td>
+    <td>@item.CounterView</td>
     <td class="hidden-phone">@item.CounterLike</td>
     <td class="center hidden-phone">@item.CounterDisLike</td>
     <td class="center hidden-phone">@item.Ratio</td>
-</tr>}
+    <td style="display: none;">@item.Description</td>
+</tr>
+}
     </tbody>
 </table>

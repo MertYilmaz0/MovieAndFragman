@@ -12,5 +12,6 @@ namespace MovieAndFragman.Service.WebAPI.Model
         public int CounterLike { get; set; }
         public int CounterDisLike { get; set; }
         public float Ratio { get; set; }
+        public int CounterView { get; set; }
     }
 }

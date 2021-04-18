@@ -120,6 +120,7 @@ namespace MovieAndFragman.BLL.Concrete
             Rating rating = fragman.Ratings.SingleOrDefault(a => a.UserID == uid);
             if (rating == null)
             {
+                fragman.CounterView += 1;
                 fragman.Ratings.Add(new Rating { FragmanID = fid, UserID = uid });
                 Update(fragman);
             }
