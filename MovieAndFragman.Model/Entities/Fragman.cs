@@ -16,6 +16,7 @@ namespace MovieAndFragman.Model.Entities
         public string Poster { get; set; }
         public int CounterLike { get; set; }
         public int CounterDisLike { get; set; }
+        //todo: Görüntülenme sayısı
         public float Ratio { get; set; }// Beğenilme oranı
         public int UserID { get; set; }
         public User User { get; set; }//yükleyici        

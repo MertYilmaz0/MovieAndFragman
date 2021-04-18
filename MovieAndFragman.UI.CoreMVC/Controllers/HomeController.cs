@@ -17,13 +17,11 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [HttpPost]
         public IActionResult GetFragman([FromBody] List<FragmanVM> fragmanVMs)
         {
-            if (fragmanVMs==null)
+            if (fragmanVMs == null)
             {
                 ViewBag.Message = "Listelenecek Film Bulunamadı";
             }
-            return PartialView("_singleFragman",fragmanVMs);
+            return PartialView("_singleFragman", fragmanVMs);
         }
-
-
     }
 }
