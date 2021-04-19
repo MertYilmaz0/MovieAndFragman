@@ -186,7 +186,7 @@
         var fragId =@ViewContext.RouteData.Values["id"]
         var uid =@ViewBag.UId
         $(document).ready(function () {
-            GetFragmanListAll("../../Home/GetFragman")
+            GetFragmanListAll()
             GetRating(fragId)
             AddRating(fragId, uid)
             GetBtnMyList("../../../mylist/getbtn")
@@ -200,8 +200,7 @@
         function Like(token) {
             $.ajax({
                 type: "GET",
-                url: apiurl + "fragman/UpdateRating?fid=" + fragId + "&uid=" + uid + "&token=" + token,
-                headers: { "ApiKey": apikey },
+                url:"../../../ajax/like?fid=" + fragId + "&uid=" + uid + "&token=" + token,
                 success: function (response) {
                     if (response.check) {
                         alertify.success(response.message)
