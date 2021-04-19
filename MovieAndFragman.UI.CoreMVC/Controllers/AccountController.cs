@@ -90,6 +90,18 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             return PartialView("_loginModel", accountVM);
         }
 
+        public IActionResult LoginNameMobile()
+        {
+            string name = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userRole = User.FindFirstValue(ClaimTypes.Role);
+
+            AccountVM accountVM = new AccountVM();
+            accountVM.UserName = name;
+            accountVM.UserRole = userRole;
+
+            return PartialView("_loginNameForAdmin", accountVM);
+        }
+
 
         public IActionResult Logout()
         {

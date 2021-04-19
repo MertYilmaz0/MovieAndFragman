@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MovieAndFragman.UI.CoreMVC.Models.MyList;
+using MovieAndFragman.UI.CoreMVC.Helper;
 
 namespace MovieAndFragman.UI.CoreMVC
 {
@@ -37,6 +39,11 @@ namespace MovieAndFragman.UI.CoreMVC
                 app.UseDeveloperExceptionPage();
             }
             app.UseSession();
+            app.Use((httpContext, nextMiddleware) =>
+            {
+                httpContext.Session.Set<MyList>("myList", new MyList());
+                return nextMiddleware();
+            });
             app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();

@@ -1,6 +1,6 @@
 ﻿var apiurl = "http://localhost:52154/api/"
 var apikey = "YWhtZXRtZXJ0YmlsYWw="
-
+//Todo:Apikey'i appset den çek
 
 function GetLastThirdMovie() {
     $.ajax({
@@ -70,13 +70,13 @@ function GetFragmanByName(name) {
             type: "GET",
             url: apiurl + "fragman/GetByName?name=" + name,
             headers: { "ApiKey": apikey },
-            success: function (response) {                
+            success: function (response) {
                 $.ajax({
                     type: "Post",
                     url: "GetMovieList",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(response),
-                    success: function (data) {                        
+                    success: function (data) {
                         $("#singleFragman").html(data);
                     }
                 })
@@ -104,6 +104,33 @@ function AddRating(frag, user) {
             if (!response.check) {
                 alertify.error(response.message)
             }
+        }
+    })
+}
+
+function GetBtnMyList(path) {
+    $.ajax({
+        type: "Get",
+        url: path,
+        success: function (response) {
+            $("#btnMyList").html(response)
+            btnScript()
+        }
+    })
+}
+function btnScript() {
+    $('#myList').click(function () {
+        $("#myListItem").toggle();
+    });
+}
+
+function DeleteFromList(id) {
+    $.ajax({
+        type: "Get",
+        url: "../../../mylist/Delete?id=" + id,
+        success: function (response) {
+            GetBtnMyList("../../../mylist/getbtn")
+            alertify.success("Film izlenecekler listesinden kaldırıldı.")           
         }
     })
 }

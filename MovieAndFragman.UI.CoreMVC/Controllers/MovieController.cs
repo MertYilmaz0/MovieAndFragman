@@ -49,5 +49,7 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             RatingVM ratingVM = ApiJsonHelper<RatingVM>.GetApiEntity("fragman/GetFragRating?id=" + id);
             return PartialView("_rating", ratingVM);
         }
+
+        
     }
 }
