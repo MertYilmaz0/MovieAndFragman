@@ -58,6 +58,9 @@ namespace MovieAndFragman.BLL.Concrete
             return languageDAL.GetAll();
         }
 
-      
+        public ICollection<Language> GetAllActive()
+        {
+            return languageDAL.GetAll(a => a.IsActive);
+        }
     }
 }

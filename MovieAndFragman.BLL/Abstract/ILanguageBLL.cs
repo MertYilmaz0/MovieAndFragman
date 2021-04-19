@@ -7,5 +7,6 @@ namespace MovieAndFragman.BLL.Abstract
 {
     public interface ILanguageBLL:IBaseBLL<Language>
     {
+        ICollection<Language> GetAllActive();
     }
 }

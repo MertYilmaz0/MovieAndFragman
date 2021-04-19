@@ -1,0 +1,43 @@
+﻿
+@model List<LanguageVM>
+
+
+
+<thead>
+    <tr>
+        <th>#</th>
+        <th><i class="icon-bookmark"></i>Name</th>
+        <th class="hidden-phone"><i class="icon-question-sign"></i>Descrition</th>
+        <th><i class="icon-bookmark"></i>Profit</th>
+        <th><i class=" icon-edit"></i> Status</th>
+        <th></th>
+
+    </tr>
+</thead>
+<tbody>
+
+
+    @foreach (LanguageVM item in Model)
+    {
+        <tr>
+            <td>@item.LanguageID</td>
+            <td>
+                <a href="#">
+                    @item.LanguageName
+                </a>
+            </td>
+            <td class="hidden-phone" @item.Description></td>
+
+            <td><span class="label label-warning label-mini">@item.IsActive</span></td>
+            <td>
+                <button class="btn btn-success btn-xs"><i class="icon-ok"></i></button>
+                <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
+                <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
+            </td>
+        </tr>
+    }
+
+
+
+
+</tbody>

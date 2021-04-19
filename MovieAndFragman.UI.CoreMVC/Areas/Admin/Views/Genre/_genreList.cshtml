@@ -1,0 +1,46 @@
+﻿
+@model List<GenreVM>
+
+
+<thead>
+    <tr>
+        <th>#</th>
+        <th><i class="icon-bullhorn"></i>Name</th>
+        <th><i class=" icon-edit"></i> Status</th>
+        <th>IsActive/DeActive</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+
+
+    @foreach (GenreVM item in Model)
+    {
+    <tr>
+        <td>@item.GenreId</td>
+        <td><a href="#">@item.Name</a></td>
+        <td><span class="label label-info label-mini">@item.IsActive</span></td>
+        <td> <button class="btn btn-success btn-xs"><i class="icon-ok"></i></button></td>
+        <td>
+            @*<button class="btn btn-success btn-xs"><i class="icon-ok"></i></button>*@
+            <button href="#myModal-2" data-toggle="modal" class="btn btn-primary btn-xs" asp-area="Admin" asp-controller="Genre" asp-action="UpdateGenre" asp-route-id="@item.GenreId"><i class="icon-pencil"></i></button>
+            @*<button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>*@
+        </td>
+        <td>
+            @if (item.IsActive)
+            {
+                <button class="btn btn-danger btn-xs"><i class="icon-trash " onclick="GenreDelete(@item.GenreId)"></i></button>
+            }
+            else
+            {
+                <button class="btn btn-danger btn-xs"><i class="icon-trash" onclick="GenreDelete(@item.GenreId)" style="border-style:none"></i></button>
+            }
+
+        </td>
+    </tr>
+
+    }
+
+
+</tbody>

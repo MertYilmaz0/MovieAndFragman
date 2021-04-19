@@ -283,9 +283,9 @@
                     </li>
                     <!-- user login dropdown start-->
                     <!--<li class="dropdown" id="userName">-->
-                        <!--_loginName Partial-->
+                    <!--_loginName Partial-->
                     <!--</li>-->
-                    @await Component.InvokeAsync("DBAdmin",new{ name="Admin" })
+                    @await Component.InvokeAsync("DBAdmin", new { name = "Admin" })
                     <!-- user login dropdown end -->
                 </ul>
                 <!--search & user info end-->
@@ -327,7 +327,7 @@
                         </a>
                         <ul class="sub" style="display: none;">
                             <li><a asp-controller="Movie" asp-action="Index">List Movie</a></li>
-                         </ul>
+                        </ul>
                     </li>
 
                     <li class="sub-menu dcjq-parent-li">
@@ -338,7 +338,7 @@
                         </a>
                         <ul class="sub" style="display: none;">
                             <li><a asp-controller="Genre" asp-action="Index">Genre List</a></li>
-                         
+
                         </ul>
                     </li>
                     <li class="sub-menu dcjq-parent-li">
@@ -410,7 +410,7 @@
     <script src="~/flatAdmin/js/sparkline-chart.js"></script>
     <script src="~/flatAdmin/js/easy-pie-chart.js"></script>
     <script src="~/flatAdmin/js/count.js"></script>
-
+    <script src="~/js/AjaxScript.js"></script>
     <script>
 
         //owl carousel

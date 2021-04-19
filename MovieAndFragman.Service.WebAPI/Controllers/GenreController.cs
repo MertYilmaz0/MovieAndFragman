@@ -30,7 +30,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                 dtos.Add(new GenreDto()
                 {
                     GenreId = item.ID,
-                    Name = item.Name
+                    Name = item.Name,
+                    IsActive=item.IsActive
+                   
                 });
             }
             return dtos;
@@ -41,19 +43,83 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             return Ok(GetGenreLByFragId(id));
         }
         [HttpGet]
-        public IActionResult GetAllCategories()
+        public IActionResult GetAllGenre()
         {
             List<Genre> genres = genreBLL.GetAll().ToList();
-            List<GenreDto> categories = new List<GenreDto>();
+            List<GenreDto> genreDtos = new List<GenreDto>();
             foreach (Genre item in genres)
             {
-                categories.Add(new GenreDto()
+                genreDtos.Add(new GenreDto()
                 {
                     GenreId = item.ID,
-                    Name = item.Name
+                    Name = item.Name,
+                    IsActive=item.IsActive
+
                 });
             }
-            return Ok(categories);
+            return Ok(genreDtos);
         }
+
+
+
+        [HttpPost]
+        public IActionResult AddGenre([FromBody] GenreDto genreDto )
+        {
+            try
+            {
+                Genre genre = new Genre();
+                genre.ID = genreDto.GenreId;
+                genre.Name = genreDto.Name;
+                genreBLL.Insert(genre);
+                return Ok(new { message = "Tür ekleme işlemi gerçekleşti", check = true });
+            }
+            catch (Exception ex)
+            {
+
+                return Ok(new { message = ex.Message, check = false });
+            }
+        }
+
+
+        [HttpPost]
+        public IActionResult UpdateGenre([FromBody] GenreDto genreDto)
+        {
+            try
+            {
+                Genre genre = genreBLL.Get(genreDto.GenreId);
+                genre.Name = genreDto.Name;
+                genre.IsActive = true;
+                genreBLL.Update(genre);
+                return Ok(new { message = "Güncelleme işlemi gerçekleşti", check = true });
+            }
+            catch (Exception ex)
+            {
+
+                return Ok(new { message = ex.Message, check = false });
+            }
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult DeleteGenreById(int id)
+        {
+            genreBLL.DeleteById(id);
+            return Ok(new { message = "Silme işlemi gerçekleşti", check = true });
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetGenreById(int id)
+        {
+            Genre genre = genreBLL.Get(id);
+            GenreDto genreDto = new GenreDto() 
+            {
+                GenreId = genre.ID,
+                Name = genre.Name,
+                IsActive = genre.IsActive 
+            };
+            return Ok(genreDto);
+            
+
+        }
+
     }
 }

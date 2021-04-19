@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace MovieAndFragman.Service.WebAPI.Model
 {
-    public class GenreDto
+    public class LanguageDto
     {
-        public int GenreId { get; set; }
-        public string Name { get; set; }
+        public int LanguageID { get; set; }
+        public string LanguageName { get; set; }
+        public string Description { get; set; }
         public bool IsActive { get; set; }
     }
 }
