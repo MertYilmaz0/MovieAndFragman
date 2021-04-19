@@ -56,7 +56,7 @@
                         <div class="row mb-5">
                             @await Component.InvokeAsync("Url", Model.FragID)
                         </div>
-                        <a asp-controller="MyList" asp-action="AddMyList" asp-route-id="@Model.FragID" class="add-btn">+ ADD YOUR LIST</a>
+                        <a class="add-btn mouserPointer" onclick="AddToList(@Model.FragID)">+ ADD YOUR LIST</a>
                         <div class="rate-box" id="rating">
                             <!-- rating işlemleri -->
                         </div>
@@ -189,6 +189,7 @@
             GetFragmanListAll("../../Home/GetFragman")
             GetRating(fragId)
             AddRating(fragId, uid)
+            GetBtnMyList("../../../mylist/getbtn")
         })
         function ChangeUrl(path) {
             if (path != 0) {
@@ -212,6 +213,20 @@
             })
         }
 
-       
+        function AddToList(id) {
+            $.ajax({
+                type: "Get",
+                url: "../../../mylist/AddMyList?id=" + id,
+                success: function (response) {
+                    GetBtnMyList("../../../mylist/getbtn")
+                    if (response.check) {
+                    alertify.success("Film izlenecekler listesine eklendi.")
+                    } else {
+                        alertify.error("Film zaten izlenecekler listesinde.")
+                    }
+                }
+            })
+        }
+
     </script>
 }

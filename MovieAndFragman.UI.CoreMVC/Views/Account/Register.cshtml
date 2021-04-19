@@ -10,7 +10,7 @@
 </header>
 <!-- end page-header -->
 <main>
-    <section class="content-section" data-background="~/images/section-pattern01.png">
+    <section class="content-section" data-background="../images/section-pattern01.png">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
@@ -87,7 +87,7 @@
                 <!-- end col-7 -->
                 <div class="col-lg-5">
                     <figure class="side-image">
-                        <img src="~/images/side-image02.png" alt="Image">
+                        <img src="../images/side-image02.png" alt="Image">
                     </figure>
                     <!-- end side-image -->
                 </div>
@@ -103,6 +103,10 @@
 
 @section scripts{
     <script>
+        $(document).ready(function () {
+            GetBtnMyList("../../mylist/getbtn")
+        })
+
         var check = "@ViewBag.Check"
         var message = "@ViewBag.Message"
         if (check != "" && message != "") {

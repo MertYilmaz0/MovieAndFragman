@@ -107,3 +107,30 @@ function AddRating(frag, user) {
         }
     })
 }
+
+function GetBtnMyList(path) {
+    $.ajax({
+        type: "Get",
+        url: path,
+        success: function (response) {
+            $("#btnMyList").html(response)
+            btnScript()
+        }
+    })
+}
+function btnScript() {
+    $('#myList').click(function () {
+        $("#myListItem").toggle();
+    });
+}
+
+function DeleteFromList(id) {
+    $.ajax({
+        type: "Get",
+        url: "../../../mylist/Delete?id=" + id,
+        success: function (response) {
+            GetBtnMyList("../../../mylist/getbtn")
+            alertify.success("Film izlenecekler listesinden kaldırıldı.")           
+        }
+    })
+}

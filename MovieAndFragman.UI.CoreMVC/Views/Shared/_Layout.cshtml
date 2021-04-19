@@ -30,8 +30,8 @@
 <body>
     <!-- Preloader -->
     @*<div class="preloader d-flex align-items-center justify-content-center">
-        <img src="~/videos/Naps-Logo-Animation-1920x1080.gif" />
-    </div>*@
+            <img src="~/videos/Naps-Logo-Animation-1920x1080.gif" />
+        </div>*@
 
     <nav class="mobile-menu">
         <div class="inner">
@@ -96,7 +96,10 @@
                 <!-- end notify-dropdown -->
             </div>
             <!-- end navbar-notify -->
-            @await Component.InvokeAsync("MyList")
+
+            <div id="btnMyList">
+
+            </div>
             @*<div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>*@
             <div id="userName">
 
@@ -270,9 +273,7 @@
                 }
 
             })
-
         })
-
     </script>
 
 

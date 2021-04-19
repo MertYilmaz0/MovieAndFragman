@@ -7,9 +7,9 @@
       $("#notifyItem").toggle();
     });
 
-      $('#myList').click(function () {
-          $("#myListItem").toggle();
-      });
+      //$('#myList').click(function () {
+      //    $("#myListItem").toggle();
+      //});
 
 
     // HAMBURGER MENU

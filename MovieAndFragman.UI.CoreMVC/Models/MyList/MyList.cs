@@ -9,13 +9,14 @@ namespace MovieAndFragman.UI.CoreMVC.Models.MyList
     {
         static private Dictionary<int, ListItem> myList = new Dictionary<int, ListItem>();
         public List<ListItem> GetAllCartItem => myList.Values.ToList();
-        public void AddCart(ListItem listItem)
+        public bool AddCart(ListItem listItem)
         {
             if (myList.ContainsKey(listItem.Id))
             {
-                return;
+                return false;
             }
             myList.Add(listItem.Id, listItem);
+            return true;
         }
         
         public void DeleteCart(int id)

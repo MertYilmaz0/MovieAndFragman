@@ -139,6 +139,10 @@
 
 @section scripts{ 
     <script>
+        $(document).ready(function () {
+            GetBtnMyList("../../mylist/getbtn")
+        })
+
         function ChangeUrl(path) {
             if (path != 0) {
                 $("#liveVideo").attr("src", path)
