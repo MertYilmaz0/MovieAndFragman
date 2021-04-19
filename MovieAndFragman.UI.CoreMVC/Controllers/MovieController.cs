@@ -28,20 +28,7 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             ViewBag.Alert = "Böyle bir fragman bulunmamaktadır.";
             return RedirectToAction("index", "home");
         }
-        [HttpPost]
-        public IActionResult LastThird([FromBody] List<FragmanVM> fragmanVM)
-        {
-            return PartialView("_SingleSwiper", fragmanVM);
-        }
-        [HttpPost]
-        public IActionResult GetMovieList([FromBody] List<FragmanVM> fragmanVMs)
-        {
-            if (fragmanVMs.Count == 0)
-            {
-                return PartialView("_nullMovie");
-            }
-            return PartialView("_singleMovie", fragmanVMs);
-        }
+
 
         [HttpGet]
         public IActionResult GetRating(int id)
@@ -50,6 +37,6 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             return PartialView("_rating", ratingVM);
         }
 
-        
+
     }
 }
