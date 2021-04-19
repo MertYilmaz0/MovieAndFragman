@@ -56,8 +56,7 @@
                         <div class="row mb-5">
                             @await Component.InvokeAsync("Url", Model.FragID)
                         </div>
-                        <a href="#" class="add-btn">+ ADD YOUR LIST</a>
-
+                        <a asp-controller="MyList" asp-action="AddMyList" asp-route-id="@Model.FragID" class="add-btn">+ ADD YOUR LIST</a>
                         <div class="rate-box" id="rating">
                             <!-- rating işlemleri -->
                         </div>

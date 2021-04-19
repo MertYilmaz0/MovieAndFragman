@@ -74,9 +74,9 @@
         <div class="user-menu">
             <div class="navbar-search"> <i class="lni lni-search-alt"></i> </div>
             <!-- end navbar-search -->
-            <div class="navbar-notify">
+            <div class="navbar-notify" id="notify">
                 <i class="lni lni-alarm"></i><b>2</b>
-                <div class="notify-dropdown">
+                <div class="notify-dropdown" id="notifyItem">
                     <div class="total-notify">
                         <h6>Notification</h6>
                         <span>3</span>
@@ -96,6 +96,7 @@
                 <!-- end notify-dropdown -->
             </div>
             <!-- end navbar-notify -->
+            @await Component.InvokeAsync("MyList")
             @*<div class="navbar-account"> <a asp-controller="account" asp-action="register">Register</a>/<a asp-controller="account" asp-action="login">Login</a><i class="lni lni-user"></i></div>*@
             <div id="userName">
 

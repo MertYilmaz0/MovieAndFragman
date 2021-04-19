@@ -3,9 +3,13 @@
     "use strict";
 
     // NAVBAR NOTIFIY
-    $('.navbar-notify').click(function () {
-      $(".notify-dropdown").toggle();
+    $('#notify').click(function () {
+      $("#notifyItem").toggle();
     });
+
+      $('#myList').click(function () {
+          $("#myListItem").toggle();
+      });
 
 
     // HAMBURGER MENU

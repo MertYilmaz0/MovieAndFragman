@@ -1,0 +1,24 @@
+﻿@model List<ListItem>
+
+
+<div class="navbar-notify" id="myList">
+    <i class="lni lni-library"></i><b>@Model.Count</b>
+    <div class="notify-dropdown" id="myListItem">
+        <div class="total-notify">
+            <h6>My LIST</h6>
+            <span>@Model.Count</span>
+        </div>
+        <!-- end total-notify -->
+        <ul>
+            @foreach (ListItem item in Model)
+            {
+            <li>
+                <a asp-controller="Movie" asp-action="MovieSinglePage" asp-route-id="@item.Id">@item.Name</a>
+                &nbsp;
+                <a asp-controller="MyList" asp-action="Delete" asp-route-id="@item.Id">-</a>
+            </li>
+            }
+        </ul>
+    </div>
+    <!-- end notify-dropdown -->
+</div>
