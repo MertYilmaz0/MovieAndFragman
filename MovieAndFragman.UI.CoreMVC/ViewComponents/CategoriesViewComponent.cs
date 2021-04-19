@@ -13,7 +13,7 @@ namespace MovieAndFragman.UI.CoreMVC.ViewComponents
     {
         public ViewViewComponentResult Invoke()
         {
-            List<GenreVM> categories = ApiJsonHelper<GenreVM>.GetApiEntityList("genre/GetAllCategories");
+            List<GenreVM> categories = ApiJsonHelper<GenreVM>.GetApiEntityList("genre/GetAllGenre");
             return View(categories);
         }
     }
