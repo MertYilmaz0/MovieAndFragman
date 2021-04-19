@@ -44,7 +44,6 @@
                     </div>
                 </div>
             </div>
-
             <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-2" class="modal fade" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -58,17 +57,21 @@
                                 <div class="form-group">
                                     <label class="col-lg-2 col-sm-2 control-label">Name</label>
                                     <div class="col-lg-10">
+                                        <input type="number" name="name" style="display:none" id="updateid" value="" />
                                         <input type="text" id="updateName" class="form-control" placeholder="Please enter a type name.">
                                     </div>
                                 </div>
 
+
+                            </form>
+                            <div class="form-group">
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button type="submit" class="btn btn-default" id="updateGenre">Update</button>
+                                        <button type="submit" class="btn btn-default" onclick="UpdatePostGenre()">Update</button>
                                     </div>
                                 </div>
-                            </form>
-
+                            </div>
+                           
                         </div>
 
 
@@ -87,11 +90,7 @@
 @section scripts{
     <script>
         $(document).ready(function () {
-
             GetGenreList()
-
-
-
         })
         function GetGenreList() {
             $.ajax({
@@ -125,10 +124,10 @@
                 data: JSON.stringify(genre),
                 success: function (data) {
                     if (data.check == true) {
-                        $("#alert").html("<div class='alert alert-success' role='alert'>" + data.message + "</div>")
-                        window.location = "/Admin/Genre/Index";
+                        alertify.success(data.message)
+                        GetGenreList()
                     } else {
-                        $("#alert").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>")
+                        alertify.error(data.message)  
                     }
 
                 }
@@ -136,44 +135,42 @@
 
         })
 
-        $("#updateGenre").click(function ()
-        {
+        function UpdateGenre(genId, genName) {
+            var name = genName;
+            var id = genId;
+            $("#updateName").val(name);
+            $("#updateid").val(id);
+            console.log(genId);
+        }
+        function UpdatePostGenre() {
             var genre = new Object();
-            genre.GenreId =@ViewContext.RouteData.Values["id"];
-
-            genre.Name = $("updateName").val();
+            genre.GenreId = $("#updateid").val();
+            genre.Name = $("#updateName").val();
+            genre.IsActive = true;
+            console.log(genre)
             $.ajax
-           ({
-                type: "POST",
-                url: apiurl + "Genre/UpdateGenre",
-                headers: { "ApiKey": apikey },
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(genre),
-                success: function (data)
-                {
-                    if (data.check == true)
-                    {
-                        $("#alert").html("<div class='alert alert-success' role='alert'>" + data.message + "</div>")
-                        window.location = "/Admin/Genre/Index";
+                ({
+                    url: apiurl + "Genre/UpdateGenre?id=" + genre.GenreId+"&name="+genre.Name,
+                    headers: { "ApiKey": apikey },
+                    type: "GET",                   
+                    success: function (response) {
+                        if (response.check == true) {
+                            alertify.success(response.message)
+                            GetGenreList()
+                        }
+                        else {
+                            alertify.error(response.message)                           
+                        }
                     }
-                    else
-                    {
-                        $("#alert").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>")
-                    }
-
-
-                }
-            })
-
-
-        })
+                })
+        }
 
         function GenreDelete(genid) {
             var cvp = confirm("Kategoriyi silmek istediğine emin misiniz ?")
             if (cvp) {
                 $.ajax({
                     type: "GET",
-                    url: apiurl + "Genre/GetAllGenre/" + genid,
+                    url: apiurl + "Genre/DeleteGenreById/" + genid,
                     headers: { "ApiKey": apikey },
                     success: function (data) {
                         if (cvp) {
@@ -195,14 +192,3 @@
 }
 
 
-@*var id =@ViewContext.RouteData.Values["id"]
-    $.ajax({
-        type: "GET",
-        url: apiurl + "Genre/GetGenreById/" + id,
-        success: function (data) {
-            $("#updateName").val(data.name);
-
-        }
-
-    })
-    

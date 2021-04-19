@@ -8,5 +8,6 @@ namespace MovieAndFragman.BLL.Abstract
     public interface IGenreBLL:IBaseBLL<Genre>
     {
         List<Genre> GetByFragId(int id);
+        ICollection<Genre> GetAllForUser();
     }
 }

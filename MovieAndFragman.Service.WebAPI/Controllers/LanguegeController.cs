@@ -99,14 +99,14 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
 
         }
 
-        [HttpPost]
-        public IActionResult UpdateLanguage([FromBody] LanguageDto languageDto)
+        [HttpGet]
+        public IActionResult UpdateLanguage(int id, string name, string description)
         {
             try
             {
-                Language language = languageBLL.Get(languageDto.LanguageID);
-                language.LanguageName = languageDto.LanguageName;
-                language.Description = languageDto.Description;
+                Language language = languageBLL.Get(id);
+                language.LanguageName = name;
+                language.Description = description;
                 language.IsActive = true;
                 languageBLL.Update(language);
                 return Ok(new { message = "Dil güncelleme işlemi gerçekleşti", check = true });
@@ -117,7 +117,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public IActionResult DeleteLanguageById(int id)
         {
             languageBLL.DeleteById(id);

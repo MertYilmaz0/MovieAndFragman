@@ -57,6 +57,12 @@ namespace MovieAndFragman.BLL.Concrete
         {
             return genreDAL.GetAll();
         }
+
+        public ICollection<Genre> GetAllForUser()
+        {
+            return genreDAL.GetAll(a => a.IsActive);
+        }
+
         public List<Genre> GetByFragId(int id)
         {
             if (id == 0)

@@ -8,9 +8,10 @@
         <th>#</th>
         <th><i class="icon-bookmark"></i>Name</th>
         <th class="hidden-phone"><i class="icon-question-sign"></i>Descrition</th>
-        <th><i class="icon-bookmark"></i>Profit</th>
-        <th><i class=" icon-edit"></i> Status</th>
-        <th></th>
+        @*<th><i class="icon-bookmark"></i>Profit</th>*@
+        <th><i class=" icon-edit"></i>IsActive/DeActive</th>
+        <th>Update</th>
+        <th>Delete</th>
 
     </tr>
 </thead>
@@ -26,13 +27,25 @@
                     @item.LanguageName
                 </a>
             </td>
-            <td class="hidden-phone" @item.Description></td>
+            <td class="hidden-phone">@item.Description</td>
 
             <td><span class="label label-warning label-mini">@item.IsActive</span></td>
+
             <td>
-                <button class="btn btn-success btn-xs"><i class="icon-ok"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
+            
+                <button href="#myModal-2" data-toggle="modal" class="btn btn-primary btn-xs" onclick="UpdateLanguage(@item.LanguageID, '@item.LanguageName','@item.Description')"><i class="icon-pencil"></i></button>
+            </td>
+            <td>
+                @if (item.IsActive)
+                {
+                    <button class="btn btn-danger btn-xs"><i class="icon-trash " onclick="LanguageDelete(@item.LanguageID)"></i></button>
+                }
+                else
+                {
+                    <button class="btn btn-danger btn-xs"><i class="icon-trash" onclick="LanguageDelete(@item.LanguageID)" style="border-style:none"></i></button>
+                }
+
+
             </td>
         </tr>
     }

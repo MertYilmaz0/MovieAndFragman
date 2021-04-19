@@ -59,6 +59,23 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             }
             return Ok(genreDtos);
         }
+        [HttpGet]
+        public IActionResult GetAllCategories()
+        {
+            List<Genre> genres = genreBLL.GetAllForUser().ToList();
+            List<GenreDto> genreDtos = new List<GenreDto>();
+            foreach (Genre item in genres)
+            {
+                genreDtos.Add(new GenreDto()
+                {
+                    GenreId = item.ID,
+                    Name = item.Name,
+                    IsActive = item.IsActive
+
+                });
+            }
+            return Ok(genreDtos);
+        }
 
 
 
@@ -81,15 +98,15 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult UpdateGenre([FromBody] GenreDto genreDto)
+        [HttpGet]
+        public IActionResult UpdateGenre(int id,string name)
         {
             try
             {
-                Genre genre = genreBLL.Get(genreDto.GenreId);
-                genre.Name = genreDto.Name;
-                genre.IsActive = true;
-                genreBLL.Update(genre);
+                Genre genreUpdate = genreBLL.Get(id);
+                genreUpdate.Name = name;
+                genreUpdate.IsActive = true;
+                genreBLL.Update(genreUpdate);
                 return Ok(new { message = "Güncelleme işlemi gerçekleşti", check = true });
             }
             catch (Exception ex)
