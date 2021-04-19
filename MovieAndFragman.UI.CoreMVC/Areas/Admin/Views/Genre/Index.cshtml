@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                         </div>
 
 
@@ -94,19 +94,10 @@
         })
         function GetGenreList() {
             $.ajax({
-                type: "GET",
-                url: apiurl + "Genre/GetAllGenre",
-                headers: { "ApiKey": apikey },
+                type: "get",
+                url: "../../../admin/AdminAjax/GetGenreList",
                 success: function (response) {
-                    $.ajax({
-                        type: "POST",
-                        url: "Genre/GetGenreList",
-                        contentType: "application/json; charset=utf-8",
-                        data: JSON.stringify(response),
-                        success: function (data) {
-                            $("#genreList").html(data);
-                        }
-                    })
+                    $("#genreList").html(response);
                 }
             })
         }
@@ -118,8 +109,7 @@
 
             $.ajax({
                 type: "POST",
-                url: apiurl + "Genre/AddGenre",
-                headers: { "ApiKey": apikey },
+                url: "../../../admin/AdminAjax/AddGenre",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(genre),
                 success: function (data) {
@@ -127,7 +117,7 @@
                         alertify.success(data.message)
                         GetGenreList()
                     } else {
-                        alertify.error(data.message)  
+                        alertify.error(data.message)
                     }
 
                 }
@@ -150,16 +140,15 @@
             console.log(genre)
             $.ajax
                 ({
-                    url: apiurl + "Genre/UpdateGenre?id=" + genre.GenreId+"&name="+genre.Name,
-                    headers: { "ApiKey": apikey },
-                    type: "GET",                   
+                    url: "../../../admin/AdminAjax/UpdateGenre?id=" + genre.GenreId + "&name=" + genre.Name,
+                    type: "GET",
                     success: function (response) {
                         if (response.check == true) {
                             alertify.success(response.message)
                             GetGenreList()
                         }
                         else {
-                            alertify.error(response.message)                           
+                            alertify.error(response.message)
                         }
                     }
                 })
@@ -170,25 +159,16 @@
             if (cvp) {
                 $.ajax({
                     type: "GET",
-                    url: apiurl + "Genre/DeleteGenreById/" + genid,
-                    headers: { "ApiKey": apikey },
+                    url: "../../../admin/AdminAjax/DeleteGenreById?id=" + genid,
                     success: function (data) {
                         if (cvp) {
-                            console.log(data)
                             alert(data.message)
                             location.reload();
-
                         }
-
                     }
-
-
                 });
             }
         }
 
     </script>
-
 }
-
-

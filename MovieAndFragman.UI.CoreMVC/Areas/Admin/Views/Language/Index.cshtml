@@ -89,128 +89,109 @@
 
         </header>
         <table class="table table-striped table-advance table-hover" id="languageList">
-          
         </table>
     </section>
 
 </div>
 
-@section scripts{ 
+@section scripts{
 
-<script>
-    $(document).ready(function () {
-        GetLanguageList()
-    })
-
-    function GetLanguageList() {
-        $.ajax({
-            type: "GET",
-            url: apiurl + "Languege/GetAllLanguage",
-            headers: { "ApiKey": apikey },
-            success: function (response) {
-                $.ajax({
-                    type: "POST",
-                    url: "Language/GetLanguageList",
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(response),
-                    success: function (data) {
-                        $("#languageList").html(data);
-                    }
-                })
-            }
-        })
-    }
-
-
-    function Add() {
-       
-        var language = {
-            LanguageName: $("#languageName").val(),
-            Description: $("#description").val(),
-            IsActive: true,
-            LanguageID: 0
-        };
-
-        $.ajax({
-            type: "POST",
-            url: apiurl + "Languege/AddLanguage",
-            headers: { "ApiKey": apikey },
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(language),
-            success: function (data) {
-                if (data.check == true) {
-                    alertify.success(data.message)
-                    GetLanguageList()
-                } else {
-                    alertify.error(data.message)
-                }
-
-            }
+    <script>
+        $(document).ready(function () {
+            GetLanguageList()
         })
 
-    }
-
-
-    function LanguageDelete(lanid) {
-        var cvp = confirm("Dili silmek istediğinize emin misiniz ?")
-        var cvp2=confirm()
-        if (cvp) {
+        function GetLanguageList() {
             $.ajax({
                 type: "GET",
-                url: apiurl + "Languege/DeleteLanguageById?id=" + lanid,
-                headers: { "ApiKey": apikey },
-                success: function (data) {
-                    if (cvp) {
-                        
-                        alertify.success(data.message)
-                        GetLanguageList()
-
-                    }
-
-                }
-
-
-            });
-        }
-    }
-
-    function UpdateLanguage(lanId,lanName,landes) {
-        var name = lanName;
-        var id = lanId;
-        var des = landes;
-        $("#updateid").val(id);
-        $("#updateLanName").val(name);       
-        $("#updateLanDes").val(des);
-
-       
-    }
-
-    function UpdateLanguagePost() {
-        var language = new Object();
-        language.LanguageID = $("#updateid").val();
-        language.LanguageName = $("#updateLanName").val();
-        language.Description = $("#updateLanDes").val();
-        language.IsActive = true;
-        console.log(language)
-        $.ajax
-            ({
-                url: apiurl + "Languege/UpdateLanguage?id=" + language.LanguageID + "&name=" + language.LanguageName + "&description=" + language.Description,
-                headers: { "ApiKey": apikey },
-                type: "GET",
+                url: "../../../admin/AdminAjax/GetAllLanguage",
                 success: function (response) {
-                    if (response.check == true) {
-                        alertify.success(response.message)
-                        GetLanguageList()
-                    }
-                    else {
-                        alertify.error(response.message)
-                    }
+                    $("#languageList").html(response);
                 }
             })
-    }
+        }
 
 
-</script>
+        function Add() {
+
+            var language = {
+                LanguageName: $("#languageName").val(),
+                Description: $("#description").val(),
+                IsActive: true,
+                LanguageID: 0
+            };
+
+            $.ajax({
+                type: "get",
+                url: "../../../admin/AdminAjax/AddLanguage?id=" + language.LanguageID + "&name=" + language.LanguageName + "&description=" + language.Description,                
+                success: function (data) {
+                    if (data.check == true) {
+                        alertify.success(data.message)
+                        GetLanguageList()
+                    } else {
+                        alertify.error(data.message)
+                    }
+
+                }
+            })
+
+        }
+
+
+        function LanguageDelete(lanid) {
+            var cvp = confirm("Dili silmek istediğinize emin misiniz ?")
+            if (cvp) {
+                $.ajax({
+                    type: "GET",
+                    url: "../../../admin/AdminAjax/DeleteLanguageById?id=" + lanid,
+                    success: function (data) {
+                        if (cvp) {
+
+                            alertify.success(data.message)
+                            GetLanguageList()
+
+                        }
+                    }
+                });
+            }
+        }
+
+        function UpdateLanguage(lanId, lanName, landes) {
+            var name = lanName;
+            var id = lanId;
+            var des = landes;
+            $("#updateid").val(id);
+            $("#updateLanName").val(name);
+            $("#updateLanDes").val(des);
+
+
+        }
+
+        function UpdateLanguagePost() {
+            var language = new Object();
+            language.LanguageID = $("#updateid").val();
+            language.LanguageName = $("#updateLanName").val();
+            language.Description = $("#updateLanDes").val();
+            language.IsActive = true;
+            console.log(language)
+            $.ajax
+                ({
+                    url: "../../../admin/AdminAjax/UpdateLanguage?id=" + language.LanguageID + "&name=" + language.LanguageName + "&description=" + language.Description,
+                    type: "GET",
+                    success: function (response) {
+                        if (response.check == true) {
+                            alertify.success(response.message)
+                            GetLanguageList()
+                        }
+                        else {
+                            alertify.error(response.message)
+                        }
+                    }
+                })
+        }
+
+
+    </script>
 
 
 }

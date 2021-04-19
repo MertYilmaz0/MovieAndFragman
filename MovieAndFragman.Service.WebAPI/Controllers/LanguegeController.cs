@@ -77,16 +77,16 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult AddLanguage([FromBody] LanguageDto languageDto)
+        [HttpGet]
+        public IActionResult AddLanguage(int id,string name,string description)
         {
             try
             {
-                NameControl(languageDto.LanguageName);
+                NameControl(name);
                 Language language = new Language();
-                language.ID = languageDto.LanguageID;
-                language.LanguageName = languageDto.LanguageName;
-                language.Description = languageDto.Description;
+                language.ID = id;
+                language.LanguageName = name;
+                language.Description = description;
                 language.IsActive = true;
                 languageBLL.Insert(language);
                 return Ok(new { message = "Dil ekleme işlemi gerçekleşti", check = true });

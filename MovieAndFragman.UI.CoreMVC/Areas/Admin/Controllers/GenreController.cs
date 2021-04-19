@@ -17,24 +17,5 @@ namespace MovieAndFragman.UI.CoreMVC.Areas.Admin.Controllers
         {
             return View();
         }
-        public IActionResult AddGenre()
-        {
-            return View();
-        }
-
-        public IActionResult UpdateGenre()
-        {
-            return View();
-        }
-
-       [HttpPost]
-       public IActionResult GetGenreList([FromBody] List<GenreVM> genres)
-        {
-            if (genres==null)
-            {
-                ViewBag.Message = "Türler Listelenemiyor";
-            }
-            return PartialView("_genreList", genres);
-        }
     }
 }

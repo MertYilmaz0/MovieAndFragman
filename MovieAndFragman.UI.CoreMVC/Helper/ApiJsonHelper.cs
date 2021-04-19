@@ -23,6 +23,21 @@ namespace MovieAndFragman.UI.CoreMVC.Helper
         {
             string jsonAlbum = HttpService<EntityVM>.Post(method, entityVM).Result;
             return JsonConvert.DeserializeObject<PostVM>(jsonAlbum);
-        }        
+        }
+        public static PostVM GetApi(string method)
+        {
+            string jsonAlbum = HttpService<EntityVM>.Get(method).Result;
+            return JsonConvert.DeserializeObject<PostVM>(jsonAlbum);
+        }
+        public static void PostApi(string method, EntityVM entityVM)
+        {
+            string jsonAlbum = HttpService<EntityVM>.Post(method, entityVM).Result;
+            //return JsonConvert.DeserializeObject<PostVM>(jsonAlbum);
+        }
+        public static void GetApiVoid(string method)
+        {
+            string jsonAlbum = HttpService<EntityVM>.Get(method).Result;
+            //return JsonConvert.DeserializeObject<PostVM>(jsonAlbum);
+        }
     }
 }

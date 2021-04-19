@@ -148,8 +148,7 @@
             if (ck) {
             $.ajax({
                 type: "POST",
-                url: apiurl + "user/RegisterUser",
-                headers: { "ApiKey": apikey },
+                url: "../../../ajax/RegisterUser",                
                 data: JSON.stringify(user),
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {

@@ -1,84 +1,43 @@
-﻿const apiurl = "http://localhost:52154/api/"
-const apikey = "YWhtZXRtZXJ0YmlsYWw="
-
-function GetLastThirdMovie() {
+﻿function GetLastThirdMovie() {
     $.ajax({
-        type: "Get",
+        type: "get",
         async: false,
-        url: apiurl + "fragman/GetLastThirdFragman",
-        headers: { "ApiKey": apikey },
+        url: "../../../ajax/GetThird",
         success: function (response) {
-            $.ajax({
-                type: "Post",
-                async: false,
-                url: "Movie/LastThird",
-                data: JSON.stringify(response),
-                contentType: "application/json; charset=utf-8",
-                success: function (output) {
-                    $("#thirdMovie").html(output)
-                }
-            })
+            $("#thirdMovie").html(response)
         }
     })
 }
 
-function GetFragmanListAll(method) {
+function GetFragmanListAll() {
     $.ajax({
-        type: "Get",
-        url: apiurl + "Fragman/GetAllFragman",
-        headers: { "ApiKey": apikey },
+        type: "get",
+        url: "../../../ajax/GetAllFragman",
         success: function (response) {
-            $.ajax({
-                type: "Post",
-                url: method,
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(response),
-                success: function (data) {
-                    $("#singleFragman").html(data);
-                }
-            })
+            $("#singleFragman").html(response)
         }
-
     })
 }
 
 function GetMovieByCId(id) {
     $.ajax({
-        type: "GET",
-        url: apiurl + "fragman/GetByGenreId?id=" + id,
-        headers: { "ApiKey": apikey },
+        type: "get",
+        url: "../../../ajax/GetFragmansByCId?id=" + id,
         success: function (response) {
-            $.ajax({
-                type: "Post",
-                url: "GetMovieList",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(response),
-                success: function (data) {
-                    $("#singleFragman").html(data);
-                }
-            })
+            $("#singleFragman").html(response);
         }
     })
 }
 
 function GetFragmanByName(name) {
     if (name == "") {
-        GetFragmanListAll("GetMovieList")
+        GetFragmanListAll()
     } else {
         $.ajax({
-            type: "GET",
-            url: apiurl + "fragman/GetByName?name=" + name,
-            headers: { "ApiKey": apikey },
+            type: "get",
+            url: "../../../ajax/GetFragmansByName?name=" + name,
             success: function (response) {
-                $.ajax({
-                    type: "Post",
-                    url: "GetMovieList",
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(response),
-                    success: function (data) {
-                        $("#singleFragman").html(data);
-                    }
-                })
+                $("#singleFragman").html(response);
             }
         })
     }
@@ -97,8 +56,7 @@ function GetRating(id) {
 function AddRating(frag, user) {
     $.ajax({
         type: "Get",
-        url: apiurl + "fragman/AddRating?fid=" + frag + "&uid=" + user,
-        headers: { "ApiKey": apikey },
+        url: "../../../ajax/AddRating?fid=" + frag + "&uid=" + user,        
         success: function (response) {
             if (!response.check) {
                 alertify.error(response.message)
