@@ -1,0 +1,132 @@
+[
+
+  {
+
+    "outputFileName": "wwwroot/css/css.min.css",
+
+    "inputFiles": [
+      "wwwroot/css/lineicons.css",
+      "wwwroot/css/fancybox.min.css",
+      "wwwroot/css/swiper.min.css",
+      "wwwroot/css/bootstrap.min.css",
+      "wwwroot/css/ourStyle.css",
+      "wwwroot/css/alertify.min.css"
+
+    ]
+
+  },
+
+  {
+
+    "outputFileName": "wwwroot/css/admincss1.min.css",
+
+    "inputFiles": [
+      "wwwroot/flatAdmin/css/bootstrap.min.css",
+      "wwwroot/flatAdmin/css/bootstrap-reset.css",
+      "wwwroot/flatAdmin/assets/font-awesome/css/font-awesome.css",
+      "wwwroot/flatAdmin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css",
+      "wwwroot/flatAdmin/css/owl.carousel.css",
+      "wwwroot/flatAdmin/css/style-responsive.css",
+      "wwwroot/css/alertify.min.css"
+
+    ]
+
+  },
+  {
+
+    "outputFileName": "wwwroot/css/admincss2.min.css",
+
+    "inputFiles": [      
+      "wwwroot/flatAdmin/css/style-responsive.css",
+      "wwwroot/css/alertify.min.css"
+    ]
+
+  },
+
+  {
+
+    "outputFileName": "wwwroot/js/js.min.js",
+
+    "inputFiles": [
+
+      "wwwroot/js/jquery.min.js",
+      "wwwroot/js/bootstrap.min.js",
+      "wwwroot/js/swiper.min.js",
+      "wwwroot/js/fancybox.min.js",
+      "wwwroot/js/scripts.js",
+      "wwwroot/js/AjaxScript.js",
+      "wwwroot/js/ourScript.js",
+      "wwwroot/js/alertify.min.js"
+
+    ],
+
+    "minify": {
+
+      "enabled": true,
+
+      "renameLocals": true
+
+    },
+
+    "sourceMap": false
+
+  },
+  {
+
+    "outputFileName": "wwwroot/js/adminjs1.min.js",
+
+    "inputFiles": [
+
+      "wwwroot/flatAdmin/js/jquery.js",
+      "wwwroot/flatAdmin/js/jquery-1.8.3.min.js",
+      "wwwroot/flatAdmin/js/bootstrap.min.js",
+      "wwwroot/flatAdmin/js/jquery.scrollTo.min.js",
+      "wwwroot/flatAdmin/js/jquery.nicescroll.js",
+      "wwwroot/flatAdmin/js/jquery.sparkline.js",
+      "wwwroot/flatAdmin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js",
+      "wwwroot/flatAdmin/js/owl.carousel.js",
+      "wwwroot/flatAdmin/js/jquery.customSelect.min.js",
+      "wwwroot/flatAdmin/js/respond.min.js",
+      "wwwroot/flatAdmin/js/jquery.dcjqaccordion.2.7.js",
+      "wwwroot/flatAdmin/js/common-scripts.js"
+
+    ],
+
+    "minify": {
+
+      "enabled": true,
+
+      "renameLocals": true
+
+    },
+
+    "sourceMap": false
+
+  },
+  {
+
+    "outputFileName": "wwwroot/js/adminjs2.min.js",
+
+    "inputFiles": [
+
+      "wwwroot/flatAdmin/js/sparkline-chart.js",
+      "wwwroot/flatAdmin/js/easy-pie-chart.js",
+      "wwwroot/flatAdmin/js/count.js",
+      "wwwroot/js/AjaxScript.js",
+      "wwwroot/js/alertify.min.js"
+
+    ],
+
+    "minify": {
+
+      "enabled": true,
+
+      "renameLocals": true
+
+    },
+
+    "sourceMap": false
+
+  }
+
+]

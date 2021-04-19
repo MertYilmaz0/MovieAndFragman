@@ -1,6 +1,5 @@
-﻿var apiurl = "http://localhost:52154/api/"
-var apikey = "YWhtZXRtZXJ0YmlsYWw="
-//Todo:Apikey'i appset den çek
+﻿const apiurl = "http://localhost:52154/api/"
+const apikey = "YWhtZXRtZXJ0YmlsYWw="
 
 function GetLastThirdMovie() {
     $.ajax({
@@ -130,7 +129,7 @@ function DeleteFromList(id) {
         url: "../../../mylist/Delete?id=" + id,
         success: function (response) {
             GetBtnMyList("../../../mylist/getbtn")
-            alertify.success("Film izlenecekler listesinden kaldırıldı.")           
+            alertify.success("Film izlenecekler listesinden kaldırıldı.")
         }
     })
 }
