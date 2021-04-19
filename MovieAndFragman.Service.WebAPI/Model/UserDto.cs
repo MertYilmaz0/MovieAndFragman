@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieAndFragman.UI.CoreMVC.Areas.Admin.Models
+namespace MovieAndFragman.Service.WebAPI.Model
 {
-    public class UserVM
+    public class UserDto
     {
         public int UserId { get; set; }
         public string UserName { get; set; }

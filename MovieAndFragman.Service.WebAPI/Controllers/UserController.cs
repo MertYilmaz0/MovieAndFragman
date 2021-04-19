@@ -76,5 +76,25 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                 return Ok(userDto);
             }
         }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<User> users = userBLL.GetAll().ToList();
+            List<UserDto> dtos = new List<UserDto>();
+            foreach (User item in users)
+            {
+                dtos.Add(new UserDto()
+                {
+                    BrithDate = item.BrithDate,
+                    Email = item.Email,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    PhoneNumber = item.PhoneNumber,
+                    UserId = item.ID,
+                    UserName = item.UserName
+                });
+            }
+            return Ok(dtos);
+        }
     }
 }
