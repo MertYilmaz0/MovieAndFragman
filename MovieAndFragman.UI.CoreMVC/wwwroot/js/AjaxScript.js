@@ -19,29 +19,29 @@ function GetFragmanListAll() {
     })
 }
 
-function GetMovieByCId(id) {
-    $.ajax({
-        type: "get",
-        url: "../../../ajax/GetFragmansByCId?id=" + id,
-        success: function (response) {
-            $("#singleFragman").html(response);
-        }
-    })
-}
+//function GetMovieByCId(id) {
+//    $.ajax({
+//        type: "get",
+//        url: "../../../ajax/GetFragmansByCId?id=" + id,
+//        success: function (response) {
+//            $("#singleFragman").html(response);
+//        }
+//    })
+//}
 
-function GetFragmanByName(name) {
-    if (name == "") {
-        GetFragmanListAll()
-    } else {
-        $.ajax({
-            type: "get",
-            url: "../../../ajax/GetFragmansByName?name=" + name,
-            success: function (response) {
-                $("#singleFragman").html(response);
-            }
-        })
-    }
-}
+//function GetFragmanByName(name) {
+//    if (name == "") {
+//        GetFragmanListAll()
+//    } else {
+//        $.ajax({
+//            type: "get",
+//            url: "../../../ajax/GetFragmansByName?name=" + name,
+//            success: function (response) {
+//                $("#singleFragman").html(response);
+//            }
+//        })
+//    }
+//}
 
 function GetRating(id) {
     $.ajax({

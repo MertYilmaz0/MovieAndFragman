@@ -9,7 +9,7 @@
         });
     });
 
-})(jQuery); 
+})(jQuery);
 
 function SwiperScript() {
 
@@ -63,3 +63,16 @@ function SwiperScript() {
 
     var swiper = new Swiper(".main-slider", swiperOptions);
 } (jQuery)
+
+function GetCategory(id) {
+    if (id == -1) {
+        $(".content-section").each(function () {
+            $(this).show()
+        })
+    } else {
+        $(".content-section").each(function () {
+            $(this).hide()
+        })
+        $("#" + id).show()
+    }
+}

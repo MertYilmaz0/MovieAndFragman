@@ -2,12 +2,12 @@
 
 <ul class="categories">
     <li>
-        <a style="cursor:pointer;" onclick="GetFragmanListAll()">All</a>
+        <a style="cursor:pointer;" onclick="GetCategory(-1)">All</a>
     </li>
     @foreach (GenreVM item in Model)
     {
         <li>
-            <a style="cursor:pointer;" onclick="GetMovieByCId(@item.GenreId)">@item.Name</a>
+            <a style="cursor:pointer;" onclick="GetCategory(@item.GenreId)">@item.Name</a>
         </li>
     }
 </ul>

@@ -22,26 +22,26 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("Fragman/GetAllFragman");
             return PartialView("_singleFragman", vms);
         }
-        [HttpGet]
-        public IActionResult GetFragmansByCId(int id)
-        {
-            List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetByGenreId?id=" + id);
-            if (vms.Count == 0)
-            {
-                return PartialView("_nullMovie");
-            }
-            return PartialView("_singleMovie", vms);
-        }
-        [HttpGet]
-        public IActionResult GetFragmansByName(string name)
-        {
-            List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetByName?name=" + name);
-            if (vms.Count == 0)
-            {
-                return PartialView("_nullMovie");
-            }
-            return PartialView("_singleMovie", vms);
-        }
+        //[HttpGet]
+        //public IActionResult GetFragmansByCId(int id)
+        //{
+        //    List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetByGenreId?id=" + id);
+        //    if (vms.Count == 0)
+        //    {
+        //        return PartialView("_nullMovie");
+        //    }
+        //    return PartialView("_singleMovie", vms);
+        //}
+        //[HttpGet]
+        //public IActionResult GetFragmansByName(string name)
+        //{
+        //    List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetByName?name=" + name);
+        //    if (vms.Count == 0)
+        //    {
+        //        return PartialView("_nullMovie");
+        //    }
+        //    return PartialView("_singleMovie", vms);
+        //}
         [HttpGet]
         public IActionResult AddRating(int fid, int uid)
         {
