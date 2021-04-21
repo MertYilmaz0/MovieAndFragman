@@ -4,25 +4,25 @@
 }
 @model FragmanVM
 
-<main>
-    <header class="page-header single" data-background="@Model.Poster">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="video-player">
-                        <a href="javascript:history.go(-1)" class="back-btn"><i class="lni lni-chevron-left"></i> BACK</a>
-                        <video src="~/videos/Naps-Logo-Animation-1920x1080.mp4" poster="@Model.Poster" controls playsinline id="fragmanVideo"></video>
-                    </div>
-                    <!-- end video-player -->
+<header class="page-header single" data-background="@Model.Poster">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="video-player">
+                    <a href="javascript:history.go(-1)" class="back-btn"><i class="lni lni-chevron-left"></i> BACK</a>
+                    <video src="~/videos/Naps-Logo-Animation-1920x1080.mp4" poster="@Model.Poster" controls playsinline id="fragmanVideo"></video>
                 </div>
-                <!-- end col-12 -->
+                <!-- end video-player -->
             </div>
             <!-- end col-12 -->
-            <!-- end row -->
         </div>
-        <!-- end container -->
-    </header>
-    <!-- end header -->
+        <!-- end col-12 -->
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</header>
+<!-- end header -->
+<main>
     <section class="content-section" data-background="#ffffff">
         <div class="container">
             <div class="row">
