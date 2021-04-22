@@ -13,14 +13,28 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [HttpGet]
         public IActionResult GetThird()
         {
-            List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetLastThirdFragman");
-            return PartialView("_singleSwiper", vms);
+            try
+            {
+                List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetLastThirdFragman");
+                return PartialView("_singleSwiper", vms);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
         }
         [HttpGet]
         public IActionResult GetAllFragman()
         {
-            List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("Fragman/GetAllFragman");
-            return PartialView("_singleFragman", vms);
+            try
+            {
+                List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("Fragman/GetAllFragman");
+                return PartialView("_singleFragman", vms);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
         }
         //[HttpGet]
         //public IActionResult GetFragmansByCId(int id)
@@ -45,20 +59,41 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [HttpGet]
         public IActionResult AddRating(int fid, int uid)
         {
-            PostVM vm = ApiJsonHelper<PostVM>.GetApi("fragman/AddRating?fid=" + fid + "&uid=" + uid);
-            return Ok(vm);
+            try
+            {
+                PostVM vm = ApiJsonHelper<PostVM>.GetApi("fragman/AddRating?fid=" + fid + "&uid=" + uid);
+                return Ok(vm);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
         }
         [HttpPost]
         public IActionResult RegisterUser([FromBody] RegisterUserVM registerUser)
         {
-            PostVM vm = ApiJsonHelper<RegisterUserVM>.PostApiEntity("user/RegisterUser",registerUser);
-            return Ok(vm);
+            try
+            {
+                PostVM vm = ApiJsonHelper<RegisterUserVM>.PostApiEntity("user/RegisterUser", registerUser);
+                return Ok(vm);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
         }
         [HttpGet]
-        public IActionResult Like(int fid,int uid,string token)
+        public IActionResult Like(int fid, int uid, string token)
         {
-            PostVM vm = ApiJsonHelper<PostVM>.GetApi("fragman/UpdateRating?fid=" + fid + "&uid=" + uid + "&token=" + token);
-            return Ok(vm);
+            try
+            {
+                PostVM vm = ApiJsonHelper<PostVM>.GetApi("fragman/UpdateRating?fid=" + fid + "&uid=" + uid + "&token=" + token);
+                return Ok(vm);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
         }
     }
 }

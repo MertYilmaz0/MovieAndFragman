@@ -9,13 +9,21 @@ using System.Threading.Tasks;
 
 namespace MovieAndFragman.UI.CoreMVC.ViewComponents
 {
-    public class SingleGenreViewComponent: ViewComponent
+    public class SingleGenreViewComponent : ViewComponent
     {
         public ViewViewComponentResult Invoke(int FragId)
         {
-            List<GenreVM> genres = ApiJsonHelper<GenreVM>.GetApiEntityList("genre/GetGenreListByFragId?id=" + FragId);
-            GenreVM genre = genres.First();
-            return View(genre);
+            try
+            {
+                List<GenreVM> genres = ApiJsonHelper<GenreVM>.GetApiEntityList("genre/GetGenreListByFragId?id=" + FragId);
+                GenreVM genre = genres.First();
+                return View(genre);
+            }
+            catch (Exception)
+            {
+                GenreVM genre = new GenreVM();
+                return View(genre);
+            }
         }
     }
 }

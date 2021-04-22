@@ -24,23 +24,30 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetLastThirdFragman()
         {
-            List<Fragman> fragmans = fragmanBLL.GetLastThirdFragman().ToList();
-
-            List<FragmanDto> dtos = new List<FragmanDto>();
-
-            foreach (Fragman item in fragmans)
+            try
             {
-                FragmanDto added = new FragmanDto()
-                {
-                    FragID = item.ID,
-                    Description = item.Description,
-                    Name = item.Name,
-                    Poster = item.Poster
-                };
+                List<Fragman> fragmans = fragmanBLL.GetLastThirdFragman().ToList();
 
-                dtos.Add(added);
+                List<FragmanDto> dtos = new List<FragmanDto>();
+
+                foreach (Fragman item in fragmans)
+                {
+                    FragmanDto added = new FragmanDto()
+                    {
+                        FragID = item.ID,
+                        Description = item.Description,
+                        Name = item.Name,
+                        Poster = item.Poster
+                    };
+
+                    dtos.Add(added);
+                }
+                return Ok(dtos);
             }
-            return Ok(dtos);
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         List<FragmanDto> FragmanDTOList(ICollection<Fragman> listFragman)
@@ -62,67 +69,102 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
 
         public IActionResult GetAllFragman()
         {
-            List<FragmanDto> fragmans = FragmanDTOList(fragmanBLL.GetAll());
-            return Ok(fragmans);
+            try
+            {
+                List<FragmanDto> fragmans = FragmanDTOList(fragmanBLL.GetAll());
+                return Ok(fragmans);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
         public IActionResult Get(int id)
         {
-            Fragman fragman = fragmanBLL.Get(id);
-            if (fragman != null)
+            try
             {
-                FragmanDto dto = new FragmanDto()
+                Fragman fragman = fragmanBLL.Get(id);
+                if (fragman != null)
                 {
-                    FragID = fragman.ID,
-                    Description = fragman.Description,
-                    Name = fragman.Name,
-                    Poster = fragman.Poster
-                };
-                return Ok(dto);
+                    FragmanDto dto = new FragmanDto()
+                    {
+                        FragID = fragman.ID,
+                        Description = fragman.Description,
+                        Name = fragman.Name,
+                        Poster = fragman.Poster
+                    };
+                    return Ok(dto);
+                }
+                return Ok();
             }
-            return Ok();
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         public IActionResult GetByGenreId(int id)
         {
-            List<Fragman> fragmans = fragmanBLL.GetAll().ToList();
-            List<Fragman> sended = new List<Fragman>();
-            List<FragmanDto> dtos = new List<FragmanDto>();
-            foreach (Fragman frag in fragmans)
+            try
             {
-                bool check = false;
-                foreach (GenreFragman genre in frag.GenreFragmens)
+                List<Fragman> fragmans = fragmanBLL.GetAll().ToList();
+                List<Fragman> sended = new List<Fragman>();
+                List<FragmanDto> dtos = new List<FragmanDto>();
+                foreach (Fragman frag in fragmans)
                 {
-                    if (genre.GenreID == id)
+                    bool check = false;
+                    foreach (GenreFragman genre in frag.GenreFragmens)
                     {
-                        check = true;
+                        if (genre.GenreID == id)
+                        {
+                            check = true;
+                        }
+                    }
+                    if (check)
+                    {
+                        sended.Add(frag);
                     }
                 }
-                if (check)
-                {
-                    sended.Add(frag);
-                }
+                return Ok(FragmanDTOList(sended));
             }
-            return Ok(FragmanDTOList(sended));
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
         [HttpGet]
         public IActionResult GetByName(string name)
         {
-            List<Fragman> fragmans = fragmanBLL.GetByName(name).ToList();
-            return Ok(FragmanDTOList(fragmans));
+            try
+            {
+                List<Fragman> fragmans = fragmanBLL.GetByName(name).ToList();
+                return Ok(FragmanDTOList(fragmans));
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
         [HttpGet]
         public IActionResult GetFragRating(int id)
         {
-            Fragman fragman = fragmanBLL.Get(id);
-            RatingDto dto = new RatingDto()
+            try
             {
-                CounterDislike = fragman.CounterDisLike,
-                CounterLike = fragman.CounterLike,
-                Ratio = fragman.Ratio
-            };
-            
-            return Ok(dto);
+                Fragman fragman = fragmanBLL.Get(id);
+                RatingDto dto = new RatingDto()
+                {
+                    CounterDislike = fragman.CounterDisLike,
+                    CounterLike = fragman.CounterLike,
+                    Ratio = fragman.Ratio
+                };
+
+                return Ok(dto);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
         [HttpGet]
         public IActionResult UpdateRating(int fid,int uid,char token)
@@ -153,21 +195,28 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetAllListForAdmin()
         {
-            List<Fragman> fragmans = fragmanBLL.GetAll().ToList();
-            List<FragmanForAdminDto> dtos = new List<FragmanForAdminDto>();
-            foreach (Fragman item in fragmans)
+            try
             {
-                dtos.Add(new FragmanForAdminDto()
+                List<Fragman> fragmans = fragmanBLL.GetAll().ToList();
+                List<FragmanForAdminDto> dtos = new List<FragmanForAdminDto>();
+                foreach (Fragman item in fragmans)
                 {
-                    CounterDisLike = item.CounterDisLike,
-                    CounterLike = item.CounterLike,
-                    Description = item.Description,
-                    Name = item.Name,
-                    Ratio = item.Ratio,
-                    CounterView=item.CounterView
-                });
+                    dtos.Add(new FragmanForAdminDto()
+                    {
+                        CounterDisLike = item.CounterDisLike,
+                        CounterLike = item.CounterLike,
+                        Description = item.Description,
+                        Name = item.Name,
+                        Ratio = item.Ratio,
+                        CounterView = item.CounterView
+                    });
+                }
+                return Ok(dtos);
             }
-            return Ok(dtos);
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

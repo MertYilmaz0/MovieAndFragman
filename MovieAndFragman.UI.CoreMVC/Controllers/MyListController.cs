@@ -13,30 +13,59 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
     {
         public IActionResult AddMyList(int id)
         {
-            FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id=" + id);
-            bool ck=false;
-            if (fragmanVM != null)
+            try
             {
-                MyList myCart = HttpContext.Session.Get<MyList>("myList");
-                ListItem item = new ListItem() { Id = id, Name = fragmanVM.Name };
-                ck=myCart.AddCart(item);
+                FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id=" + id);
+                bool ck = false;
+                if (fragmanVM != null)
+                {
+                    MyList myCart = HttpContext.Session.Get<MyList>("myList");
+                    ListItem item = new ListItem() { Id = id, Name = fragmanVM.Name };
+                    ck = myCart.AddCart(item);
+                }
+                return Ok(new { check = ck });
             }
-            return Ok(new { check = ck });
+            catch (Exception)
+            {
+                return Ok(new { check = false });
+            }
         }
         public IActionResult Delete(int id)
         {
-            MyList deleted = HttpContext.Session.Get<MyList>("myList");
-            deleted.DeleteCart(id);
-            HttpContext.Session.Set<MyList>("myList", deleted);
-            return Ok();
+            try
+            {
+                MyList deleted = HttpContext.Session.Get<MyList>("myList");
+                deleted.DeleteCart(id);
+                HttpContext.Session.Set<MyList>("myList", deleted);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Ok();
+            }
         }
 
         [HttpGet]
         public IActionResult GetBtn()
         {
-            MyList myCart = HttpContext.Session.Get<MyList>("myList");
-            List<ListItem> listIts = myCart.GetAllCartItem;
-            return PartialView("_btnMylist", listIts);
+            try
+            {
+                MyList myCart = HttpContext.Session.Get<MyList>("myList");
+                List<ListItem> listIts = myCart.GetAllCartItem;                
+                return PartialView("_btnMylist", listIts);
+            }
+            catch (Exception)
+            {
+                List<ListItem> error = new List<ListItem>()
+                {
+                    new ListItem()
+                    {
+                        Id=-1,
+                        Name="Şuanda oynatma listesi görüntülenemiyor."
+                    }
+                };
+                return PartialView("_btnMylist", error);
+            }
         }
     }
 }

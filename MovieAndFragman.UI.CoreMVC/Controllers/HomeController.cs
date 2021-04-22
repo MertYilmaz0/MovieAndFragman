@@ -14,14 +14,9 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult GetFragman([FromBody] List<FragmanVM> fragmanVMs)
+        public IActionResult NotFoundError()
         {
-            if (fragmanVMs == null)
-            {
-                ViewBag.Message = "Listelenecek Film Bulunamadı";
-            }
-            return PartialView("_singleFragman", fragmanVMs);
+            return View();
         }
     }
 }

@@ -9,12 +9,20 @@ using System.Threading.Tasks;
 
 namespace MovieAndFragman.UI.CoreMVC.ViewComponents
 {
-    public class UrlViewComponent:ViewComponent
+    public class UrlViewComponent : ViewComponent
     {
         public ViewViewComponentResult Invoke(int id)
         {
-            List<UrlVM> urls= ApiJsonHelper<UrlVM>.GetApiEntityList("url/GetUrlByFragId?id=" + id);
-            return View(urls);
+            try
+            {
+                List<UrlVM> urls = ApiJsonHelper<UrlVM>.GetApiEntityList("url/GetUrlByFragId?id=" + id);
+                return View(urls);
+            }
+            catch (Exception)
+            {
+                List<UrlVM> urls = new List<UrlVM>();
+                return View(urls);
+            }
         }
     }
 }

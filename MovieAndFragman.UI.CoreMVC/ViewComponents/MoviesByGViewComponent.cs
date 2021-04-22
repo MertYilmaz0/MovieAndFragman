@@ -13,8 +13,16 @@ namespace MovieAndFragman.UI.CoreMVC.ViewComponents
     {
         public ViewViewComponentResult Invoke(int id)
         {
-            List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetByGenreId?id=" + id);                        
-            return View(vms);
+            try
+            {
+                List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetByGenreId?id=" + id);
+                return View(vms);
+            }
+            catch (Exception)
+            {
+                List<FragmanVM> vms = new List<FragmanVM>();
+                return View(vms);
+            }
         }
     }
 }

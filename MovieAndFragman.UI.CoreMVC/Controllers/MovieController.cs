@@ -19,24 +19,35 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         [Authorize(Roles = "User,Admin")]
         public IActionResult MovieSinglePage(int id)
         {
-            FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id=" + id);
-            if (fragmanVM != null)
+            try
             {
-                ViewBag.UId = User.FindFirstValue(ClaimTypes.UserData);
-                return View(fragmanVM);
+                FragmanVM fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntity("fragman/Get?id=" + id);
+                if (fragmanVM != null)
+                {
+                    ViewBag.UId = User.FindFirstValue(ClaimTypes.UserData);
+                    return View(fragmanVM);
+                }
+                return RedirectToAction("NotFoundError", "Home");
             }
-            ViewBag.Alert = "Böyle bir fragman bulunmamaktadır.";
-            return RedirectToAction("index", "home");
+            catch (Exception)
+            {
+                return RedirectToAction("NotFoundError", "Home");
+            }
         }
 
 
         [HttpGet]
         public IActionResult GetRating(int id)
         {
-            RatingVM ratingVM = ApiJsonHelper<RatingVM>.GetApiEntity("fragman/GetFragRating?id=" + id);
-            return PartialView("_rating", ratingVM);
+            try
+            {
+                RatingVM ratingVM = ApiJsonHelper<RatingVM>.GetApiEntity("fragman/GetFragRating?id=" + id);
+                return PartialView("_rating", ratingVM);
+            }
+            catch (Exception)
+            {
+                return PartialView("_ratingError");
+            }
         }
-
-
     }
 }

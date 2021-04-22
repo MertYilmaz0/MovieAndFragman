@@ -13,8 +13,16 @@ namespace MovieAndFragman.UI.CoreMVC.ViewComponents
     {
         public ViewViewComponentResult Invoke()
         {
-            List<FragmanVM> fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetLastThirdFragman");
-            return View(fragmanVM);
+            try
+            {
+                List<FragmanVM> fragmanVM = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetLastThirdFragman");
+                return View(fragmanVM);
+            }
+            catch (Exception)
+            {
+                List<FragmanVM> fragmanVM = new List<FragmanVM>();
+                return View(fragmanVM);
+            }
         }
     }
 }

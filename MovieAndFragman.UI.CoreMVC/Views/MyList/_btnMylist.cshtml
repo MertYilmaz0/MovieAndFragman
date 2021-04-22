@@ -14,11 +14,20 @@
             {
                 @foreach (ListItem item in Model)
                 {
-                    <li>
-                        <a asp-controller="Movie" asp-action="MovieSinglePage" asp-route-id="@item.Id">@item.Name</a>
-                        &nbsp;
-                        <a class="mouserPointer" onclick="DeleteFromList(@item.Id)">-</a>
-                    </li>
+                    if (item.Id == -1)
+                    {
+                        <li class="alert alert-danger col-lg-12" role="alert">
+                            <span>@item.Name</span>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-controller="Movie" asp-action="MovieSinglePage" asp-route-id="@item.Id">@item.Name</a>
+                            &nbsp;
+                            <a class="mouserPointer" onclick="DeleteFromList(@item.Id)">-</a>
+                        </li>
+                    }
                 }
             }
         </ul>
