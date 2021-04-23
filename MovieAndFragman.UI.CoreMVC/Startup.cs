@@ -53,16 +53,7 @@ namespace MovieAndFragman.UI.CoreMVC
             {
                
 
-                endpoints.MapControllerRoute(
-                    name: "AllMovie",
-                    pattern: "allMovie",
-                    defaults: new { controller = "Movie", action="Movies" }
-                    );
-                endpoints.MapControllerRoute(
-                    name: "MovieSingle",
-                    pattern: "movieSingle",
-                    defaults: new { controller = "Movie", action = "MovieSinglePage" }
-                    );
+              
 
                 endpoints.MapControllerRoute(
                     name: "area",
