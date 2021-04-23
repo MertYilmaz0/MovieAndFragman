@@ -11,29 +11,13 @@
                 </h2>
                 <ul class="features">
                     <li>
-                        <div class="rate">
-                            <svg class="circle-chart" viewBox="0 0 30 30" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-                                <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                            </svg>
-                            <b>5.4</b> IMDB SCORE
-                        </div>
-                        <!-- end rate -->
-                    </li>
-                    <li>
-                        <div class="year">2020</div>
-                    </li>
-                    <li>
-                        <div class="hd">4K <b>ULTRA HD</b></div>
-                    </li>
-                    <li>
-                        @await Component.InvokeAsync("Genre",item.FragID)                        
+                        @await Component.InvokeAsync("Genre", item.FragID)
                     </li>
                 </ul>
                 <p class="description">
                     @item.Description
                 </p>
-                <a asp-controller="movie" asp-action="MovieSinglePage" asp-route-id="@item.FragID" class="play-btn">WATCH TRAILER</a>
+                <a asp-controller="movie" asp-action="MovieSinglePage" asp-route-id="@item.FragID" class="play-btn">WATCH VİDEO</a>
             </div>
             <!-- end container -->
         </div>

@@ -29,23 +29,7 @@
                 <div class="col-lg-8">
                     <div class="movie-info-box">
                         <h2 class="name">@Model.Name</h2>
-                        <ul class="features">
-                            <li>
-                                <div class="rate">
-                                    <svg class="circle-chart" viewBox="0 0 30 30" width="40" height="40" fill="transparent" xmlns="http://www.w3.org/2000/svg">
-                                        <circle class="circle-chart__background" stroke="#eee" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
-                                        <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
-                                    </svg>
-                                    <b>5.4</b> IMDB SCORE
-                                </div>
-                                <!-- end rate -->
-                            </li>
-                            <li>
-                                <div class="year">2020</div>
-                            </li>
-                            <li>
-                                <div class="hd">1080 <b>HD</b></div>
-                            </li>
+                        <ul class="features">    
                             <li>
                                 @await Component.InvokeAsync("Genre", Model.FragID)
                             </li>
