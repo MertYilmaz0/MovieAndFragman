@@ -22,10 +22,11 @@
         <link href="~/css/fancybox.min.css" rel="stylesheet" />
         <link href="~/css/swiper.min.css" rel="stylesheet" />
         <link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
-        @*<link href="~/css/ourStyle.css" rel="stylesheet" />*@
-        @*<link href="~/css/alertify.min.css" rel="stylesheet" />*@
+    @*<link href="~/css/ourStyle.css" rel="stylesheet" />*@
+    @*<link href="~/css/alertify.min.css" rel="stylesheet" />*@
     <link href="~/css/css.min.css" rel="stylesheet" />
-        <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/ourStyle.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -48,11 +49,11 @@
 
             <!-- end button-account -->
             <div class="site-menu">
-                <ul>
-                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                    <li><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
-                    <li><a asp-controller="live" asp-action="index">LIVE</a></li>
-                    <li><a class="mouserPointer">TIPS</a></li>
+                <ul >
+                    <li class="btnmenu"><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li class="btnmenu"><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
+                    <li class="btnmenu"><a asp-controller="live" asp-action="index">LIVE</a></li>
+                    <li class="btnmenu"><a class="mouserPointer">TIPS</a></li>
                 </ul>
             </div>
             <!-- end site-menu -->
@@ -64,10 +65,10 @@
         <div class="logo"> <a asp-controller="Home" asp-action="Index"> <img src="~/images/logo.png" alt="Image"> </a> </div>
         <!-- end logo -->
         <div class="site-menu">
-            <ul>
-                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
-                <li><a asp-controller="live" asp-action="index">LIVE</a></li>
+            <ul >
+                <li><a class="btnmainmenu" asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li><a class="btnmainmenu" asp-controller="Movie" asp-action="Movies">MOVIES</a></li>
+                <li><a class="btnmainmenu" asp-controller="live" asp-action="index">LIVE</a></li>
                 <li><a class="mouserPointer">TIPS</a></li>
             </ul>
         </div>

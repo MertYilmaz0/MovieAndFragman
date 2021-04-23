@@ -12,3 +12,18 @@
 .mouserPointer{
     cursor:pointer;
 }
+
+.btnmainmenu {
+   
+    background-color:#e81c1c;
+	border-radius:54px;
+	border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:2px 40px;
+	text-decoration:none;
+	text-shadow:none;
+}
