@@ -51,12 +51,25 @@ namespace MovieAndFragman.UI.CoreMVC
 
             app.UseEndpoints(endpoints =>
             {
+               
+
+                endpoints.MapControllerRoute(
+                    name: "AllMovie",
+                    pattern: "allMovie",
+                    defaults: new { controller = "Movie", action="Movies" }
+                    );
+                endpoints.MapControllerRoute(
+                    name: "MovieSingle",
+                    pattern: "movieSingle",
+                    defaults: new { controller = "Movie", action = "MovieSinglePage" }
+                    );
+
                 endpoints.MapControllerRoute(
                     name: "area",
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 
                     );
-
+            
 
                 endpoints.MapControllerRoute(
                     name: "default",
