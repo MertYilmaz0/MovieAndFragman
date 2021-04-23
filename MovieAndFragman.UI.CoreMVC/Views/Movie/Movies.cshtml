@@ -10,38 +10,41 @@
 </header>
 <!-- end page-header -->
 <main>
-    <div class="row">
-        <div class="col-lg-9" id="categoryPanel">                      
-            @await Component.InvokeAsync("MovieIndex")
-        </div>
-        <!-- end content-section -->
-        <div class="col-lg-3">
-            <aside class="sidebar">
-                <!-- end widget -->
-                <div class="widget">
-                    <h6 class="widget-title">CATEGORIES</h6>
+    <div class="container" style="margin-top:10px">
+        <div class="row">
+            <div class="col-lg-10" id="categoryPanel">
+                @await Component.InvokeAsync("MovieIndex")
+            </div>
+            <!-- end content-section -->
+            <div class="col-lg-2 position-relative">
+                <aside class="sidebar position-sticky sticky-top" ">
+                    <!-- end widget -->
+                    <div class="widget">
+                        <h6 class="widget-title">CATEGORIES</h6>
 
-                    @await Component.InvokeAsync("Categories")
+                        @await Component.InvokeAsync("Categories")
 
-                </div>
-                <!-- end widget -->
-                <div class="widget">
-                    <h6 class="widget-title">ALT KATEGORİLER</h6>
-                    <ul class="categories">
-                        <li><a class="mouserPointer">Orjinal Yapımlar</a></li>
-                        <li><a class="mouserPointer">Biz'den Haberler</a></li>
-                        <li><a class="mouserPointer">Şahane Kısalar</a></li>
-                        <li><a class="mouserPointer">İlham Veren Diziler</a></li>
-                        <li><a class="mouserPointer">Bizim Belgeselciler</a></li>
-                        <li><a class="mouserPointer">Biz'den Hikayeler</a></li>
-                        <li><a class="mouserPointer">Canlı Yayınlar</a></li>
-                    </ul>
-                </div>
-            </aside>
-            <!-- end sidebar -->
+                    </div>
+                    <!-- end widget -->
+                    <div class="widget">
+                        <h6 class="widget-title">ALT KATEGORİLER</h6>
+                        <ul class="categories">
+                            <li><a class="mouserPointer">Orjinal Yapımlar</a></li>
+                            <li><a class="mouserPointer">Biz'den Haberler</a></li>
+                            <li><a class="mouserPointer">Şahane Kısalar</a></li>
+                            <li><a class="mouserPointer">İlham Veren Diziler</a></li>
+                            <li><a class="mouserPointer">Bizim Belgeselciler</a></li>
+                            <li><a class="mouserPointer">Biz'den Hikayeler</a></li>
+                            <li><a class="mouserPointer">Canlı Yayınlar</a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <!-- end sidebar -->
+            </div>
+            <!-- end col-4 -->
         </div>
-        <!-- end col-4 -->
     </div>
+    
 
 
 </main>
