@@ -27,3 +27,19 @@
 	text-decoration:none;
 	text-shadow:none;
 }
+.btnmainwatch {
+    box-shadow: 3px 4px 0px -1px #870000;
+    background: linear-gradient(to bottom, #e81c1c 5%, #e81c1c 100%);
+    background-color: #e81c1c;
+    border-radius: 10px;
+    border: 1px solid #d02718;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 13px 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
+}
