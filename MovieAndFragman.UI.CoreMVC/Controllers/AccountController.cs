@@ -80,14 +80,15 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         {
             try
             {
-                PostVM postVM = ApiJsonHelper<RegisterUserVM>.PostApiEntity("user/RegisterUser", userVM);
-                ViewBag.Message = postVM.Message;
-                ViewBag.Check = postVM.Check;
-                return View();
+                throw new Exception();
+                //PostVM postVM = ApiJsonHelper<RegisterUserVM>.PostApiEntity("user/RegisterUser", userVM);
+                //ViewBag.Message = postVM.Message;
+                //ViewBag.Check = postVM.Check;
+                //return View();
             }
             catch (Exception)
             {
-                return RedirectToAction("NotFoundError", "Home");
+                return RedirectToAction("RegisterError");
             }
         }
 
@@ -143,6 +144,10 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             {
                 return RedirectToAction("NotFoundError", "Home");
             }
+        }
+        public IActionResult RegisterError()
+        {
+            return View();
         }
     }
 }

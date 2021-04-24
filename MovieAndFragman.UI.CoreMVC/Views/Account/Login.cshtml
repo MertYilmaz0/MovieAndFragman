@@ -78,10 +78,7 @@
 </main>
 
 @section scripts{
-    <script>
-        $(document).ready(function () {
-            GetBtnMyList("../../mylist/getbtn")
-        })
+    <script>        
         var check = "@ViewBag.Check"
         var message = "@ViewBag.Message"
         if (check != "" && message != "") {

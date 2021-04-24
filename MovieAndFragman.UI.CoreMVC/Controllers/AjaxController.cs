@@ -69,19 +69,19 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
                 return PartialView("_error");
             }
         }
-        [HttpPost]
-        public IActionResult RegisterUser([FromBody] RegisterUserVM registerUser)
-        {
-            try
-            {
-                PostVM vm = ApiJsonHelper<RegisterUserVM>.PostApiEntity("user/RegisterUser", registerUser);
-                return Ok(vm);
-            }
-            catch (Exception)
-            {
-                return PartialView("_error");
-            }
-        }
+        //[HttpPost]
+        //public IActionResult RegisterUser([FromBody] RegisterUserVM registerUser)
+        //{
+        //    try
+        //    {
+        //        PostVM vm = ApiJsonHelper<RegisterUserVM>.PostApiEntity("user/RegisterUser", registerUser);
+        //        return Ok(vm);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return PartialView("_error");
+        //    }
+        //}
         [HttpGet]
         public IActionResult Like(int fid, int uid, string token)
         {
