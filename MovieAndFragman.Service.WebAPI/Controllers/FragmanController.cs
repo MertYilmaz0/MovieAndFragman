@@ -37,7 +37,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                         FragID = item.ID,
                         Description = item.Description,
                         Name = item.Name,
-                        Poster = item.Poster
+                        Poster = item.Poster,
+                        SmallPoster=item.SmallPoster,
+                        MediumPoster=item.MediumPoster
                     };
 
                     dtos.Add(added);
@@ -60,7 +62,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     FragID = item.ID,
                     Name = item.Name,
                     Description = item.Description,
-                    Poster = item.Poster
+                    Poster = item.Poster,
+                    MediumPoster=item.MediumPoster,
+                    SmallPoster=item.SmallPoster
                 });
             }
 
@@ -91,7 +95,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                         FragID = fragman.ID,
                         Description = fragman.Description,
                         Name = fragman.Name,
-                        Poster = fragman.Poster
+                        Poster = fragman.Poster,
+                        SmallPoster=fragman.SmallPoster,
+                        MediumPoster=fragman.MediumPoster
                     };
                     dto.FirstUrl = fragman.Urls.First().UrlPath;
                     return Ok(dto);

@@ -24,5 +24,7 @@ namespace MovieAndFragman.Model.Entities
         public ICollection<FragComment> FragComments { get; set; }
         public ICollection<Rating> Ratings { get; set; }//izlenme
         public ICollection<Url> Urls { get; set; }//yol
+        public string SmallPoster { get; set; }
+        public string MediumPoster { get; set; }
     }
 }

@@ -12,5 +12,7 @@ namespace MovieAndFragman.UI.CoreMVC.Models
         public string Description { get; set; }
         public string Poster { get; set; }
         public string FirstUrl { get; set; }
+        public string SmallPoster { get; set; }
+        public string MediumPoster { get; set; }
     }
 }
