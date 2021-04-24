@@ -662,7 +662,7 @@ button[type="submit"] {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 30px 60px;
+    padding: 10px 60px;
     position: fixed;
     left: 0;
     top: 0;
@@ -679,7 +679,7 @@ button[type="submit"] {
         }
 
             .navbar .logo a img {
-                height: 54px;
+                height: 100px;
             }
 
     .navbar .site-menu {
@@ -708,7 +708,7 @@ button[type="submit"] {
 
                     .navbar .site-menu ul li a:hover {
                         text-decoration: none;
-                        color: #e90101;
+                        /*color: #e90101;*/
                     }
 
     .navbar .user-menu {
