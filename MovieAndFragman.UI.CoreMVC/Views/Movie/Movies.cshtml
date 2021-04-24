@@ -10,14 +10,14 @@
 </header>
 <!-- end page-header -->
 <main>
-    <div class="container" style="margin-top:10px">
+    <div class="container" style=" margin-top: 10px; width: 100vw">
         <div class="row">
-            <div class="col-lg-10" id="categoryPanel">
+            <div class="col-lg-7" id="categoryPanel">
                 @await Component.InvokeAsync("MovieIndex")
             </div>
             <!-- end content-section -->
-            <div class="col-lg-2 position-relative">
-                <aside class="sidebar position-sticky sticky-top" ">
+            <div class="col-lg-2 position-sticky" style="float:right">
+                <aside class="sidebar position-sticky sticky-top">
                     <!-- end widget -->
                     <div class="widget">
                         <h6 class="widget-title">CATEGORIES</h6>
@@ -26,6 +26,12 @@
 
                     </div>
                     <!-- end widget -->
+                    
+                </aside>
+                <!-- end sidebar -->
+            </div>
+            <div class="col-lg-2 position-sticky mr-sm-1" style="float:right">
+                <aside class="sidebar position-sticky sticky-top">
                     <div class="widget">
                         <h6 class="widget-title">ALT KATEGORİLER</h6>
                         <ul class="categories">
@@ -39,11 +45,10 @@
                         </ul>
                     </div>
                 </aside>
-                <!-- end sidebar -->
             </div>
-            <!-- end col-4 -->
+                <!-- end col-4 -->
+            </div>
         </div>
-    </div>
     
 
 

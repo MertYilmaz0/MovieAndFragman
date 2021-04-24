@@ -662,7 +662,7 @@ button[type="submit"] {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px 60px;
+    padding: 10px 30px;
     position: fixed;
     left: 0;
     top: 0;
