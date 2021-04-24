@@ -55,7 +55,7 @@ namespace MovieAndFragman.BLL.Concrete
 
         public Fragman Get(int entityId)
         {
-            return fragmanDAL.Get(a => a.ID == entityId, a => a.Ratings);
+            return fragmanDAL.Get(a => a.ID == entityId, a => a.Ratings,a=>a.Urls);
         }
 
         public ICollection<Fragman> GetAll()

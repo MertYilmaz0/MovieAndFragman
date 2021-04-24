@@ -93,6 +93,7 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                         Name = fragman.Name,
                         Poster = fragman.Poster
                     };
+                    dto.FirstUrl = fragman.Urls.First().UrlPath;
                     return Ok(dto);
                 }
                 return Ok();
