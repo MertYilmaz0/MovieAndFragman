@@ -180,6 +180,7 @@
             GetFragmanListAll()
             GetRating(fragId)
             AddRating(fragId, uid)
+
         })
         function ChangeUrl(path) {
             if (path != 0) {
@@ -217,5 +218,15 @@
             })
         }
 
+
+        $(document).on('click', '.emoji', function (value) {
+            var btnEmoji = value.target
+            console.log(value)
+            var btnSub = btnEmoji.children[0]
+            var subStr = btnSub.innerText
+            var subInt = parseInt(subStr)
+            subInt += 1
+            btnSub.innerText = subInt
+        });
     </script>
 }
