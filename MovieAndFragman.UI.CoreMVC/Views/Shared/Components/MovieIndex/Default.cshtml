@@ -2,7 +2,7 @@
 
 @{
     int i = 0;
-    string color = string.Empty;
+    string color = "27272B";
 }
 
 @if (Model.Count > 0)
@@ -20,7 +20,7 @@
             i++;
         }
         
-        <section class="content-section" data-background="@color" id="@item.GenreId">
+        <section class="content-section" data-background="#@color" id="@item.GenreId">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

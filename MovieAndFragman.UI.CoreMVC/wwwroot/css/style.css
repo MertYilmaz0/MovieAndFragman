@@ -111,7 +111,7 @@ strong {
 
 /* LINKS */
 a {
-    color: #111111;
+    color: #FFFFFF;
     -webkit-transition: all .35s ease-in-out;
     -moz-transition: all .35s ease-in-out;
     -ms-transition: all .35s ease-in-out;
@@ -121,7 +121,7 @@ a {
 
     a:hover {
         color: #111111;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
 /* FORM ELEMENTS */
@@ -1270,6 +1270,7 @@ button[type="submit"] {
         top: 50px;
         z-index: 1;
         font-weight: 600;
+        border-radius:18px;
     }
 
         .video-player .back-btn:hover {
@@ -1482,7 +1483,7 @@ main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background: #fff;
+    background: #27272B;
     position: relative;
     z-index: 6;
 }
@@ -3148,7 +3149,7 @@ main {
                 }
 
                 .sidebar .widget .categories li a {
-                    color: #111111;
+                    color: #FFFFFF;
                     font-size: 17px;
                 }
 
