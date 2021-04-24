@@ -60,7 +60,7 @@ namespace MovieAndFragman.UI.CoreMVC
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 
                     );
-            
+            //test
 
                 endpoints.MapControllerRoute(
                     name: "default",
