@@ -27,6 +27,8 @@ namespace MovieAndFragman.DAL
         public DbSet<Url> Urls { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<Live> Live { get; set; }
+        public DbSet<Podcast> Podcasts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +40,8 @@ namespace MovieAndFragman.DAL
             modelBuilder.ApplyConfiguration(new RatingConfiguration());
             modelBuilder.ApplyConfiguration(new FragmanConfiguration());
             modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+            modelBuilder.ApplyConfiguration(new LiveConfiguration());
+            modelBuilder.ApplyConfiguration(new PodcastConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -17,6 +17,8 @@ namespace MovieAndFragman.BLL.Concrete.DependencyInjection
             services.AddScoped<IUrlBLL, UrlService>();
             services.AddScoped<IUserBLL, UserService>();
             services.AddScoped<ILanguageBLL, LanguageService>();
+            services.AddScoped<ILiveBLL, LiveService>();
+            services.AddScoped<IPodcastBLL, PodcastService>();
         }
 
     }
