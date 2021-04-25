@@ -8,7 +8,18 @@ namespace MovieAndFragman.BLL.Concrete
 {
     class LiveService : ILiveBLL
     {
-        //todo: live
+
+
+        public void Insert(Live entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Live entity)
+        {
+            throw new NotImplementedException();
+        }
+  
         public void Delete(Live entity)
         {
             throw new NotImplementedException();
@@ -29,14 +40,5 @@ namespace MovieAndFragman.BLL.Concrete
             throw new NotImplementedException();
         }
 
-        public void Insert(Live entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Live entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MovieAndFragman.BLL.Abstract
 {
-    interface IPodcastBLL:IBaseBLL<Podcast>
+   public interface IPodcastBLL:IBaseBLL<Podcast>
     {
     }
 }

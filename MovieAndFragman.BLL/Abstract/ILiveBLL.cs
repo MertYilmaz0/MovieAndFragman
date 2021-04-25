@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MovieAndFragman.BLL.Abstract
 {
-    interface ILiveBLL:IBaseBLL<Live>
+    public interface ILiveBLL:IBaseBLL<Live>
     {
     }
 }
