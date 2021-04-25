@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="video-player">
-                    <a href="javascript:history.go(-1)" class="back-btn"><i class="lni lni-chevron-left"></i> BACK</a>                    
+                    <a href="javascript:history.go(-1)" class="back-btn"><i class="lni lni-chevron-left"></i> BACK</a>
                     <iframe id="liveVideo" style="width:100%;height:35vw" src="https://www.youtube.com/embed/9UUecf02o_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <!-- end video-player -->
@@ -50,7 +50,7 @@
                     <div class="video-thumb light">
                         <figure class="video-image">
                             <a href="#"><img src="~/images/movies08.jpg" alt="Image"></a>
-                            
+
                         </figure>
                         <div class="video-content">
                             <h3 class="name"><a class="mouserPointer" onclick="ChangeUrl('https://www.youtube.com/embed/_H0zgHH3yu8')">Güldür Güldür Show</a></h3>
@@ -120,7 +120,7 @@
 </main>
 
 @section scripts{
-    <script> 
+    <script>
         function ChangeUrl(path) {
             if (path != 0) {
                 $("#liveVideo").attr("src", path)
@@ -128,3 +128,5 @@
         }
     </script>
 }
+
+
