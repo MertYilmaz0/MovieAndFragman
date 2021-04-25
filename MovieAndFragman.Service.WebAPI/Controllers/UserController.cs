@@ -79,22 +79,29 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<User> users = userBLL.GetAll().ToList();
-            List<UserDto> dtos = new List<UserDto>();
-            foreach (User item in users)
+            try
             {
-                dtos.Add(new UserDto()
+                List<User> users = userBLL.GetAll().ToList();
+                List<UserDto> dtos = new List<UserDto>();
+                foreach (User item in users)
                 {
-                    BrithDate = item.BrithDate,
-                    Email = item.Email,
-                    FirstName = item.FirstName,
-                    LastName = item.LastName,
-                    PhoneNumber = item.PhoneNumber,
-                    UserId = item.ID,
-                    UserName = item.UserName
-                });
+                    dtos.Add(new UserDto()
+                    {
+                        BrithDate = item.BrithDate,
+                        Email = item.Email,
+                        FirstName = item.FirstName,
+                        LastName = item.LastName,
+                        PhoneNumber = item.PhoneNumber,
+                        UserId = item.ID,
+                        UserName = item.UserName
+                    });
+                }
+                return Ok(dtos);
             }
-            return Ok(dtos);
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

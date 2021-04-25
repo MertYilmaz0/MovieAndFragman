@@ -43,25 +43,46 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetAllLanguage()
         {
-            List<LanguageDto> languages = LanguageDtoList(languageBLL.GetAll());
-            return Ok(languages);
+            try
+            {
+                List<LanguageDto> languages = LanguageDtoList(languageBLL.GetAll());
+                return Ok(languages);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
         [HttpGet]
         public IActionResult GetLanguageActive()
         {
-            List<LanguageDto> languages = LanguageDtoList(languageBLL.GetAllActive());
-            return Ok(languages);
+            try
+            {
+                List<LanguageDto> languages = LanguageDtoList(languageBLL.GetAllActive());
+                return Ok(languages);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("{id}")]
         public IActionResult GetLanguageById(int id)
         {
-            Language language = languageBLL.Get(id);
-            LanguageDto languageDto = new LanguageDto();
-            languageDto.LanguageID = language.ID;
-            languageDto.LanguageName = language.LanguageName;
-            languageDto.Description = language.Description;
-            return Ok(languageDto);
+            try
+            {
+                Language language = languageBLL.Get(id);
+                LanguageDto languageDto = new LanguageDto();
+                languageDto.LanguageID = language.ID;
+                languageDto.LanguageName = language.LanguageName;
+                languageDto.Description = language.Description;
+                return Ok(languageDto);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
 
         }
 

@@ -6,14 +6,14 @@
 
 <body class="login-body">
     <div class="container">
-        <form class="form-signin" action="index.html">
+        <form class="form-signin" asp-area="admin" asp-controller="home" asp-action="updatelive" method="get">
             <h2 class="form-signin-heading">CANLI YAYIN</h2>
             <div class="login-wrap">
                 <p>Youtube Canlı Yayın Linkinizi Buraya Girin</p>
-                <input type="text" class="form-control" placeholder="Link" autofocus>
+                <input type="text" name="path" class="form-control" placeholder="Link" autofocus>
                 <div class="radios">
                 </div>
-                <button class="btn btn-lg btn-login btn-block" type="submit">Submit</button>
+                <button class="btn btn-lg btn-login btn-block" type="submit">Update</button>
                 <div class="registration">
                 </div>
             </div>

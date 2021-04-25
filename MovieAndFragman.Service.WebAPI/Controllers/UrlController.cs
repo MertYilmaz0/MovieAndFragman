@@ -24,19 +24,26 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetUrlByFragId(int id)
         {
-            List<Url> urls = urlBLL.GetListByFragId(id).ToList();
-            List<UrlDto> dtos = new List<UrlDto>();
-            foreach (Url item in urls)
+            try
             {
-                dtos.Add(new UrlDto()
+                List<Url> urls = urlBLL.GetListByFragId(id).ToList();
+                List<UrlDto> dtos = new List<UrlDto>();
+                foreach (Url item in urls)
                 {
-                    UrlId = item.ID,
-                    UrlPath = item.UrlPath,
-                    LanguageID = item.LanguageID,
-                    Language = item.Language.LanguageName
-                });
+                    dtos.Add(new UrlDto()
+                    {
+                        UrlId = item.ID,
+                        UrlPath = item.UrlPath,
+                        LanguageID = item.LanguageID,
+                        Language = item.Language.LanguageName
+                    });
+                }
+                return Ok(dtos);
             }
-            return Ok(dtos);
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

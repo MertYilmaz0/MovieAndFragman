@@ -45,39 +45,51 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetAllGenre()
         {
-            List<Genre> genres = genreBLL.GetAll().ToList();
-            List<GenreDto> genreDtos = new List<GenreDto>();
-            foreach (Genre item in genres)
+            try
             {
-                genreDtos.Add(new GenreDto()
+                List<Genre> genres = genreBLL.GetAll().ToList();
+                List<GenreDto> genreDtos = new List<GenreDto>();
+                foreach (Genre item in genres)
                 {
-                    GenreId = item.ID,
-                    Name = item.Name,
-                    IsActive=item.IsActive
+                    genreDtos.Add(new GenreDto()
+                    {
+                        GenreId = item.ID,
+                        Name = item.Name,
+                        IsActive = item.IsActive
 
-                });
+                    });
+                }
+                return Ok(genreDtos);
             }
-            return Ok(genreDtos);
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
         [HttpGet]
         public IActionResult GetAllCategories()
         {
-            List<Genre> genres = genreBLL.GetAllForUser().ToList();
-            List<GenreDto> genreDtos = new List<GenreDto>();
-            foreach (Genre item in genres)
+            try
             {
-                genreDtos.Add(new GenreDto()
+                List<Genre> genres = genreBLL.GetAllForUser().ToList();
+                List<GenreDto> genreDtos = new List<GenreDto>();
+                foreach (Genre item in genres)
                 {
-                    GenreId = item.ID,
-                    Name = item.Name,
-                    IsActive = item.IsActive
+                    genreDtos.Add(new GenreDto()
+                    {
+                        GenreId = item.ID,
+                        Name = item.Name,
+                        IsActive = item.IsActive
 
-                });
+                    });
+                }
+                return Ok(genreDtos);
             }
-            return Ok(genreDtos);
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
-
-
 
         [HttpPost]
         public IActionResult AddGenre([FromBody] GenreDto genreDto )
@@ -119,23 +131,35 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult DeleteGenreById(int id)
         {
-            genreBLL.DeleteById(id);
-            return Ok(new { message = "Silme işlemi gerçekleşti", check = true });
+            try
+            {
+                genreBLL.DeleteById(id);
+                return Ok(new { message = "Silme işlemi gerçekleşti", check = true });
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("{id}")]
         public IActionResult GetGenreById(int id)
         {
-            Genre genre = genreBLL.Get(id);
-            GenreDto genreDto = new GenreDto() 
+            try
             {
-                GenreId = genre.ID,
-                Name = genre.Name,
-                IsActive = genre.IsActive 
-            };
-            return Ok(genreDto);
-            
-
+                Genre genre = genreBLL.Get(id);
+                GenreDto genreDto = new GenreDto()
+                {
+                    GenreId = genre.ID,
+                    Name = genre.Name,
+                    IsActive = genre.IsActive
+                };
+                return Ok(genreDto);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
     }

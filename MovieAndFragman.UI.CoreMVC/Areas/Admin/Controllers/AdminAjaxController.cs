@@ -32,11 +32,11 @@ namespace MovieAndFragman.UI.CoreMVC.Areas.Admin.Controllers
                 return Ok(new { check = true, message = ex.Message });
             }
         }
-        public IActionResult UpdateGenre(int id,string name)
+        public IActionResult UpdateGenre(int id, string name)
         {
             try
             {
-                ApiJsonHelper<GenreVM>.GetApi("Genre/UpdateGenre?id=" +id+ "&name=" + name);
+                ApiJsonHelper<GenreVM>.GetApi("Genre/UpdateGenre?id=" + id + "&name=" + name);
                 return Ok(new { check = true, message = "Tür güncellendi." });
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace MovieAndFragman.UI.CoreMVC.Areas.Admin.Controllers
         {
             try
             {
-                ApiJsonHelper<LanguageVM>.GetApi("Languege/AddLanguage?id=" +id + "&name=" + name + "&description=" + description);
+                ApiJsonHelper<LanguageVM>.GetApi("Languege/AddLanguage?id=" + id + "&name=" + name + "&description=" + description);
                 return Ok(new { check = true, message = "Dil eklendi." });
             }
             catch (Exception ex)
@@ -87,7 +87,7 @@ namespace MovieAndFragman.UI.CoreMVC.Areas.Admin.Controllers
                 return Ok(new { check = true, message = ex.Message });
             }
         }
-        public IActionResult UpdateLanguage(int id, string name,string description)
+        public IActionResult UpdateLanguage(int id, string name, string description)
         {
             try
             {

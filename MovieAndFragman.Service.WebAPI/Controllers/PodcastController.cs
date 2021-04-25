@@ -57,17 +57,31 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult Get(int id)
         {
-            Podcast podcast = podcastBLL.Get(id);
-            PodcastDto dto = ConvertDto(podcast);
-            return Ok(dto);
+            try
+            {
+                Podcast podcast = podcastBLL.Get(id);
+                PodcastDto dto = ConvertDto(podcast);
+                return Ok(dto);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<Podcast> podList = podcastBLL.GetAll().ToList();
-            List<PodcastDto> dtoList = ConvertDtoList(podList);
-            return Ok(dtoList);
+            try
+            {
+                List<Podcast> podList = podcastBLL.GetAll().ToList();
+                List<PodcastDto> dtoList = ConvertDtoList(podList);
+                return Ok(dtoList);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

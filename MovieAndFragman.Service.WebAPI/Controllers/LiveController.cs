@@ -57,17 +57,47 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
         [HttpGet]
         public IActionResult Get(int id)
         {
-            Live live = liveBLL.Get(id);
-            LiveDto dto = ConvertDto(live);
-            return Ok(dto);
+            try
+            {
+                Live live = liveBLL.Get(id);
+                LiveDto dto = ConvertDto(live);
+                return Ok(dto);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<Live> liveList = liveBLL.GetAll().ToList();
-            List<LiveDto> dtoList = ConvertDtoList(liveList);
-            return Ok(dtoList);
+            try
+            {
+                List<Live> liveList = liveBLL.GetAll().ToList();
+                List<LiveDto> dtoList = ConvertDtoList(liveList);
+                return Ok(dtoList);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Update(string path)
+        {
+            try
+            {
+                Live live = liveBLL.Get(4);
+                live.BroadcastPath = path;
+                liveBLL.Update(live);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }
