@@ -311,6 +311,7 @@ button[type="submit"] {
     -ms-transition: all .35s ease-in-out;
     -o-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out;
+    border-radius: 18px;
 }
 
     .custom-button:hover {

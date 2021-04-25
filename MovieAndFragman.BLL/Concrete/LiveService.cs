@@ -1,4 +1,5 @@
 ﻿using MovieAndFragman.BLL.Abstract;
+using MovieAndFragman.DAL.Abstract;
 using MovieAndFragman.Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -9,35 +10,43 @@ namespace MovieAndFragman.BLL.Concrete
     class LiveService : ILiveBLL
     {
 
+        ILiveDAL liveDAL;
+        public LiveService(ILiveDAL dAL)
+        {
+            liveDAL = dAL;
+        }
 
         public void Insert(Live entity)
         {
-            throw new NotImplementedException();
+            liveDAL.Insert(entity);
         }
 
         public void Update(Live entity)
         {
-            throw new NotImplementedException();
+            liveDAL.Update(entity);
         }
   
         public void Delete(Live entity)
         {
-            throw new NotImplementedException();
+            entity.IsActive = false;
+            liveDAL.Update(entity);
         }
 
         public void DeleteById(int entityId)
         {
-            throw new NotImplementedException();
+            Live delete = Get(entityId);
+            delete.IsActive = false;
+            liveDAL.Update(delete);
         }
 
         public Live Get(int entityId)
         {
-            throw new NotImplementedException();
+            return liveDAL.Get(a => a.ID == entityId);
         }
 
         public ICollection<Live> GetAll()
         {
-            throw new NotImplementedException();
+            return liveDAL.GetAll();
         }
 
     }
