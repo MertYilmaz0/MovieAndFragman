@@ -7,6 +7,10 @@ namespace MovieAndFragman.Model.Entities
 {
     public class Podcast:BaseModel, IEntity
     {
+        public Podcast()
+        {
+            IsActive = true;
+        }
         public string Name { get; set; }
         public string BroadcastPath { get; set; }
         public string ImagePath { get; set; }

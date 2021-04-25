@@ -1,4 +1,5 @@
 ﻿using MovieAndFragman.BLL.Abstract;
+using MovieAndFragman.DAL.Abstract;
 using MovieAndFragman.Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,35 +9,45 @@ namespace MovieAndFragman.BLL.Concrete
 {
     class PodcastService : IPodcastBLL
     {
-        //todo: podcast
-        public void Delete(Podcast entity)
+
+        IPodcastDAL podcastDAL;
+
+        public PodcastService(IPodcastDAL dAL)
         {
-            throw new NotImplementedException();
+            podcastDAL = dAL;
         }
 
-        public void DeleteById(int entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Podcast Get(int entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<Podcast> GetAll()
-        {
-            throw new NotImplementedException();
-        }
 
         public void Insert(Podcast entity)
         {
-            throw new NotImplementedException();
+            podcastDAL.Insert(entity);
         }
 
         public void Update(Podcast entity)
         {
-            throw new NotImplementedException();
+            podcastDAL.Update(entity);
         }
+        public void Delete(Podcast entity)
+        {
+            entity.IsActive = false;
+            podcastDAL.Update(entity);
+        }
+        public Podcast Get(int entityId)
+        {
+            return podcastDAL.Get(a => a.ID == entityId);
+        }
+
+        public void DeleteById(int entityId)
+        {
+            Podcast delete = Get(entityId);
+            delete.IsActive = false;
+            podcastDAL.Update(delete);
+        }
+
+        public ICollection<Podcast> GetAll()
+        {
+            return podcastDAL.GetAll();
+        }
+
     }
 }
