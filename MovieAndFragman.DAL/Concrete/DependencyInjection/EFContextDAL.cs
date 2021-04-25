@@ -16,6 +16,8 @@ namespace MovieAndFragman.DAL.Concrete.DependencyInjection
             services.AddScoped<IUrlDAL, UrlRepository>();
             services.AddScoped<IUserDAL, UserRepository>();
             services.AddScoped<ILanguageDAL, LanguageRepository>();
+            services.AddScoped<ILiveDAL, LiveRepository>();
+            services.AddScoped<IPodcastDAL, PodcastRepository>();
         }
 
     }
