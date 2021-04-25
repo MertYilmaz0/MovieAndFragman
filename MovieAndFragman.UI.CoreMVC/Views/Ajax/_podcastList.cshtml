@@ -1,0 +1,18 @@
+﻿@model List<PodcastVM>
+
+@if (Model.Count > 0)
+{
+    @foreach (PodcastVM item in Model)
+    {
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+            <div class="video-thumb light">
+                <figure class="video-image">
+                    <a href="#"><img src="@item.ImagePath" alt="PodcastImage"></a>
+                </figure>
+                <div class="video-content">
+                    <h3 class="name"><a class="mouserPointer" onclick="ChangeUrl('@item.BroadcastPath')">@item.Name</a></h3>
+                </div>
+            </div>
+        </div>
+    }
+}

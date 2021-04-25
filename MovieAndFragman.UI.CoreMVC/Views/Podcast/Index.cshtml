@@ -32,59 +32,7 @@
                     </div>
                     <!-- end section-title -->
                 </div>
-                <!-- end col-12 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/14447293/08d557a50c3e57c6.jpeg" alt="Image"></a>
-                        </figure>
-                        <div class="video-content">
-                            <h3 class="name"><a class="mouserPointer" onclick="ChangeUrl('https://open.spotify.com/embed-podcast/show/5NjQS2V18f7MS3nfa7fdxd')">20'li Yaşlar</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="https://cdn-images-1.listennotes.com/podcasts/motivasyon-delisi-c6bd1mBV7oJ-OC0-eRBdDjA.300x300.jpg" alt="Image"></a>
-
-                        </figure>
-                        <div class="video-content">
-                            <h3 class="name"><a class="mouserPointer" onclick="ChangeUrl('https://open.spotify.com/embed-podcast/episode/3H9i3Ik3l2pSXm15NJwSar')">Bu Gün Muhteşem Bir Gün</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="https://cdn-images-1.listennotes.com/podcasts/organik-beyinler-podcast-organikbeyinler-2H0kLmqE1a8.510x510.jpg" alt="Image"></a>
-                        </figure>
-                        <div class="video-content">
-                            <h3 class="name"><a class="mouserPointer" onclick="ChangeUrl('https://open.spotify.com/embed-podcast/episode/0hywMt25lilKWsUIUjrT05')">153-Kaliteli Bir Yaşam</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>
-                <!-- end col-2 -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="video-thumb light">
-                        <figure class="video-image">
-                            <a href="#"><img src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/11800448/11800448-1612784097319-a42a89554d3b2.jpg" alt="Image"></a>
-                        </figure>
-                        <div class="video-content">
-                            <h3 class="name"><a class="mouserPointer" onclick="ChangeUrl('https://open.spotify.com/embed-podcast/episode/4T15TpHxWdy3HeDC8ZsHtu')">Erken Kalkmak Hayatınızı Değiştirir</a></h3>
-                        </div>
-                        <!-- end video-content -->
-                    </div>
-                    <!-- end video-thumb -->
-                </div>                
+                <div class="row" id="podcastList"></div>  
             </div>
             <!-- end row -->
         </div>
@@ -100,5 +48,21 @@
                 $("#podcast").attr("src", path)
             }
         }
+
+        $.ajax({
+            type: "get",
+            url: "../../../ajax/PodcastGetAll",
+            success: function (response) {
+                $("#podcastList").html(response)
+            }
+        })
+
+        $.ajax({
+            type: "get",
+            url: "../../../ajax/GetPodcast",
+            success: function (response) {
+                $("#podcast").attr("src", response.bPath)
+            }
+        })
     </script>
 }

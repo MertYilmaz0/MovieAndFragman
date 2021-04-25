@@ -14,7 +14,7 @@ namespace MovieAndFragman.DAL
         {
             IConfigurationBuilder configBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: false);
             IConfiguration configuration = configBuilder.Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));            
             base.OnConfiguring(optionsBuilder);
         }
 

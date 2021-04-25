@@ -95,5 +95,60 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
                 return PartialView("_error");
             }
         }
+
+        [HttpGet]
+        public IActionResult LiveGetAll()
+        {
+            try
+            {
+                List<LiveVM> vms = ApiJsonHelper<LiveVM>.GetApiEntityList("live/getall");
+                return PartialView("_liveList", vms);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
+        }
+        [HttpGet]
+        public IActionResult PodcastGetAll()
+        {
+            try
+            {
+                List<PodcastVM> vms = ApiJsonHelper<PodcastVM>.GetApiEntityList("podcast/getall");
+                return PartialView("_podcastList",vms);
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetBroadcast()
+        {
+            try
+            {
+                LiveVM vm = ApiJsonHelper<LiveVM>.GetApiEntity("live/get?id=4");
+                return Ok(new { bPath = vm.BroadcastPath });
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
+        }
+        [HttpGet]
+        public IActionResult GetPodcast()
+        {
+            try
+            {
+                List<PodcastVM> vms = ApiJsonHelper<PodcastVM>.GetApiEntityList("podcast/getall");
+                PodcastVM vM = vms.First();
+                return Ok(new { bPath = vM.BroadcastPath });
+            }
+            catch (Exception)
+            {
+                return PartialView("_error");
+            }
+        }
     }
 }
