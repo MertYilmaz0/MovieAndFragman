@@ -11,24 +11,27 @@
                 <!-- end section-title -->
             </div>
             <!-- end col-12 -->
-
-            @foreach (FragmanVM item in Model)
+            @if (Model.Count > 0)
             {
-                <div class="col-lg-3 col-sm-6">
-                    <div class="category-thumb">
-                        <figure class="category-image"> <img src="@item.MediumPoster" alt="Image"> </figure>
-                        <div class="category-content">
-                            <ul class="tags">
-                                @await Component.InvokeAsync("SingleGenre", item.FragID)
-                            </ul>
-                            <h3 class="name">@item.Name</h3>
-                            <div class="play-btn"><a asp-controller="Movie" asp-action="MovieSinglePage" asp-route-id="@item.FragID">+</a></div>
+
+                @foreach (FragmanVM item in Model)
+                {
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="category-thumb">
+                            <figure class="category-image"> <img src="@item.MediumPoster" alt="Image"> </figure>
+                            <div class="category-content">
+                                <ul class="tags">
+                                    @await Component.InvokeAsync("SingleGenre", item.FragID)
+                                </ul>
+                                <h3 class="name">@item.Name</h3>
+                                <div class="play-btn"><a asp-controller="Movie" asp-action="MovieSinglePage" asp-route-id="@item.FragID">+</a></div>
+                            </div>
+                            <!-- end category-content -->
                         </div>
-                        <!-- end category-content -->
+                        <!-- end category-thumb -->
                     </div>
-                    <!-- end category-thumb -->
-                </div>
-                <!-- end col-3 -->
+                    <!-- end col-3 -->
+                }
             }
 
         </div>
