@@ -16,7 +16,8 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
             try
             {
                 List<FragmanVM> vms = ApiJsonHelper<FragmanVM>.GetApiEntityList("fragman/GetLastThirdFragman");
-                return PartialView("_singleSwiper", vms);
+                List<FragmanVM> third = vms.Take(3).ToList();
+                return PartialView("_singleSwiper", third);
             }
             catch (Exception)
             {
