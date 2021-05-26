@@ -7,6 +7,12 @@ namespace MovieAndFragman.Service.WebAPI.Model
 {
     public class AddFragmanDTO
     {
+        public AddFragmanDTO()
+        {
+            Documents = new HashSet<string>();
+            UrlDto = new HashSet<UrlDto>();
+            GenreDtos = new HashSet<GenreDto>();
+        }
         public int FragID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -14,7 +20,7 @@ namespace MovieAndFragman.Service.WebAPI.Model
         public string FirstUrl { get; set; }
         public string SmallPoster { get; set; }
         public string MediumPoster { get; set; }
-        public List<string> Documents { get; set; }
+        public ICollection<string> Documents { get; set; }
         public int CounterLike { get; set; }
         public int CounterDisLike { get; set; }
         public int CounterView { get; set; }
