@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace MovieAndFragman.UI.CoreMVC.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class MovieController : Controller
     {
-        [Area("Admin")]
-        [Authorize(Roles = "Admin")]
+ 
         public IActionResult Index()
         {
             return View();
         }
-
+    
         public IActionResult AddMovie()
         {
             return View();
         }
-
-        public IActionResult UpdateUser()
+        public IActionResult UpdateMovie()
         {
             return View();
         }

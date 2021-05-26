@@ -39,7 +39,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                         Name = item.Name,
                         Poster = item.Poster,
                         SmallPoster=item.SmallPoster,
-                        MediumPoster=item.MediumPoster
+                        MediumPoster=item.MediumPoster,
+                    Documents=item.Documents
+                        
                     };
 
                     dtos.Add(added);
@@ -64,11 +66,75 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     Description = item.Description,
                     Poster = item.Poster,
                     MediumPoster=item.MediumPoster,
-                    SmallPoster=item.SmallPoster
+                    SmallPoster=item.SmallPoster,
+                    Documents = item.Documents
+
                 });
             }
 
             return fragmanDtos;
+        }
+
+        //Fragman ConvertFragman(AddFragmanDTO addFragmanDTO)
+        //{
+        //    Fragman fragman = new Fragman()
+        //    {
+        //        ID = addFragmanDTO.FragID,
+        //        CreatedDate = DateTime.Now,
+        //        Name = addFragmanDTO.Name,
+        //        CounterDisLike = addFragmanDTO.CounterDisLike,
+        //        CounterLike = addFragmanDTO.CounterLike,
+        //        CounterView = addFragmanDTO.CounterView,
+        //        Description = addFragmanDTO.Description,
+        //        Documents = addFragmanDTO.Documents,
+        //        IsActive = true,
+        //        Poster = addFragmanDTO.Poster,
+        //        MediumPoster = addFragmanDTO.MediumPoster,
+        //        SmallPoster = addFragmanDTO.SmallPoster,
+
+        //    };
+        //}
+
+        [HttpPost]
+        public IActionResult AddFragman([FromBody] AddFragmanDTO addfragmanDto)
+        {
+            try
+            {
+                Fragman fragman = new Fragman();
+                fragman.Name = addfragmanDto.Name;
+                fragman.Description = addfragmanDto.Description;
+                fragman.Poster = addfragmanDto.Poster;
+                fragman.SmallPoster = addfragmanDto.SmallPoster;
+                fragman.MediumPoster = addfragmanDto.MediumPoster;
+                //fragman.Documents = addfragmanDto.Documents;
+                fragman.CounterLike = 0;
+                fragman.CounterDisLike = 0;
+                fragman.CounterView = 0;
+                fragman.Ratio = 0;
+                fragmanBLL.Insert(fragman);
+
+                List<Url> urls = new List<Url>();
+
+                foreach (UrlDto item in addfragmanDto.UrlDto)
+                {
+                    urls.Add(new Url { ID = item.UrlId, FragmanID = fragman.ID, LanguageID = item.LanguageID, UrlPath = item.UrlPath });
+                }
+                List<Genre> genres = new List<Genre>();
+                foreach (GenreDto item in addfragmanDto.GenreDtos)
+                {
+                    genres.Add(new Genre { ID = item.GenreId, Name = item.Name });
+                }
+
+                fragmanBLL.Update(fragman);
+
+                return Ok(new { message = "Tür ekleme işlemi gerçekleşti", check = true });
+
+            }
+            catch (Exception ex)
+            {
+
+                return Ok(new { message = ex.Message, check = false });
+            }
         }
 
         public IActionResult GetAllFragman()

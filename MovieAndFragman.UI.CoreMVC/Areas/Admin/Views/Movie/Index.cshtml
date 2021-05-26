@@ -15,15 +15,15 @@
         <a href="#myModal" data-toggle="modal" class="btn btn-xs btn-success float-left">
             Add Movie
         </a>
-        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
+       
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade col-lg-12" style="display: none;">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                         <h4 class="modal-title">Add Movie Form</h4>
                     </div>
-                    <div class="modal-body">
-
+                    <div class="modal-body" >
                         <form role="form">
                             <div class="form-group">
                                 <label>Movie Name</label>
@@ -36,13 +36,112 @@
 
                             </div>
                             <div class="form-group">
-                                <label>Poster</label>
-                                <input type="text" class="form-control" placeholder="Please enter a description">
-
+                                <label class="control-label col-md-3">Poster Image Upload</label>
+                                <div class="col-md-9">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <input type="hidden">
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new"><i class="icon-paper-clip"></i> Select image</span>
+                                                <span class="fileupload-exists"><i class="icon-undo"></i> Change</span>
+                                                <input type="file" class="default">
+                                            </span>
+                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="icon-trash"></i> Remove</a>
+                                        </div>
+                                    </div>
+                                    <span class="label label-danger">NOTE!</span>
+                                    <span>
+                                        Attached image thumbnail is
+                                        supported in Latest Firefox, Chrome, Opera,
+                                        Safari and Internet Explorer 10 only
+                                    </span>
+                                </div>
                             </div>
-
                             <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
+                                <label class="control-label col-md-3">Add Language</label>
+                                <select>
+                                    <option value="value">Language</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Add Genre</label>
+                                <select>
+                                    <option value="value">Genre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Small Poster Image Upload</label>
+                                <div class="col-md-9">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <input type="hidden">
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new"><i class="icon-paper-clip"></i> Select image</span>
+                                                <span class="fileupload-exists"><i class="icon-undo"></i> Change</span>
+                                                <input type="file" class="default">
+                                            </span>
+                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="icon-trash"></i> Remove</a>
+                                        </div>
+                                    </div>
+                                    <span class="label label-danger">NOTE!</span>
+                                    <span>
+                                        Attached image thumbnail is
+                                        supported in Latest Firefox, Chrome, Opera,
+                                        Safari and Internet Explorer 10 only
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Medium Poster Image Upload</label>
+                                <div class="col-md-9">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <input type="hidden">
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+                                        <div>
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new"><i class="icon-paper-clip"></i> Select image</span>
+                                                <span class="fileupload-exists"><i class="icon-undo"></i> Change</span>
+                                                <input type="file" class="default">
+                                            </span>
+                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="icon-trash"></i> Remove</a>
+                                        </div>
+                                    </div>
+                                    <span class="label label-danger">NOTE!</span>
+                                    <span>
+                                        Attached image thumbnail is
+                                        supported in Latest Firefox, Chrome, Opera,
+                                        Safari and Internet Explorer 10 only
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Document input</label>
+                                <div class="controls col-md-9">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <input type="hidden">
+                                        <span class="btn btn-white btn-file">
+                                            <span class="fileupload-new"><i class="icon-paper-clip"></i> Select file</span>
+                                            <span class="fileupload-exists"><i class="icon-undo"></i> Change</span>
+                                            <input type="file" class="default">
+                                        </span>
+                                        <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Movie File input</label>
                                 <div class="col-10">
                                     <input type="file">
                                 </div>

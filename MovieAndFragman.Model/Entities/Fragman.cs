@@ -18,6 +18,8 @@ namespace MovieAndFragman.Model.Entities
         public int CounterDisLike { get; set; }
         public int CounterView { get; set; }
         public float Ratio { get; set; }// Beğenilme oranı
+
+        public List<string> Documents { get; set; } //Fragman dökümanı
         public int UserID { get; set; }
         public User User { get; set; }//yükleyici        
         public ICollection<GenreFragman> GenreFragmens { get; set; }

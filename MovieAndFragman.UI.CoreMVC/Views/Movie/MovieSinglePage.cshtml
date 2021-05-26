@@ -4,6 +4,8 @@
 }
 @model FragmanVM
 
+<!--Ana Movie Sayfası-->
+
 <header class="page-header single" data-background="@Model.Poster">
     <div class="container">
         <div class="row">
@@ -49,10 +51,13 @@
                     <div class="movie-side-info-box">
                         <figure style="margin:0 0;"><img src="@Model.MediumPoster" alt="Image"></figure>
                     </div>
+
                     <!-- end movie-side-info-box -->
                 </div>
+
                 <!-- end col-4 -->
             </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="movie-info-box">
@@ -63,6 +68,15 @@
                     </div>
                 </div>
             </div>
+            <!-- end col-12 -->
+            <!-- end row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <iframe src="//docs.google.com/gview?url=https://help.adobe.com/archive/en_US/acrobat/8/standard/acrobat_8_help.pdf&embedded=true" style="width:1250px; height:800px;" frameborder="0"></iframe>
+
+                </div>
+            </div>
+
             <!-- end col-12 -->
             <!-- end row -->
         </div>
@@ -180,6 +194,7 @@
             GetFragmanListAll()
             GetRating(fragId)
             AddRating(fragId, uid)
+            myFunction()
 
         })
         function ChangeUrl(path) {
@@ -187,6 +202,9 @@
                 $("#fragmanVideo").attr("src", path)
             }
         }
+
+        //function myFunction() {        //    var x = document.getElementById("myframe");        //    x.style.backgroundColor = "#27272b";        //}
+
 
         function Like(token) {
             $.ajax({
