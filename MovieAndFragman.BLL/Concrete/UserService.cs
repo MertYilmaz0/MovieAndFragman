@@ -37,7 +37,7 @@ namespace MovieAndFragman.BLL.Concrete
                     throw new Exception("Email adresinde boşluk ' ' bırakmayınız.");
                 }
             }
-            if (!user.Email.Contains('@') || !user.Email.Contains(".com"))
+            if (!user.Email.Contains('@') || !user.Email.Contains("."))
             {
                 throw new Exception("Lütfen e-mailinizi doğru formatta yazınız.(....@....com)");
             }

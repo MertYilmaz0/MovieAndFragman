@@ -10,6 +10,7 @@ namespace MovieAndFragman.Model.Entities
         public Fragman()
         {
             IsActive = false;
+            //Documents = new HashSet<string>();
         }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -19,7 +20,7 @@ namespace MovieAndFragman.Model.Entities
         public int CounterView { get; set; }
         public float Ratio { get; set; }// Beğenilme oranı
 
-        public List<string> Documents { get; set; } //Fragman dökümanı
+        //public ICollection<string> Documents { get; set; } //Fragman dökümanı
         public int UserID { get; set; }
         public User User { get; set; }//yükleyici        
         public ICollection<GenreFragman> GenreFragmens { get; set; }
