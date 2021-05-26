@@ -2,16 +2,28 @@
 
 
 
-        <ul class="categories">
+<ul class="categories">
+    <li>
+        <a style="cursor:pointer;" onclick="GetCategory(-1,'Movies')">All</a>
+    </li>
+    @{
+        int i = 1;
+    }
+    @*@foreach (GenreVM item in Model)
+        {
             <li>
-                <a style="cursor:pointer;" onclick="GetCategory(-1)">All</a>
+                <a class="mouserPointer" onclick="GetCategory(@item.GenreId)">@item.Name</a>
             </li>
-            @foreach (GenreVM item in Model)
-            {
-                <li>
-                    <a class="mouserPointer" onclick="GetCategory(@item.GenreId)">@item.Name</a>
-                </li>
-            }
-        </ul>
+        }*@
+
+    @foreach (GenreVM item in Model)
+    {
+        <li>
+            <a class="mouserPointer" onclick="GetCategory(@item.GenreId,'Episode @i')">Episode @i</a>
+        </li>
+
+        i++;
+    }
+</ul>
 
 

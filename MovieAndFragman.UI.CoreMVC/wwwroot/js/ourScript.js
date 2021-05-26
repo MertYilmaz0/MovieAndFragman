@@ -64,7 +64,7 @@ function SwiperScript() {
     var swiper = new Swiper(".main-slider", swiperOptions);
 } (jQuery)
 
-function GetCategory(id) {
+function GetCategory(id,name) {
     if (id == -1) {
         $(".content-section").each(function () {
             $(this).show()
@@ -74,5 +74,6 @@ function GetCategory(id) {
             $(this).hide()
         })
         $("#" + id).show()
-    }
+    }    
+    $("#hdrName").html("<h1 >" + name + "</h1>")
 }
