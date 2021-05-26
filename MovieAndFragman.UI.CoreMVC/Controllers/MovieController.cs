@@ -16,6 +16,14 @@ namespace MovieAndFragman.UI.CoreMVC.Controllers
         {
             return View();
         }
+        public IActionResult SPL()
+        {
+            return View();
+        }
+        public IActionResult DailyGif()
+        {
+            return View();
+        }
         [Authorize(Roles = "User,Admin")]
         public IActionResult MovieSinglePage(int id)
         {
