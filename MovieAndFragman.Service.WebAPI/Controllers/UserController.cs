@@ -103,5 +103,34 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                 return BadRequest();
             }
         }
+
+        #region User ekleme
+        //[HttpGet]
+        //public IActionResult AddUser()
+        //{
+        //    try
+        //    {
+        //        User newuser = new User()
+        //        {
+        //            FirstName = "Koc",
+        //            LastName = "Koc",
+        //            BrithDate = DateTime.Now.AddYears(-20),
+        //            Email = "koc@remflix.net",
+        //            UserName = "KOC",
+        //            Password = "rem123",
+        //            IsActive = true,
+        //            CreatedDate = DateTime.Now,
+        //            PhoneNumber = "05123456789"
+        //        };
+        //        userBLL.Insert(newuser);
+        //        return Ok();
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw;
+        //    }
+        //} 
+        #endregion
     }
 }

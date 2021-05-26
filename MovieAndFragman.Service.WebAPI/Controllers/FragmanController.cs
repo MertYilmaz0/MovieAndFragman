@@ -38,9 +38,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                         Description = item.Description,
                         Name = item.Name,
                         Poster = item.Poster,
-                        SmallPoster=item.SmallPoster,
-                        MediumPoster=item.MediumPoster,
-                    Documents=item.Documents
+                        SmallPoster = item.SmallPoster,
+                        MediumPoster = item.MediumPoster,
+                        //Documents = item.Documents.ToList()
                         
                     };
 
@@ -65,9 +65,9 @@ namespace MovieAndFragman.Service.WebAPI.Controllers
                     Name = item.Name,
                     Description = item.Description,
                     Poster = item.Poster,
-                    MediumPoster=item.MediumPoster,
-                    SmallPoster=item.SmallPoster,
-                    Documents = item.Documents
+                    MediumPoster = item.MediumPoster,
+                    SmallPoster = item.SmallPoster,
+                    //Documents = item.Documents.ToList()
 
                 });
             }
